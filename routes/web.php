@@ -34,6 +34,10 @@ require __DIR__.'/auth.php';
 
 // Admin Route
 Route::prefix('/admin')->namespace('App\HTTP\Controllers\Admin')->group(function() {
+    // Admin Login
     Route::get('login',[AdminUserController::class,'login']);
-    Route::get('dashboard',[AdminController::class,'index']);
+    Route::middleware('admin')->group(function() {
+        // Admin Dashboard
+        Route::get('dashboard',[AdminController::class,'index']);
+    });
 });
