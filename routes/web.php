@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Middleware\Admin;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,10 +35,12 @@ require __DIR__.'/auth.php';
 
 // Admin Route
 Route::prefix('/admin')->namespace('App\HTTP\Controllers\Admin')->group(function() {
-    // Admin Login
-    Route::get('login',[AdminUserController::class,'login']);
+    Route::match(['get', 'post'], 'login', [AdminUserController::class,'login']);
     Route::middleware('admin')->group(function() {
-        // Admin Dashboard
-        Route::get('dashboard',[AdminController::class,'index']);
+        Route::get('dashboard',[AdminController::class, 'index']);
+        Route::get('logout', [AdminUserController::class, 'logout']);
     });
 });
+
+// Route::get('login', [AdminUserController::class,'create']);
+// Route::post('login',[AdminUserController::class,'store']);

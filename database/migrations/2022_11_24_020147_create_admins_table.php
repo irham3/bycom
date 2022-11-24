@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('mobile')->unique();
             $table->string('type');
-            $table->string('seller_id')->unique();
+            $table->integer('seller_id')->unique();
             $table->string('password');
             $table->string('image');
             $table->tinyInteger('status');
