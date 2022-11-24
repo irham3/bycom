@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,5 +32,8 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-// Admin Dashboard Route without admin group
-Route::get('admin/dashboard',[AdminController::class,'index']);
+// Admin Route
+Route::prefix('/admin')->namespace('App\HTTP\Controllers\Admin')->group(function() {
+    Route::get('login',[AdminUserController::class,'login']);
+    Route::get('dashboard',[AdminController::class,'index']);
+});
