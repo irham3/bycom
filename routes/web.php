@@ -34,7 +34,7 @@ require __DIR__.'/auth.php';
 
 // Admin Route
 Route::prefix('/admin')->namespace('App\HTTP\Controllers\Admin')->group(function() {
-    Route::match(['get', 'post'], 'login', [AdminController::class, 'login']);
+    Route::match(['get', 'post'], 'login', [AdminController::class, 'login'])->middleware('adminGuest');
     Route::middleware('admin')->group(function() {
         Route::get('dashboard',[AdminController::class, 'dashboard']);
         Route::match(['get','post'], 'update-admin-password', [AdminController::class, 'updateAdminPassword']);
