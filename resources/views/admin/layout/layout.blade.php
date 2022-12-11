@@ -21,6 +21,72 @@
   <link rel="stylesheet" href="{{ URL::asset('admin/css/vertical-layout-light/style.css?v=').time()}}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{ URL::asset('admin/images/favicon.png?v=').time()}}" />
+
+  <style>
+  /* Edit Navbar style */
+  .navbar .navbar-menu-wrapper {
+    background: #000;
+  }
+
+  .navbar .navbar-brand-wrapper {
+    background: #000;
+  }
+
+  /* Edit sidebar style */
+  .sidebar .nav.sub-menu .nav-item .nav-link {
+      color: #000;
+  }
+
+  .sidebar .nav:not(.sub-menu) > .nav-item > .nav-link[aria-expanded="true"] {
+    border-radius: 8px 8px 0 0;
+    background: #000;
+    color: #fff;
+  }
+  .sidebar .nav.sub-menu {
+    background: #fff;
+    padding: 0.25rem 0 0 1.5rem;
+    text-decoration: none
+  }
+  .sidebar .nav.sub-menu .nav-item .nav-link.active {
+    color: #ffffff;
+    background: #000;
+}
+  .sidebar .nav .nav-item .nav-link:hover {
+    background: #000;
+    color: #fff;
+  }
+  /* Edit Table Style */
+    .expandable-table thead tr th {
+      background: #000;
+    }
+
+    .dataTables_paginate .paginate_button.current:hover {
+    color: inherit !important;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: rgba(230, 230, 230, 0.1);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(230, 230, 230, 0.1)), color-stop(100%, rgba(0, 0, 0, 0.1)));
+    /* background: -webkit-linear-gradient(top, rgba(230, 230, 230, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%); */
+    background: -moz-linear-gradient(top, rgba(230, 230, 230, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+    background: -ms-linear-gradient(top, rgba(230, 230, 230, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+    background: -o-linear-gradient(top, rgba(230, 230, 230, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+    /* background: linear-gradient(to bottom, rgba(230, 230, 230, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%); */
+    }
+
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 1.5em;
+    padding: .1em 1em;
+    margin-left: 2px;
+    text-align: center;
+    text-decoration: none !important;
+    cursor: pointer;
+    color: inherit !important;
+    border: 1px solid transparent;
+    border-radius: 2px;
+  }
+
+  </style>
 </head>
 <body>
   <div class="container-scroller">
