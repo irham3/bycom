@@ -7,20 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>ByCom Admin</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="{{ url('admin/vendors/feather/feather.css') }}">
-  <link rel="stylesheet" href="{{ url('admin/vendors/ti-icons/css/themify-icons.css') }}">
-  <link rel="stylesheet" href="{{ url('admin/vendors/css/vendor.bundle.base.css') }}">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ URL::asset('admin/vendors/feather/feather.css?v=').time()}}">
+  <link rel="stylesheet" href="{{ URL::asset('admin/vendors/ti-icons/css/themify-icons.css?v=').time()}}">
+  <link rel="stylesheet" href="{{ URL::asset('admin/vendors/css/vendor.bundle.base.css?v=').time()}}">
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="{{ url('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}">
-  <link rel="stylesheet" href="{{ url('admin/vendors/ti-icons/css/themify-icons.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ url('admin/js/select.dataTables.min.css') }}">
+  <link rel="stylesheet" href="{{ URL::asset('admin/vendors/ti-icons/css/themify-icons.css?v=').time()}}">
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('admin/js/select.dataTables.min.css?v=').time()}}">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="{{ url('admin/css/vertical-layout-light/style.css') }}">
+  <link rel="stylesheet" href="{{ URL::asset('admin/css/vertical-layout-light/style.css?v=').time()}}">
   <!-- endinject -->
-  <link rel="shortcut icon" href="{{ url('admin/images/favicon.png') }}" />
+  <link rel="shortcut icon" href="{{ URL::asset('admin/images/favicon.png?v=').time()}}" />
 </head>
 <body>
   <div class="container-scroller">
@@ -37,29 +37,32 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   <!-- plugins:js -->
-  <script src="{{ url('admin/vendors/js/vendor.bundle.base.js') }}"></script>
+  <script src="{{ URL::asset('admin/vendors/js/vendor.bundle.base.js?v=').time()}}"></script>
   <!-- endinject -->
+  {{-- <script src="{{ URL::asset('admin/vendors/chart.js/Chart.min.js?v=').time()}}"></script>
+  <script src="{{ URL::asset('admin/vendors/datatables.net/jquery.dataTables.js?v=').time()}}"></script>
+  <script src="{{ URL::asset('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.js?v=').time()}}"></script>
+  <script src="{{ URL::asset('admin/js/dataTables.select.min.js?v=').time()}}"></script> --}}
   <!-- Plugin js for this page -->
-  <script src="{{ url('admin/vendors/chart.js/Chart.min.js') }}"></script>
-  <script src="{{ url('admin/vendors/datatables.net/jquery.dataTables.js') }}"></script>
-  <script src="{{ url('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}"></script>
-  <script src="{{ url('admin/js/dataTables.select.min.js') }}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
   <!-- End plugin js for this page -->
   <!-- inject:js -->
-  <script src="{{ url('admin/js/off-canvas.js') }}"></script>
-  <script src="{{ url('admin/js/hoverable-collapse.js') }}"></script>
-  <script src="{{ url('admin/js/template.js') }}"></script>
-  <script src="{{ url('admin/js/settings.js') }}"></script>
-  <script src="{{ url('admin/js/todolist.js') }}"></script>
+  <script src="{{ URL::asset('admin/js/off-canvas.js?v=').time()}}"></script>
+  <script src="{{ URL::asset('admin/js/hoverable-collapse.js?v=').time()}}"></script>
+  <script src="{{ URL::asset('admin/js/template.js?v=').time()}}"></script>
+  <script src="{{ URL::asset('admin/js/settings.js?v=').time()}}"></script>
+  <script src="{{ URL::asset('admin/js/todolist.js?v=').time()}}"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
-  <script src="{{ url('admin/js/dashboard.js') }}"></script>
-  <script src="{{ url('admin/js/Chart.roundedBarCharts.js') }}"></script>
+  <script src="{{ URL::asset('admin/js/dashboard.js?v=').time()}}"></script>
+  <script src="{{ URL::asset('admin/js/Chart.roundedBarCharts.js?v=').time()}}"></script>
   <!-- End custom js for this page-->
+
+  @yield('js-content')
 </body>
 
 </html>

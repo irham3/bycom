@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Middleware\Admin;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,16 +31,7 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
-
-// Admin Route
-Route::prefix('/admin')->namespace('App\HTTP\Controllers\Admin')->group(function() {
-    Route::match(['get', 'post'], 'login', [AdminController::class, 'login'])->middleware('adminGuest');
-    Route::middleware('admin')->group(function() {
-        Route::get('dashboard',[AdminController::class, 'dashboard']);
-        Route::match(['get','post'], 'update-admin-password', [AdminController::class, 'updateAdminPassword']);
-        Route::get('logout', [AdminController::class, 'logout']);
-    });
-});
+require __DIR__.'/admin.php';
 
 // Route::get('login', [AdminController::class,'create']);
 // Route::post('login',[AdminController::class,'store']);

@@ -727,7 +727,7 @@ Version 5.0.0-preview-3 (2018-10-18)
     Fixed long toolbar groups extending outside of the editor instead of wrapping
     Changed `Whole word` label in Search and Replace dialog to `Find whole words only` #AP-387
     Fixed dialog titles so they are now proper case #AP-384
-    Fixed color picker default to be #000000 instead of #ff00ff #AP-216
+    Fixed color picker default to be #FFFFFF instead of #ff00ff #AP-216
     Fixed "match case" option on the Find and Replace dialog is no longer selected by default #AP-298
     Fixed vertical alignment of toolbar icons #DES-134
     Fixed toolbar icons not appearing on IE11 #DES-133

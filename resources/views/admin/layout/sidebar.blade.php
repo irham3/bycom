@@ -6,26 +6,21 @@
         <span class="menu-title">Dashboard</span>
       </a>
     </li>
+
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-        <i class="ti-settings menu-icon"></i>
-        <span class="menu-title">Settings</span>
-        <i class="menu-arrow"></i>
+      <a class="nav-link" href="{{ url('admin/users') }}">
+        <i class="icon-head menu-icon"></i>
+        <span class="menu-title">Users</span>
       </a>
-      <div class="collapse" id="ui-basic">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="{{ url('admin/update-admin-password') }}">Update Password</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{ url('admin/update-admin-details') }}">Update Details</a></li>
-        </ul>
-      </div>
     </li>
+    
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+      <a class="nav-link" data-toggle="collapse" href="#pc-components" aria-expanded="false" aria-controls="pc-components">
         <i class="ti-desktop menu-icon"></i>
         <span class="menu-title">PC Components</span>
         <i class="menu-arrow"></i>
       </a>
-      <div class="collapse" id="form-elements">
+      <div class="collapse" id="pc-components">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"><a class="nav-link" href="{{ url('admin/cpu') }}">CPU</a></li>
           <li class="nav-item"><a class="nav-link" href="{{ url('admin/motherboard') }}">Motherboard</a></li>
@@ -37,16 +32,32 @@
         </ul>
       </div>
     </li>
+
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-        <i class="icon-head menu-icon"></i>
-        <span class="menu-title">User Pages</span>
+      <a class="nav-link" data-toggle="collapse" href="#pcbulds" aria-expanded="false" aria-controls="pcbulds">
+        <i class="ti-package menu-icon"></i>
+        <span class="menu-title">Full PC Builds</span>
         <i class="menu-arrow"></i>
       </a>
-      <div class="collapse" id="auth">
+      <div class="collapse" id="pcbulds">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url('admin/good-pcbuild') }}">Good</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url('admin/better-pcbuild') }}">Better</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url('admin/best-pcbuild') }}">Best</a></li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#settings" aria-expanded="false" aria-controls="settings">
+        <i class="ti-settings menu-icon"></i>
+        <span class="menu-title">Settings</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="settings">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{{ url('admin/update-admin-password') }}">Update Password</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{ url('admin/update-admin-details') }}">Update Details</a></li>
         </ul>
       </div>
     </li>
