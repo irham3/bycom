@@ -24,9 +24,6 @@
 
   <style>
   /* Edit Navbar style */
-  .navbar .navbar-menu-wrapper {
-    background: #000;
-  }
 
   .navbar .navbar-brand-wrapper {
     background: #000;
@@ -39,25 +36,30 @@
 
   .sidebar .nav:not(.sub-menu) > .nav-item > .nav-link[aria-expanded="true"] {
     border-radius: 8px 8px 0 0;
-    background: #000;
-    color: #fff;
+    background: #E7EAEE;
+    color: #000;
+  }
+  .sidebar .nav:not(.sub-menu) > .nav-item > .nav-link[aria-expanded="true"] {
+    border-radius: 8px 8px 0 0;
+    background: #E7EAEE;
+    color: #000;
   }
   .sidebar .nav.sub-menu {
-    background: #fff;
+    background: #E7EAEE;
     padding: 0.25rem 0 0 1.5rem;
     text-decoration: none
   }
   .sidebar .nav.sub-menu .nav-item .nav-link.active {
-    color: #ffffff;
-    background: #000;
+    color: #fff;
+    background: #FFAE5D;
 }
   .sidebar .nav .nav-item .nav-link:hover {
-    background: #000;
+    background: #FFAE5D;
     color: #fff;
   }
   /* Edit Table Style */
     .expandable-table thead tr th {
-      background: #000;
+      background: #FFAE5D;
     }
 
     .dataTables_paginate .paginate_button.current:hover {

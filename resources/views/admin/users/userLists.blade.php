@@ -5,7 +5,7 @@
     <div class="col-md-12 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <button type="button" class="btn btn-success btn-rounded btn-fw">Add User</button>
+          <button type="button" class="btn btn-success">Add User</button>
           <p class="card-title mt-3">List User</p>
           <div class="row">
             <div class="col-12">
