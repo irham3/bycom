@@ -28591,14 +28591,14 @@ div.tagsinput span.tag a {
 }
 
 .sidebar .nav .nav-item.active > .nav-link {
-  background: #000000;
+  background: #FFAE5D;
   position: relative;
 }
 
 .sidebar .nav .nav-item.active > .nav-link i,
 .sidebar .nav .nav-item.active > .nav-link .menu-title,
 .sidebar .nav .nav-item.active > .nav-link .menu-arrow {
-  color: #fff;
+  color: #000;
 }
 
 .sidebar .nav .nav-item.active > .nav-link i.menu-arrow::before {
@@ -28622,7 +28622,7 @@ div.tagsinput span.tag a {
 }
 
 .sidebar .nav:not(.sub-menu) > .nav-item:hover > .nav-link, .sidebar .nav:not(.sub-menu) > .nav-item:hover[aria-expanded="true"] {
-  background: #000000;
+  background: #FFAE5D;
   color: #fff;
 }
 
@@ -28632,12 +28632,12 @@ div.tagsinput span.tag a {
 
 .sidebar .nav:not(.sub-menu) > .nav-item > .nav-link[aria-expanded="true"] {
   border-radius: 8px 8px 0 0;
-  background: #000000;
+  background: #FFAE5D;
   color: #fff;
 }
 
 .sidebar .nav:not(.sub-menu) > .nav-item.active {
-  background: #000000;
+  background: #FFAE5D;
 }
 
 .sidebar .nav.sub-menu {
@@ -29994,7 +29994,7 @@ div.tagsinput span.tag a {
   }
   .sidebar-icon-only .sidebar .nav .nav-item .nav-link .menu-title {
     border-radius: 0 5px 5px 0px;
-    background: #000000;
+    background: #FFAE5D;
   }
   .rtl.sidebar-icon-only .sidebar .nav .nav-item .nav-link .menu-title {
     border-radius: 5px 0 0 5px;
@@ -30021,7 +30021,7 @@ div.tagsinput span.tag a {
     display: flex;
     -webkit-align-items: center;
     align-items: center;
-    background: #000000;
+    background: #FFAE5D;
     padding: 0.5rem 1.4rem;
     left: 70px;
     position: absolute;
@@ -30051,7 +30051,7 @@ div.tagsinput span.tag a {
     display: none;
   }
   .sidebar-icon-only .sidebar .nav .nav-item.hover-open .nav-link:hover .menu-title {
-    background: #000000;
+    background: #FFAE5D;
   }
   .sidebar-dark.sidebar-icon-only .sidebar .nav .nav-item.hover-open .nav-link:hover .menu-title {
     background: #232227;
