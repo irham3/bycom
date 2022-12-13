@@ -23,6 +23,14 @@
   <link rel="shortcut icon" href="{{ URL::asset('admin/images/favicon.png?v=').time()}}" />
 
   <style>
+  /* Edit Navbar style */
+  .navbar .navbar-menu-wrapper {
+    background: #000;
+  }
+
+  .navbar .navbar-brand-wrapper {
+    background: #000;
+  }
 
   /* Edit sidebar style */
   .sidebar .nav.sub-menu .nav-item .nav-link {
