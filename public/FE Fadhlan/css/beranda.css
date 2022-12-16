@@ -1,0 +1,75 @@
+/* Navbar */
+.header {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    z-index: 2;
+    height: 90px;
+    width: 100%;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    transition: all 0.4s;
+}
+
+.navbar .nav-link {
+    color: white;
+	
+}
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #2b2b2b;
+    text-decoration: none;
+}
+.navbar .navbar-brand {
+    color: white;
+}
+.navbar-toggler {
+	color: white;
+}
+
+/* Jumbotron */
+.jumbotron {
+	background-image:url(../img/banner-beranda.png);
+	background-size: cover;
+	height: 540px;
+	text-align: center;
+	position: relative;
+}
+
+.jumbotron .container {
+	position: relative;
+	z-index:1 ;
+}
+
+
+.jumbotron .display-4 {
+	color: white;
+	font-weight: 200;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+	font-size:40px;
+	margin-bottom: 30px;
+}
+
+.jumbotron .display-4 span {
+	font-weight: 500;
+}
+
+/* Tulisan BYCOM */
+.tulisan{
+	position: absolute;
+	color: white;
+	margin-top: 40px;
+	font-family: 'Poppins', sans-serif;
+	font-size: 32px;  
+}
+
+.navbar li {
+	margin-top:  40px;
+	padding-right: 10px;
+}

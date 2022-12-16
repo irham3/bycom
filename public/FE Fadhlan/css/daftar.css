@@ -1,0 +1,134 @@
+*{
+     margin: 0;
+     padding: 0;   
+}
+
+html{
+     overflow-x: hidden;    
+     overflow: hidden;
+}
+ 
+/* Bagian Kiri */
+.bg-gambarkiri{
+     background-image: url('../img/daftar.png');
+     /* background-repeat: no-repeat;
+     background-size: contain; */
+     /* coding diatas buat ga terlalu zoom tapi jadinya kecil gambarnya */
+}
+
+/* Effect Biar Gambar Agak Gelap */
+.bg-gambarkiri::after {
+     content: '';
+	display: block;
+	width: 50%;
+	height: 100%;
+	background: rgba(62, 62, 62, 0.5);
+	position: absolute;
+	bottom: 0;
+}
+
+/* Tulisan BYCOM */
+.tulisan{
+     position: absolute;
+     color: white;
+     margin-left: 100px;
+     margin-top: 96px;
+     font-family: 'Poppins', sans-serif;
+     font-size: 70px;  
+}
+
+/* Bagian Kanan */
+.bagiankanan{
+     background: #fdfdfd;
+}
+
+/* Tulisan Daftar */
+.tulisandaftar {
+     font-family: 'Poppins', sans-serif;
+     font-weight: 700;
+     color: #3E3E3E;
+}
+
+/* Tulisan Sudah Punya Akun? Masuk */
+.sudahpunyaakun {
+     font-family: 'Nunito', sans-serif;
+     font-weight: 300;
+     color: #747474;
+}
+   
+.sudahpunyaakun a {
+     text-decoration: none;
+     color: #FFAE5D;
+}
+
+/* Kolom */
+.mt-3 {
+     font-family: 'Poppins', sans-serif;
+}
+
+.form-label{
+     font-weight: 600;
+}   
+
+.form-control{
+    border-width: 25px;
+    border-radius: 106px;
+    overflow-x: hidden;
+    height: 120%;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0.05); 
+}
+
+/* Tulisan Dengan mendaftar, saya menyetujui Syarat dan Ketentuan serta Kebijakan Privasi */
+.pernyataanmenyetujui {
+     font-family: 'Nunito', sans-serif;
+     font-weight: 700;
+     font-style: normal;
+     color: #3E3E3E;
+}
+   
+.pernyataanmenyetujui a {
+     text-decoration: none;
+     color: #FFAE5D;
+}
+
+/* Tulisan Atau */
+.atau {
+     margin: 5%;
+     font-family: 'Nunito', sans-serif;
+     font-weight: 700;
+     color: #3E3E3E; 
+}
+  
+.text{
+     align-items: flex-end;
+}
+ 
+/* Button Link ke Google */
+.btn-google{
+     border: 1px solid rgba(0, 0, 0, 0.25);
+     box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0.05);
+     border-radius: 106px;
+     background: #FFFFFF;
+     font-family: 'Poppins', sans-serif;
+}
+
+.btn-google img  {
+     align-items: left;
+     text-align: justify;
+     display:inline-block;
+     /* gajalannnnn gambar googlenya gabisa kekiri */
+     width: 7%;
+}
+
+/* Button Buat Akun */
+.btn-buatakun{
+     border: 1px solid rgba(0, 0, 0, 0.25);
+     box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0.05);
+     border-radius: 106px;
+     background: #FFAE5D;
+     font-family: 'Poppins', sans-serif;
+     color: white;
+     font-weight: 700;
+}
+ 
