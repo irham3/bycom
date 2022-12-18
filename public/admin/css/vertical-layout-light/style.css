@@ -11083,20 +11083,20 @@ fieldset:disabled .wizard > .actions a,
 
 .btn-primary, .wizard > .actions a {
   color: #fff;
-  background-color: #000000;
-  border-color: #000000;
+  background-color: #FFAE5D;
+  border-color: #FFAE5D;
 }
 
 .btn-primary:hover, .wizard > .actions a:hover {
   color: #fff;
-  background-color: #3f3e91;
-  border-color: #3b3a88;
+  background-color: #FF8F1F;
+  border-color: #FF972F;
 }
 
 .btn-primary:focus, .wizard > .actions a:focus, .btn-primary.focus, .wizard > .actions a.focus {
   color: #fff;
-  background-color: #3f3e91;
-  border-color: #3b3a88;
+  background-color: #FF8F1F;
+  border-color: #FF972F;
   box-shadow: 0 0 0 0.2rem rgba(102, 100, 184, 0.5);
 }
 
@@ -11110,8 +11110,8 @@ fieldset:disabled .wizard > .actions a,
 .show > .btn-primary.dropdown-toggle,
 .wizard > .actions .show > a.dropdown-toggle {
   color: #fff;
-  background-color: #3b3a88;
-  border-color: #37367f;
+  background-color: #FF8F1F;
+  border-color: #FF972F;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus, .wizard > .actions a:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .wizard > .actions a:not(:disabled):not(.disabled).active:focus,

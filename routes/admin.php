@@ -10,7 +10,7 @@ Route::prefix('/admin')->namespace('App\HTTP\Controllers\Admin')->group(function
   Route::middleware('admin')->group(function() {
       Route::get('dashboard',[AdminController::class, 'dashboard']);
       Route::get('logout', [AdminController::class, 'logout']);
-      Route::match(['get','post'], 'update-admin-password', [AdminController::class, 'updateAdminPassword']);
+      Route::match(['get','post'], 'settings', [AdminController::class, 'updateAdminPassword']);
 
       // Admin Users Route
       Route::get('users', [AdminUserController::class, 'index']);

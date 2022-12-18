@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>ByCom Admin</title>
+  <title>ByCom Dashboard</title>
   <!-- plugins:css -->
   <link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet">
   <link rel="stylesheet" href="{{ URL::asset('admin/vendors/feather/feather.css?v=').time()}}">
@@ -23,11 +23,6 @@
   <link rel="shortcut icon" href="{{ URL::asset('admin/images/favicon.png?v=').time()}}" />
 
   <style>
-  /* Edit Navbar style */
-
-  .navbar .navbar-brand-wrapper {
-    background: #000;
-  }
 
   /* Edit sidebar style */
   .sidebar .nav.sub-menu .nav-item .nav-link {

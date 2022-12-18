@@ -49,17 +49,10 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#settings" aria-expanded="false" aria-controls="settings">
+      <a class="nav-link" href="{{ url('admin/settings') }}">
         <i class="ti-settings menu-icon"></i>
         <span class="menu-title">Settings</span>
-        <i class="menu-arrow"></i>
       </a>
-      <div class="collapse" id="settings">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="{{ url('admin/update-admin-password') }}">Update Password</a></li>
-          <li class="nav-item"> <a class="nav-link" href="{{ url('admin/update-admin-details') }}">Update Details</a></li>
-        </ul>
-      </div>
     </li>
   </ul>
 </nav>
