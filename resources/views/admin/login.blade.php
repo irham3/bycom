@@ -5,18 +5,18 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Skydash Admin</title>
+  <title>Bycom Dashboard</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="{{ url('admin/vendors/feather/feather.css') }}">
-  <link rel="stylesheet" href="{{ url('admin/vendors/ti-icons/css/themify-icons.css') }}">
-  <link rel="stylesheet" href="{{ url('admin/vendors/css/vendor.bundle.base.css') }}">
+  <link rel="stylesheet" href="{{ url('admin/vendors/feather/feather.css?v=').time() }}">
+  <link rel="stylesheet" href="{{ url('admin/vendors/ti-icons/css/themify-icons.css?v=').time() }}">
+  <link rel="stylesheet" href="{{ url('admin/vendors/css/vendor.bundle.base.css?v=').time() }}">
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="{{ url('admin/css/vertical-layout-light/style.css') }}">
+  <link rel="stylesheet" href="{{ url('admin/css/vertical-layout-light/style.css?v=').time() }}">
   <!-- endinject -->
-  <link rel="shortcut icon" href="{{ url('admin/images/favicon.png') }}" />
+  <link rel="shortcut icon" href="{{ url('admin/images/favicon.png?v=').time() }}" />
 </head>
 
 <body>
@@ -27,7 +27,7 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <div class="brand-logo">
-                <img src="{{ asset('admin/images/logo.svg') }}" alt="logo">
+                <img src="{{ asset('admin/images/logo-black.svg?v=').time() }}" alt="logo">
               </div>
               @if (Session::has('error_message'))
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -59,15 +59,14 @@
                 <div class="mt-3">
                   <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="">SIGN IN</button>
                 </div>
-                <div class="my-2 d-flex justify-content-between align-items-center">
+                {{-- <div class="my-2 d-flex justify-content-between align-items-center">
                   <div class="form-check">
                     <label class="form-check-label text-muted">
                       <input type="checkbox" class="form-check-input">
                       Keep me signed in
                     </label>
                   </div>
-                  <a href="#" class="auth-link text-black">Forgot password?</a>
-                </div>
+                </div> --}}
               </form>
             </div>
           </div>
