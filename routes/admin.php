@@ -16,5 +16,9 @@ Route::prefix('/admin')->namespace('App\HTTP\Controllers\Admin')->group(function
       Route::get('users', [AdminUserController::class, 'index']);
       Route::get('/getAllUsers', [AdminUserController::class,
       'getAllUsers']);
+      Route::post('user/store', [AdminUserController::class, 'store']);
+      Route::get('user/edit/{id}', [AdminUserController::class, 'edit']);
+      Route::post('user/update/{id}', [AdminUserController::class, 'update']);
+      Route::get('user/delete/{id}', [AdminUserController::class, 'delete']);
   });
 });

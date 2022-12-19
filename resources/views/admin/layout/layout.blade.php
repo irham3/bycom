@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="{{ URL::asset('admin/vendors/css/vendor.bundle.base.css?v=').time()}}">
   <!-- endinject -->
   <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="{{ url('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}">
+  <link rel="stylesheet" href="{{ URL::asset('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css?v=').time() }}">
   <link rel="stylesheet" href="{{ URL::asset('admin/vendors/ti-icons/css/themify-icons.css?v=').time()}}">
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('admin/js/select.dataTables.min.css?v=').time()}}">
   <!-- End plugin css for this page -->
@@ -23,14 +23,6 @@
   <link rel="shortcut icon" href="{{ URL::asset('admin/images/favicon.png?v=').time()}}" />
 
   <style>
-  /* Edit Navbar style */
-  .navbar .navbar-menu-wrapper {
-    background: #000;
-  }
-
-  .navbar .navbar-brand-wrapper {
-    background: #000;
-  }
 
   /* Edit sidebar style */
   .sidebar .nav.sub-menu .nav-item .nav-link {
