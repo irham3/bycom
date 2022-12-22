@@ -5,7 +5,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminUserController;
 
 // Admin Route
-Route::prefix('/admin')->namespace('App\HTTP\Controllers\Admin')->group(function() {
+Route::prefix('/admin')->group(function() {
   Route::match(['get', 'post'], 'login', [AdminController::class, 'login'])->middleware('adminGuest');
   Route::middleware('admin')->group(function() {
       Route::get('dashboard',[AdminController::class, 'dashboard']);
@@ -14,11 +14,8 @@ Route::prefix('/admin')->namespace('App\HTTP\Controllers\Admin')->group(function
 
       // Admin Users Route
       Route::get('users', [AdminUserController::class, 'index']);
-      Route::get('/getAllUsers', [AdminUserController::class,
+      Route::get('user/getAllUsers', [AdminUserController::class,
       'getAllUsers']);
-      Route::post('user/store', [AdminUserController::class, 'store']);
-      Route::get('user/edit/{id}', [AdminUserController::class, 'edit']);
-      Route::post('user/update/{id}', [AdminUserController::class, 'update']);
-      Route::get('user/delete/{id}', [AdminUserController::class, 'delete']);
+      Route::resource('user', AdminUserController::class);
   });
 });

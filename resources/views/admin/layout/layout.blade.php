@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="{{ URL::asset('admin/css/vertical-layout-light/style.css?v=').time()}}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{ URL::asset('admin/images/favicon.png?v=').time()}}" />
+   {{-- CSRF TOKEN --}}
+   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <style>
 
@@ -83,6 +85,10 @@
     border-radius: 2px;
   }
 
+  /* Edit Sweet Alert CSS */
+  .swal2-container .swal2-popup {
+    padding: 0;
+  }
   </style>
 </head>
 <body>

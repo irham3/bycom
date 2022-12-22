@@ -29,12 +29,7 @@ class AdminUserController extends Controller
 
             return DataTables::of($users)
             ->addColumn('action', function($user) {
-                $html = '
-                <a class="btn btn-info" href="{{ url("admin/users/view") }}'.$user->id.'">View</a>
-                <a class="btn btn-warning" href="{{ url("admin/users/edit") }}'.$user->id.'">Edit</a>
-                <a class="btn btn-danger" href="{{ url("admin/users/delete") }}'.$user->id.'">Delete</a>
-                ';
-                return $html;
+                return view('admin.users._aksi')->with('user', $user);
             })
             ->make(true);
     }
@@ -51,24 +46,23 @@ class AdminUserController extends Controller
             'password.required' => 'Password harus diisi',
         ]);
 
-        User::create([
-            'name'  => $request->name,
-            'email'  => $request->email,
-            'password'  => Hash::make($request->password),
-        ]);
-
         if($validator->fails()) {
-            return redirect()->back();
+            return response()->json(['errors' => $validator->errors()]);
         }
         else {
-            return redirect('admin/users/index')->with('success_message', 'Akun Berhasil dibuat');
+            User::create([
+                'name'  => $request->name,
+                'email'  => $request->email,
+                'password'  => Hash::make($request->password),
+            ]);
+            return response()->json(['success' => "Berhasil menyimpan data"]);
         }
 
     }
 
     public function edit($id)
     {
-        $user = User::find($id);
+        $user = User::find($id)->first();
         if($user)
         {
             return response()->json([
@@ -86,12 +80,17 @@ class AdminUserController extends Controller
 
     }
 
+    public function show($id)
+    {
+        //
+    }
+
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
             'name'      => ['required', 'string', 'max:255'],
-            'email'     => ['email'],
-            'password'  => ['required', 'confirmed', Password::defaults()]
+            'email'     => ['required', 'email','unique:'.User::class],
+            'password'  => ['required', Password::defaults()]
         ]);
 
         if($validator->fails())
@@ -128,21 +127,7 @@ class AdminUserController extends Controller
 
     public function destroy($id)
     {
-        $user = User::find($id);
-        if($user)
-        {
-            $user->delete();
-            return response()->json([
-                'status'=>200,
-                'message'=>'User Deleted Successfully.'
-            ]);
-        }
-        else
-        {
-            return response()->json([
-                'status'=>404,
-                'message'=>'No User Found.'
-            ]);
-        }
+        $user = User::findOrFail($id);
+        $user->delete();
     }
 }
