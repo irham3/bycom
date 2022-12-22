@@ -62,7 +62,7 @@ class AdminUserController extends Controller
 
     public function edit($id)
     {
-        $user = User::find($id)->first();
+        $user = User::find($id);
         if($user)
         {
             return response()->json([
@@ -89,7 +89,7 @@ class AdminUserController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name'      => ['required', 'string', 'max:255'],
-            'email'     => ['required', 'email','unique:'.User::class],
+            'email'     => ['required', 'email'],
             'password'  => ['required', Password::defaults()]
         ]);
 
