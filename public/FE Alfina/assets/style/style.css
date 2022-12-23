@@ -1,0 +1,159 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    color: #000000;
+}
+
+header{
+    background-image: url('../image/background.png');
+    background-size: cover;
+}
+
+ul{
+    padding-left: 0px;
+    padding: 1rem 0px;
+}
+
+li.nav-item{
+    list-style: none;
+    padding: 5px 0px;
+    color: #000000;
+    font-size: 13px;
+}
+
+li.nav-item.active{
+    color: #FFAE5D !important;
+}
+
+li.nav-item a{
+    text-decoration: none;
+    color: #000000;
+}
+
+.bg-blur{
+    background: rgba(230, 230, 230, 0.26);
+}
+
+.top-nav{
+    margin: 0px 150px;
+}
+
+.icon-nav{
+    flex-basis: 15%;
+    justify-content: space-between;
+}
+
+.main-nav .nav-item a{
+    color: #ffffff !important;
+    font-size: 14px;
+}
+
+/* .main-nav li.nav-item{
+    width: 100%;
+} */
+
+.collapse.navbar-collapse{
+    justify-content: space-between;
+}
+
+/*START STYLING MARKETPLACE*/
+.side-nav{
+    background: #FAFAFA;
+    flex-basis: 30%;
+}
+
+.nav-item label{
+    margin-left: 5px;
+}
+
+.card{
+    background: rgba(230, 230, 230, 0.26);
+    border: none;
+    margin: 0px 10px;
+}
+
+.card-body{
+    background: #ffffff;
+    color: #1F1F1F;
+}
+
+.card-body h5, .detail-content h5, th{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.card-body p{
+    font-weight: normal;
+}
+
+.card-img-top{
+    width: 80%;
+    height: 180px;
+    margin: 10px 0px;
+}
+
+.btn{
+    background: #FFAE5D;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 25px;
+}
+
+.form-control{
+    width: 40%;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+.form-control::placeholder{
+    color: #898989;
+    font-size: 12px;
+}
+
+.btn-grup .btn{
+    margin: 0px 5px;
+}
+
+.tokopedia{
+    background: #25A32D;
+}
+
+.detail-content p{
+    font-size: 13px;
+}
+/*END STYLING MARKETPLACE*/
+
+/*START STYLING KERANJANG*/
+.section-title.komponen{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.section-title.komponen h3{
+    color: #404040;
+    margin: 0px 20px;
+    font-weight: bold;
+}
+
+tr.heading-table th{
+    color: #26293B;
+    font-weight: 400;
+    padding: 15px 0px !important;
+}
+
+.nama-komponen{
+    font-size: 12px;
+    color: #191B2A;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+tbody th td{
+    padding: 1.5rem 0px;
+}
+
+td.komponen{
+    padding: 0px;
+}
+/*END STYLING KERANJANG*/
