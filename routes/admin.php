@@ -10,7 +10,8 @@ Route::prefix('/admin')->group(function() {
   Route::middleware('admin')->group(function() {
       Route::get('dashboard',[AdminController::class, 'dashboard']);
       Route::get('logout', [AdminController::class, 'logout']);
-      Route::match(['get','post'], 'settings', [AdminController::class, 'updateAdminPassword']);
+      Route::match(['get','post'], 'settings', [AdminController::class, 'updateAdminPassword'])->name('updateAdminPassword');
+      Route::post('settings/updateAdminImage', [AdminController::class, 'updateAdminImage'])->name('updateAdminImage');
 
       // Admin Users Route
       Route::get('users', [AdminUserController::class, 'index']);
