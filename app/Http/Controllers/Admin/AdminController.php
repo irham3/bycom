@@ -80,7 +80,7 @@ class AdminController extends Controller
                 return redirect()->back()->withErrors('Password lama salah');
             }
         }
-        return view('admin.settings.update-admin-password', compact('adminDetails'));
+        return view('admin.settings.index', compact('adminDetails'));
     }
 
     public function updateAdminImage(Request $request)
@@ -89,14 +89,15 @@ class AdminController extends Controller
             $extension = $request->file('imgUpload')->extension();
             $imgName = date('dmyHis').uniqid().'.'.$extension;
 
-            $this->validate($request, [
+            $this->validate($request, 
+              [
                 'imgUpload' => 'required|image|mimes:jpeg,png,jpg,svg|max:5000',
-            ], 
-            [
+              ], 
+              [
                 'imgUpload.image' => 'File yang dipilih bukan gambar',
                 'imgUpload.mimes' => 'Format gambar harus jpeg, png, jpg, svg',
                 'max' => 'Ukuran gambar maksimal 5MB'
-            ]
+              ]
             );
             Storage::putFileAs('public/images/profile-images', $request->file('imgUpload'), $imgName);
             Admin::where('email', Auth::guard('admin')->user()->email)->update(['image'=>$imgName]);
