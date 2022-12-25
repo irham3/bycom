@@ -19,10 +19,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('mobile')->unique();
             $table->string('type');
-            $table->integer('seller_id')->unique();
             $table->string('password');
             $table->string('image')->default('admin.png');
-            $table->tinyInteger('status');
             $table->timestamps();
         });
     }

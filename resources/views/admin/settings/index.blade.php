@@ -28,12 +28,12 @@
             <form action="{{ route('updateAdminImage') }}" method="post" enctype="multipart/form-data">
               @csrf
               <div class="profile-pic mt-3">
-                <label class="-label" for="file">
+                <label class="-label" for="file-admin-img">
                   <span class="glyphicon glyphicon-camera"></span>
                   <span>Ganti Gambar</span>
                 </label>
-                <input id="file" type="file" name="imgUpload" accept=".jpeg,.png,.jpg,.svg" onchange="loadFile(event)"/>
-                <img src="{{asset('/storage/images/profile-images/'.$adminDetails['image'])}}" class="shadow" id="output-img" width="200" alt="profile_img"/>
+                <input id="file-admin-img" type="file" name="imgUpload" class="upload-img" accept=".jpeg,.png,.jpg,.svg" />
+                <img src="{{asset('/storage/images/profile-images/admin/'.$adminDetails['image'])}}" class="shadow" id="output-img" width="200" alt="profile_img"/>
               </div>
               <div class="card-body">
                 <div class="row">
@@ -103,13 +103,4 @@
   @include('admin.layout.footer')
 </div>
 
-@endsection
-
-@section('js-content')
-<script>
-  var loadFile = function (event) {
-    var image = document.getElementById("output-img");
-    image.src = URL.createObjectURL(event.target.files[0]);
-  };
-</script>
 @endsection

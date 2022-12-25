@@ -17,15 +17,11 @@ class AdminSeeder extends Seeder
     {
         $adminRecords = [
             [
-                'id' => 1,
-                'name' => 'Super Admin',
+                'name' => 'Admin',
                 'email' => 'admin@bycom.com',
                 'mobile' => '088102340929',
-                'type' => 'superadmin',
-                'seller_id' => 0,
-                'password' => '$2y$10$dwwyF1aA1AA1KGtI7roPNeakyMZIM0R8AzBp8kPqnMio4CdesvW1.',
-                'image' => '',
-                'status' => 1,
+                'type' => 'admin',
+                'password' => '$2y$10$lkbPD6BrmeMMlPF/WL1tcO0gvgRfPxXn2RvbRKSZlzRn9N48A7uAG',
             ],
         ];
         Admin::insert($adminRecords); 

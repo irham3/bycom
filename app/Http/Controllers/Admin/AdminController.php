@@ -28,7 +28,7 @@ class AdminController extends Controller
 
             $this->validate($request, $rules, $customMessages);
 
-            if(Auth::guard('admin')->attempt(['email'=>$data['email'], 'password'=>$data['password'], 'status'=>1])) {
+            if(Auth::guard('admin')->attempt(['email'=>$data['email'], 'password'=>$data['password']])) {
                 return redirect('admin/dashboard')->with('adminDetails', $data);
             } else {
                 return redirect()->back()->with('error_message', 'Email atau Password salah');
@@ -99,7 +99,7 @@ class AdminController extends Controller
                 'max' => 'Ukuran gambar maksimal 5MB'
               ]
             );
-            Storage::putFileAs('public/images/profile-images', $request->file('imgUpload'), $imgName);
+            Storage::putFileAs('public/images/profile-images/admin', $request->file('imgUpload'), $imgName);
             Admin::where('email', Auth::guard('admin')->user()->email)->update(['image'=>$imgName]);
 
             return redirect()->back()->withSuccess('Gambar profil berhasil diperbarui');

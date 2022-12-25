@@ -10,7 +10,7 @@
     <ul class="navbar-nav navbar-nav-right">
       <li class="nav-item nav-profile dropdown">
         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-          <img src="{{ asset('/storage/images/profile-images/'.Auth::guard('admin')->user()->image) }}" alt="profile"/>
+          <img src="{{ asset('/storage/images/profile-images/admin/'.Auth::guard('admin')->user()->image) }}" alt="profile"/>
         </a>
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
           <a href="{{ url('admin/logout') }}" class="dropdown-item">

@@ -16,6 +16,7 @@
                   <thead>
                     <tr>
                       <th>ID</th>
+                      <th>Avatar</th>
                       <th>Nama</th>
                       <th>Email</th>
                       <th>Aksi</th>

@@ -12,6 +12,7 @@
         destroy:true,
         columns: [
             {data:'id', name: 'id'},
+            {data:'image', name: 'image', orderable: false, searchable: false},
             {data:'name', name: 'name'},
             {data:'email', name: 'email'},
             {data:'action', name: 'action', orderable: false, searchable: false}
@@ -20,47 +21,47 @@
   });
 
   // Store
-  $('.btn-add-user').click(function() {
-    var csrf_token = $('meta[name="csrf-token"]').attr('content');
+  $('#add_user_form').submit(function(e) {
+    e.preventDefault();
+    const fd = new FormData(this);
     $.ajax({
-        url: 'user',
-        type: 'POST',
-        data: {
-          '_method': 'POST',
-          '_token': csrf_token,
-          name: $('#addUserModal #name').val(),
-          email: $('#addUserModal #email').val(),
-          password: $('#addUserModal #password').val(),
-          password_confirmation: $('#addUserModal #password_confirmation').val(),
-        },
-        success: function(response) {
-          if (response.errors) {
-            let errors = ''
-            $.each(response.errors, function(key, value) {
-              errors += value + '</br>';
-            });
-            Swal.fire(
-              'Warning',
-              errors,
-              'warning'
-            )
-          } else{
-            $('.users-table').DataTable().ajax.reload();
-            Swal.fire(
-              'Berhasil!',
-              response.success,
-              'success'
-              )
-            $("#addUserModal").modal('hide');
-          }
-        },
-        error: function (xhr, status, error) {
+      url: 'user',
+      method: 'post',
+      data: fd,
+      cache: false,
+      contentType: false,
+      processData: false,
+      dataType: 'json',
+      success: function(response) {
+        if (response.errors) {
+          let errors = ''
+          $.each(response.errors, function(key, value) {
+            errors += value + '</br>';
+          });
           Swal.fire(
-            'Error',
-            'Ada masalah!',
-            'error'
+            'Warning',
+            errors,
+            'warning'
           )
+        } else{
+          $('.users-table').DataTable().ajax.reload();
+          Swal.fire(
+            'Berhasil!',
+            response.success,
+            'success'
+            )
+          $("#addUserModal").modal('hide');
         }
+      },
+      error: function (xhr, status, error) {
+        console.log(fd);
+        console.log(xhr.responseText);
+        Swal.fire(
+          'Error',
+          'Ada masalah!',
+          'error'
+        )
+      }
     });
   });
 
@@ -118,61 +119,22 @@
     e.preventDefault();
     var id = $(this).data('id');
     var url = $(this).attr('href');
-    csrf_token = $('meta[name="csrf-token"]').attr('content');
     $.ajax({
         url: url,
         type: 'GET',
         data: {
           '_method': 'GET',
-          '_token': csrf_token
         },
         success: function(response) {
           $('#editUserModal').modal('show');
-          console.log(response.user);
+          $('#editUserModal .btn-close').click(function (e) { 
+            e.preventDefault();
+            $('#editUserModal').modal('hide');
+          });
+          $('#editUserModal #output-img').attr('src', '/storage/images/profile-images/users/' + response.user.image);
+          $('#editUserModal #id').val(response.user.id);
           $('#editUserModal #name').val(response.user.name);
           $('#editUserModal #email').val(response.user.email);
-          $('.btn-update-user').click(function() {
-            $.ajax({
-              url: 'user/' + id,
-              type: 'PUT',
-              data: {
-                '_method': 'POST',
-                '_token': csrf_token,
-                name: $('#editUserModal #name').val(),
-                email: $('#editUserModal #email').val(),
-                password: $('#editUserModal #password').val()
-              },
-              success: function(response) {
-                if (response.errors) {
-                  let errors = ''
-                  $.each(response.errors, function(key, value) {
-                    errors += value + '</br>';
-                  });
-                  Swal.fire(
-                    'Warning',
-                    errors,
-                    'warning'
-                  )
-                } else{
-                  $('.users-table').DataTable().ajax.reload();
-                  Swal.fire(
-                    'Berhasil!',
-                    response.success,
-                    'success'
-                    )
-                  $("#addUserModal").modal('hide');
-                }
-              },
-              error: function (xhr, status, error) {
-                console.log(xhr.responseText)
-                Swal.fire(
-                  'Error',
-                  'Ada masalah!',
-                  'error'
-                )
-              }
-            });
-          });
         }, 
         error: function (xhr, status, error) {
           var err = eval("(" + xhr.responseText + ")"); 
@@ -183,6 +145,49 @@
             'error'
           )
         }
+    });
+  });
+
+  $('#edit_user_form').submit(function(e) {
+    e.preventDefault();
+    const fd = new FormData(this); 
+    $.ajax({
+      url: 'user/update',
+      type: 'POST',
+      data: fd,
+      cache: false,
+      contentType: false,
+      processData: false,
+      dataType: 'json',
+      success: function(response) {
+        if (response.errors) {
+          let errors = '';
+          $.each(response.errors, function(key, value) {
+            errors += value + '</br>';
+          });
+          Swal.fire(
+            'Warning',
+            errors,
+            'warning'
+          )
+        } else{
+          $('.users-table').DataTable().ajax.reload();
+          Swal.fire(
+            'Berhasil!',
+            response.success,
+            'success'
+            )
+          $("#editUserModal").modal('hide');
+        }
+      },
+      error: function (xhr, status, error) {
+        console.log(xhr.responseText)
+        Swal.fire(
+          'Error',
+          'Ada masalah!',
+          'error'
+        )
+      }
     });
   });
 </script>

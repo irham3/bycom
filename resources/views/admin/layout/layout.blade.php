@@ -133,7 +133,7 @@
 
   /* Edit Sweet Alert CSS */
   .swal2-container .swal2-popup {
-    padding: 0;
+    padding: 15px;
   }
   </style>
 </head>
@@ -177,6 +177,15 @@
   <script src="{{ URL::asset('admin/js/Chart.roundedBarCharts.js?v=').time()}}"></script>
   <!-- End custom js for this page-->
 
+  <script>
+    document.addEventListener('change', function (event) {
+      if (event.target.matches('.upload-img')) {
+        console.log(event);
+        var image = event.target.nextSibling.nextSibling;
+        image.src = URL.createObjectURL(event.target.files[0]);
+      } 
+    });
+  </script>
   @yield('js-content')
 </body>
 

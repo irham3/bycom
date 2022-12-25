@@ -17,6 +17,7 @@ Route::prefix('/admin')->group(function() {
       Route::get('users', [AdminUserController::class, 'index']);
       Route::get('user/getAllUsers', [AdminUserController::class,
       'getAllUsers']);
+      Route::post('user/update', [AdminUserController::class, 'update'])->name('updateAdminUser');
       Route::resource('user', AdminUserController::class);
   });
 });
