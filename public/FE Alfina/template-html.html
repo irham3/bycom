@@ -11,39 +11,95 @@
   <body>
     <!--Header Section-->
     <header>
-        <nav class="navbar bg-dark" style="border-bottom: 1px solid #808080;">
-            <div class="container">
-               <div> 
-                    <a class="navbar-brand" href="#">
-                       <img src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Bootstrap
-                   </a></div>
-                <div>
-                    <iconify-icon icon="material-symbols:shopping-cart-rounded" style="color: white;"></iconify-icon>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-nav">
+            <div class="container pt-3 pb-2" style="border-bottom: 1px solid #808080;">
+                <div class="ms-2">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="assets/image/logo.png" alt="Logo" class="d-inline-block align-text-top">
+                    </a>
+                </div>
+                <div class="d-flex icon-nav">
                     <div>
-                        <a href="">Sign in</a>
+                        <img src="assets/image/cart.svg" alt="">
+                    </div>
+                    <div class="d-flex pt-1">
+                        <div><img src="assets/image/profile.svg" alt=""></div>
+                        <div class="ms-2" style="padding-top: 2px;"><a href="daftar.html">Sign in</a></div>
                     </div>
                 </div>
             </div>
-            
-        </nav>
-    
-        <!--Main Navbar-->
-        <nav class="navbar navbar-expand-lg bg-dark">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span>
+                </button>
+                <div class="container collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav main-nav">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Beranda</a></li>
                         <li class="nav-item"> <a class="nav-link" href="#">Simulasi Rakit PC</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Rekomendasi Rakitan PC</a></li>
                         <li class="nav-item"><a class="nav-link">Marketplace</a></li>
                     </ul>
-              </div>
+                </div>
             </div>
         </nav>
     </header>
+
+    <footer class="bg-dark">
+        <div class="container">
+            <div class="footer-content d-flex justify-content-between">
+                <div class="footer-desc">
+                    <div class="logo-area">
+                        <img src="assets/image/logo.png" alt="">
+                    </div>
+                    <div class="desc-area">
+                        <p>Membantu anda untuk merakit PC sesuai kebutuhan yang anda inginkan.</p>
+                    </div>
+                </div>
+                <div class="footer-desc">
+                    <div class="logo-area">
+                        <span class="logo-name">About us</span>
+                    </div>
+                    <div class="desc-area">
+                         <ul class="contacts-area">
+                             <li><a href="#">Zeux</a></li>
+                             <li><a href="#">Portfolio</a></li>
+                             <li><a href="#">Careers</a></li>
+                             <li><a href="#">Contact us</a></li>
+                         </ul>
+                    </div>
+                </div>
+                <div class="footer-desc">
+                    <div class="logo-area">
+                        <span class="logo-name">Contact us</span>
+                    </div>
+                    <div class="desc-area">
+                        <p>Jl. Telekomunikasi. 1, Terusan Buahbatu - Bojongsoang, Telkom University, Sukapura, Kec. Dayeuhkolot, Kabupaten Bandung, Jawa Barat 40257</p>
+                        <p>+62 895-3430-86057</p>
+                    </div>
+                </div>
+                <div class="footer-desc">
+                    <div class="logo-area">
+                        <span class="logo-name"></span>
+                    </div>
+                    <div class="desc-area logo d-flex">
+                        <img src="assets/image/sosmed.png" alt="">
+                        <img src="assets/image/sosmed-2.png" alt="">
+                        <img src="assets/image/sosmed-3.png" alt="">
+                        <img src="assets/image/sosmed-4.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <hr style="color: #ffffff; opacity: 1;">
+            <div class="footer-bottom">
+                <div class="copyright text-center">
+                    <i class='bx bxs-copyright'></i>
+                    <span>Copyright ® 2022 Kaizen Team All rights Rcerved</span>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!--Page Content-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

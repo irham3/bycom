@@ -10,9 +10,24 @@ header{
     background-size: cover;
 }
 
+.navbar-nav{
+    flex-direction: column;
+    width: 100%;
+
+}
+
 ul{
     padding-left: 0px;
     padding: 1rem 0px;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+a, .footer-desc p, li.list-name{
+    text-decoration: none;
+    color: #ffffff;
 }
 
 li.nav-item{
@@ -20,10 +35,7 @@ li.nav-item{
     padding: 5px 0px;
     color: #000000;
     font-size: 13px;
-}
-
-li.nav-item.active{
-    color: #FFAE5D !important;
+    flex-basis: 25%;
 }
 
 li.nav-item a{
@@ -41,10 +53,10 @@ li.nav-item a{
 
 .icon-nav{
     flex-basis: 15%;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
-.main-nav .nav-item a{
+.main-nav .nav-item a, .icon-nav a{
     color: #ffffff !important;
     font-size: 14px;
 }
@@ -54,8 +66,62 @@ li.nav-item a{
 } */
 
 .collapse.navbar-collapse{
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
+
+/*FOOTER START*/
+
+/*Footer*/
+footer {
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+footer .container{
+  max-width: 1240px;
+  padding: 30px 40px;
+  margin: auto;
+}
+
+.footer-desc .logo-area {
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.logo-area .logo-name {
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.footer-desc .desc-area {
+  max-width: 320px;
+}
+
+.footer-desc .desc-area.logo{
+    padding-top: 5rem;
+}
+
+.desc-area p {
+    font-size: 13px;
+}
+
+
+.copyright span{
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.contacts-area{
+    padding: 0px;
+}
+
+.contacts-area li a{
+    font-size: 12px;
+}
+
+
+/*END FOOOTER*/
 
 /*START STYLING MARKETPLACE*/
 .side-nav{
@@ -69,8 +135,10 @@ li.nav-item a{
 
 .card{
     background: rgba(230, 230, 230, 0.26);
-    border: none;
-    margin: 0px 10px;
+    margin: 10px;
+    border: 0.5px solid #898989;
+    border-radius: 8px;
+    flex-basis: 22%;
 }
 
 .card-body{
@@ -97,7 +165,8 @@ li.nav-item a{
     background: #FFAE5D;
     color: #ffffff;
     border: none;
-    padding: 0.5rem 25px;
+    font-size: 12px;
+    padding: 10px 15px;
 }
 
 .form-control{
@@ -121,6 +190,11 @@ li.nav-item a{
 
 .detail-content p{
     font-size: 13px;
+}
+
+.side-nav .nav-item.active a{
+    color: #FFAE5D;
+    font-weight: bold;
 }
 /*END STYLING MARKETPLACE*/
 
@@ -156,4 +230,71 @@ tbody th td{
 td.komponen{
     padding: 0px;
 }
+
+th.category{
+    color: #2C87C3;
+    font-weight: bold;
+}
+
+.btn.add{
+    background: #2C87C3;
+    padding: 10px 40px;
+}
 /*END STYLING KERANJANG*/
+
+/*START STYLE VIEW ALL*/
+.btn.view{
+    padding: 10px 40px;
+}
+
+.card-body h5{
+    height: 30px;
+}
+
+/*END STYLE VIEW ALL*/
+
+/*START DETAIL KOMPONEN*/
+/* Style the images inside the grid */
+
+.column-img {
+    background: rgba(230, 230, 230, 0.26);
+    margin: 0px 10px;
+}
+
+.column-img img {
+  opacity: 0.9;
+  cursor: pointer;
+  width: auto;
+  width: 75%;
+}
+
+#expandedImg{
+    margin: 0px 7rem;
+}
+
+.column-img img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row-gallery:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container (positioning is needed to position the close button and the text) */
+.container-gallery {
+  position: relative;
+  background: rgba(230, 230, 230, 0.26);
+}
+
+/* Closable button inside the image */
+.closebtn {
+  position: absolute;
+  right: 15px;
+  color: #000000;
+  font-size: 35px;
+  cursor: pointer;
+}
+/*END DETAIL KOMPONEN*/
