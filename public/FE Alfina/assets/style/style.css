@@ -1,22 +1,23 @@
-*{
-    font-family: 'Poppins', sans-serif;
+* {
+    font-family: "Poppins", sans-serif;
     padding: 0;
     margin: 0;
     color: #000000;
 }
 
-header{
-    background-image: url('../image/background.png');
+header {
+    background-image: url("../image/background.png");
     background-size: cover;
 }
 
-.navbar-nav{
+/*NAVBAR START*/
+
+.navbar-nav {
     flex-direction: column;
     width: 100%;
-
 }
 
-ul{
+ul {
     padding-left: 0px;
     padding: 1rem 0px;
 }
@@ -25,12 +26,14 @@ ul li {
     list-style-type: none;
 }
 
-a, .footer-desc p, li.list-name{
+a,
+.footer-desc p,
+li.list-name {
     text-decoration: none;
     color: #ffffff;
 }
 
-li.nav-item{
+li.nav-item {
     list-style: none;
     padding: 5px 0px;
     color: #000000;
@@ -38,67 +41,77 @@ li.nav-item{
     flex-basis: 25%;
 }
 
-li.nav-item a{
+li.nav-item a {
     text-decoration: none;
     color: #000000;
 }
 
-.bg-blur{
+.bg-blur {
     background: rgba(230, 230, 230, 0.26);
 }
 
-.top-nav{
+.top-nav {
     margin: 0px 150px;
 }
 
-.icon-nav{
+.icon-nav {
     flex-basis: 15%;
     justify-content: space-evenly;
 }
 
-.main-nav .nav-item a, .icon-nav a{
-    color: #ffffff !important;
+.nav-link{
+    text-align: center;
+}
+
+.nav-link:hover, .nav-link.active{
+    color: #ffae5d !important;
+    font-weight: bold;
+}
+
+.nav-link.active{
+    border-bottom: 1px solid #ffae5d;
+    width: 65%;
+}
+
+.main-nav .nav-item a,
+.icon-nav a {
+    color: #ffffff;
     font-size: 14px;
 }
 
-/* .main-nav li.nav-item{
-    width: 100%;
-} */
-
-.collapse.navbar-collapse{
+.collapse.navbar-collapse {
     justify-content: space-evenly;
 }
+/*END NAVBAR*/
 
 /*FOOTER START*/
-
-/*Footer*/
 footer {
-  width: 100%;
-  bottom: 0;
-  left: 0;
+    width: 100%;
+    bottom: 0;
+    left: 0;
 }
-footer .container{
-  max-width: 1240px;
-  padding: 30px 40px;
-  margin: auto;
+footer .container {
+    max-width: 1240px;
+    padding: 30px 40px;
+    margin: auto;
 }
 
 .footer-desc .logo-area {
-  align-items: center;
-  margin-bottom: 2.5rem;
+    align-items: center;
+    margin-bottom: 2.5rem;
 }
 
 .logo-area .logo-name {
-  font-size: 16px;
-  color: #ffffff;
-  font-weight: bold;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 .footer-desc .desc-area {
-  max-width: 320px;
+    max-width: 320px;
 }
 
-.footer-desc .desc-area.logo{
+.footer-desc .desc-area.logo {
     padding-top: 5rem;
 }
 
@@ -106,34 +119,32 @@ footer .container{
     font-size: 13px;
 }
 
-
-.copyright span{
+.copyright span {
     color: #ffffff;
     font-size: 12px;
 }
 
-.contacts-area{
+.contacts-area {
     padding: 0px;
 }
 
-.contacts-area li a{
+.contacts-area li a {
     font-size: 12px;
 }
-
 
 /*END FOOOTER*/
 
 /*START STYLING MARKETPLACE*/
-.side-nav{
-    background: #FAFAFA;
+.side-nav {
+    background: #fafafa;
     flex-basis: 30%;
 }
 
-.nav-item label{
+.nav-item label {
     margin-left: 5px;
 }
 
-.card{
+.card {
     background: rgba(230, 230, 230, 0.26);
     margin: 10px;
     border: 0.5px solid #898989;
@@ -141,113 +152,115 @@ footer .container{
     flex-basis: 22%;
 }
 
-.card-body{
+.card-body {
     background: #ffffff;
-    color: #1F1F1F;
+    color: #1f1f1f;
 }
 
-.card-body h5, .detail-content h5, th{
+.card-body h5,
+.detail-content h5,
+th {
     font-weight: bold;
     font-size: 14px;
 }
 
-.card-body p{
+.card-body p {
     font-weight: normal;
 }
 
-.card-img-top{
+.card-img-top {
     width: 80%;
     height: 180px;
     margin: 10px 0px;
 }
 
-.btn{
-    background: #FFAE5D;
+.btn {
+    background: #ffae5d;
     color: #ffffff;
     border: none;
     font-size: 12px;
     padding: 10px 15px;
 }
 
-.form-control{
+.form-control {
     width: 40%;
     border: 1px solid #000000;
     border-radius: 10px;
 }
 
-.form-control::placeholder{
+.form-control::placeholder {
     color: #898989;
     font-size: 12px;
 }
 
-.btn-grup .btn{
+.btn-grup .btn {
     margin: 0px 5px;
 }
 
-.tokopedia{
-    background: #25A32D;
+.tokopedia {
+    background: #25a32d;
 }
 
-.detail-content p{
+.detail-content p {
     font-size: 13px;
 }
 
-.side-nav .nav-item.active a{
-    color: #FFAE5D;
+.side-nav .nav-item.active a {
+    color: #ffae5d;
     font-weight: bold;
 }
 /*END STYLING MARKETPLACE*/
 
 /*START STYLING KERANJANG*/
-.section-title.komponen{
-    background: #FFFFFF;
+.section-title.komponen {
+    background: #ffffff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.section-title.komponen h3{
+.section-title.komponen h3 {
     color: #404040;
     margin: 0px 20px;
     font-weight: bold;
 }
 
-tr.heading-table th{
-    color: #26293B;
+tr.heading-table th {
+    color: #26293b;
     font-weight: 400;
     padding: 15px 0px !important;
 }
 
-.nama-komponen{
+.nama-komponen {
     font-size: 12px;
-    color: #191B2A;
+    color: #191b2a;
     font-weight: bold;
     padding-left: 20px;
 }
 
-tbody th td{
+tbody th td {
     padding: 1.5rem 0px;
 }
 
-td.komponen{
+td.komponen {
     padding: 0px;
 }
 
-th.category{
-    color: #2C87C3;
+th.category {
+    color: #2c87c3;
     font-weight: bold;
 }
 
-.btn.add{
-    background: #2C87C3;
+.btn.add {
+    background: #2c87c3;
     padding: 10px 40px;
 }
 /*END STYLING KERANJANG*/
 
 /*START STYLE VIEW ALL*/
-.btn.view{
+.btn.view {
     padding: 10px 40px;
 }
 
-.card-body h5{
+.card-body h5 {
     height: 30px;
 }
 
@@ -262,39 +275,39 @@ th.category{
 }
 
 .column-img img {
-  opacity: 0.9;
-  cursor: pointer;
-  width: auto;
-  width: 75%;
+    opacity: 0.9;
+    cursor: pointer;
+    width: auto;
+    width: 75%;
 }
 
-#expandedImg{
+#expandedImg {
     margin: 0px 7rem;
 }
 
 .column-img img:hover {
-  opacity: 1;
+    opacity: 1;
 }
 
 /* Clear floats after the columns */
 .row-gallery:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
 /* The expanding image container (positioning is needed to position the close button and the text) */
 .container-gallery {
-  position: relative;
-  background: rgba(230, 230, 230, 0.26);
+    position: relative;
+    background: rgba(230, 230, 230, 0.26);
 }
 
 /* Closable button inside the image */
 .closebtn {
-  position: absolute;
-  right: 15px;
-  color: #000000;
-  font-size: 35px;
-  cursor: pointer;
+    position: absolute;
+    right: 15px;
+    color: #000000;
+    font-size: 35px;
+    cursor: pointer;
 }
 /*END DETAIL KOMPONEN*/
