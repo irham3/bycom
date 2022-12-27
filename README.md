@@ -24,9 +24,9 @@ Tambahin gambar profil (bebas) `user.png` di `/storage/public/profile-images/use
 Tambahin gambar profil (bebas) `admin.png` di `/storage/public/profile-images/admin`
 
 ## Admin Account
-
-__email:__ admin@bycom.com </br>
-__password:__ 12345678
+Buka link url `/admin/login`
+__Email:__      admin@bycom.com </br>
+__Password:__   12345678
 
 ## About Laravel
 
