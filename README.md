@@ -18,12 +18,12 @@ php artisan db:seed
 php artisan storage:link
 ```
 
-Tambahin file `user.png` di `/storage/public/profile-images/users`
+Tambahin file `user.png` di `/storage/public/profile-images/users` </br>
 Tambahin file `admin.png` di `/storage/public/profile-images/admin`
 
 ## Admin Account
 
-__email:__ admin@bycom.com 
+__email:__ admin@bycom.com </br>
 __password:__ 12345678
 
 ## About Laravel
