@@ -8,11 +8,11 @@
 </p>
 
 ## Configuration
-copy .env.example .env
+```copy .env.example .env
 composer install
 php artisan key:generate
 php artisan db:seed
-php artisan storage:link
+php artisan storage:link```
 
 Tambahin file user.png di /storage/public/profile-images/users
 Tambahin file admin.png di /storage/public/profile-images/admin
