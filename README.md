@@ -18,8 +18,8 @@ php artisan db:seed
 php artisan storage:link
 ```
 
-Tambahin file `user.png` di `/storage/public/profile-images/users` </br>
-Tambahin file `admin.png` di `/storage/public/profile-images/admin`
+Tambahin gambar profil (bebas) `user.png` di `/storage/public/profile-images/users` </br>
+Tambahin gambar profil (bebas) `admin.png` di `/storage/public/profile-images/admin`
 
 ## Admin Account
 
