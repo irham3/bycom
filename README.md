@@ -13,6 +13,8 @@ Jalanin di terminal atau CMD
 ```
 copy .env.example .env
 composer install
+npm install
+npm run build
 php artisan key:generate
 php artisan db:seed
 php artisan storage:link
