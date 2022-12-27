@@ -15,19 +15,17 @@ return new class extends Migration
     {
         Schema::create('cpus', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->integer('price');
+            $table->string('url');
+            $table->string('image')->default('placeholder.png');
+            $table->foreignId('cpuSocketId')->references('id')->on('cpu_sockets')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('coreCount');
+            $table->string('coreClock');
+            $table->string('boostClock');
+            $table->integer('tdp');
+            $table->string('integratedGraphic');            
             $table->timestamps();
-            $table->enum('name',[''])->unique();
-            $table->integer('rating');
-            $table->integer('rating_count');
-            $table->string('price');
-            $table->enum('socket',[''])->unique();
-            $table->foreign('socket')->references('socket_cpu')->on('motherboards')->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('core_count');
-            $table->string('core_clock');
-            $table->string('boost_clock');
-            $table->string('tdp');
-            $table->string('integrated_graphics');
-            $table->boolean('smt');
         });
     }
 

@@ -15,17 +15,13 @@ return new class extends Migration
     {
         Schema::create('cases', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('name');
-            $table->integer('rating');
-            $table->integer('rating_count');
-            $table->string('price');
-            $table->enum('type',[''])->unique();
-            $table->string('color');
-            $table->string('power_supply');
-            $table->string('side_panel_window');
-            $table->integer('external_525_bays');
-            $table->enum('internal_35_bays',[''])->unique();
+            $table->integer('price');
+            $table->string('url');
+            $table->string('image')->default('placeholder.png');
+            $table->string('type');
+            $table->tinyInteger('hddSlot');
+            $table->timestamps();
         });
     }
 

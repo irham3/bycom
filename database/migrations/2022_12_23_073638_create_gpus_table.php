@@ -13,17 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('power_supplies', function (Blueprint $table) {
+        Schema::create('gpus', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('name');
             $table->integer('price');
             $table->string('url');
             $table->string('image')->default('placeholder.png');
-            $table->string('formFactor');
-            $table->string('efficiencyRating');
-            $table->integer('wattage');
-            $table->string('modular');
+            $table->enum('license', ['Intel', 'AMD', 'Nvidia']);
+            $table->string('memorySize');
+            $table->integer('tdp');
+            $table->string('boostClock');
+            $table->integer('length');
+            $table->timestamps();
         });
     }
 
@@ -34,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('power_supplies');
+        Schema::dropIfExists('video_cards');
     }
 };

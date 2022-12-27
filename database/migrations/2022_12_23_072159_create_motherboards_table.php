@@ -16,19 +16,15 @@ return new class extends Migration
     {
         Schema::create('motherboards', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('name');
-            $table->integer('rating');
-            $table->integer('rating_count');
-            $table->string('price');
-            $table->enum('socket_cpu',[''])->unique();
-            $table->enum('form_factor',[''])->unique();
-            $table->foreign('form_factor')->references('type')->on('cases')->onDelete('cascade')->onUpdate('cascade');
-            $table->enum('socket_memory',[''])->unique();
-            $table->string('memory_max');
-            $table->integer('memory_slots');
-            $table->enum('socket_drive',[''])->unique();
-            $table->string('color');
+            $table->integer('price');
+            $table->string('url');
+            $table->string('image')->default('placeholder.png');
+            $table->foreignId('cpuSocketId')->references('id')->on('cpu_sockets')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('formFactor');
+            $table->integer('memoryMax');
+            $table->integer('memorySlot');
+            $table->timestamps();
         });
     }
 
