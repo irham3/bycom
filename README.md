@@ -7,6 +7,27 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Configuration
+
+Jalanin di terminal atau CMD
+```
+copy .env.example .env
+composer install
+npm install
+npm run build
+php artisan key:generate
+php artisan db:seed
+php artisan storage:link
+```
+
+Tambahin gambar profil (bebas) `user.png` di `/storage/public/profile-images/users` </br>
+Tambahin gambar profil (bebas) `admin.png` di `/storage/public/profile-images/admin`
+
+## Admin Account
+Buka link url `/admin/login` </br> </br>
+__Email:__  admin@bycom.com </br>
+__Password:__  12345678
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
