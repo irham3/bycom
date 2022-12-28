@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('user_pc_builds', function (Blueprint $table) {
+        Schema::create('detail_pc_builds', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('userId')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('code')->unique();
+            $table->string('name');
             $table->foreignId('cpuId')->nullable()->references('id')->on('cpus')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('moboId')->nullable()->references('id')->on('motherboards')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('memoryId')->nullable()->references('id')->on('memories')->onDelete('cascade')->onUpdate('cascade');
