@@ -3,7 +3,7 @@
       <div class="footer-content d-flex justify-content-between">
           <div class="footer-desc">
               <div class="logo-area">
-                  <img src="assets/image/logo.png" alt="">
+                  <img src="images/logo.png" alt="">
               </div>
               <div class="desc-area">
                   <p>Membantu anda untuk merakit PC sesuai kebutuhan yang anda inginkan.</p>
@@ -36,10 +36,10 @@
                   <span class="logo-name"></span>
               </div>
               <div class="desc-area logo d-flex">
-                  <img src="assets/image/sosmed.png" alt="">
-                  <img src="assets/image/sosmed-2.png" alt="">
-                  <img src="assets/image/sosmed-3.png" alt="">
-                  <img src="assets/image/sosmed-4.png" alt="">
+                  <img src="images/sosmed.png" alt="">
+                  <img src="images/sosmed-2.png" alt="">
+                  <img src="images/sosmed-3.png" alt="">
+                  <img src="images/sosmed-4.png" alt="">
               </div>
           </div>
       </div>
