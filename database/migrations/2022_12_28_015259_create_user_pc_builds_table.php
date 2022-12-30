@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('user_pc_builds', function (Blueprint $table) {
             $table->id();
             $table->foreignId('userId')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('detailPcBuildId')->references('id')->on('detai_pc_builds')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('detailPcBuildId')->references('id')->on('detail_pc_builds')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
