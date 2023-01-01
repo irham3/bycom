@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('image')->default('placeholder.png');
             $table->foreignId('cpuSocketId')->references('id')->on('cpu_sockets')->onDelete('cascade')->onUpdate('cascade');
             $table->string('formFactor');
-            $table->integer('memoryMax');
+            $table->integer('memoryMaxGB');
             $table->integer('memorySlot');
             $table->timestamps();
         });

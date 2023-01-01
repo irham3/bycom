@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cpu extends Model
+class Memory extends Model
 {
     use HasFactory;
     protected $guarded = [];

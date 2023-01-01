@@ -18,8 +18,12 @@ class DatabaseSeeder extends Seeder
 
         $this->call(AdminSeeder::class);
         $this->call(UserSeeder::class);
+        $this->call(CPUSocketSeeder::class);
         $this->call(CpuSeeder::class);
-
+        $this->call(PcCaseSeeder::class);
+        $this->call(MotheboardSeeder::class);
+        $this->call(MemorySeeder::class);
+        $this->call(GpuSeeder::class);
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',

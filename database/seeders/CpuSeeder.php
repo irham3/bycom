@@ -15,16 +15,62 @@ class CpuSeeder extends Seeder
      */
     public function run()
     {
+        
         $data = [
             [
-                "name" => "Intel Core i7-10700K",
-                "url" => "https://tokopedia.link/SDYUwopu5vb",
-                "core_count" => 4,
-                "core_clock" => "3.30 GHz",
-                "boost_clock" => "4.30 GHz",
-                "tdp" => "58 W",
-                "integrated_graphics" => ""
+                "name" => "AMD Ryzen 5 5600G",
+                "price" => 2445000,
+                "url" => "https://tokopedia.link/5bX6FFYqbwb",
+                "coreCount" => 6,
+                "coreClock" => "3.90 GHz",
+                "boostClock" => "4.40 GHz",
+                "tdp" => 65,
+                "integratedGraphic" => "Radeon Vega 7"
             ],
+
+            [
+                "name" => "Intel Core i7-12700K",
+                "price" => 7438000,
+                "url" => "https://tokopedia.link/FbOAmT0qbwb",
+                "coreCount" => 12,
+                "coreClock" => "3.60 GHz",
+                "boostClock" => "5.00 GHz",
+                "tdp" => 190,
+                "integratedGraphic" => "Intel UHD Graphics 770"
+            ],
+
+            [
+                "name" => "AMD Ryzen 7 5800x",
+                "price" => 4209000,
+                "url" => "https://tokopedia.link/XS7IHa9qbwb",
+                "coreCount" => 8,
+                "coreClock" => "3.80 GHz",
+                "boostClock" => "4.70 GHz",
+                "tdp" => 105,
+                "integratedGraphic" => ""
+            ],
+
+            [
+                "name" => "AMD Ryzen 9 7950x",
+                "price" => 12182000,
+                "url" => "https://tokopedia.link/06RDRbbrbwb",
+                "coreCount" => 16,
+                "coreClock" => "4.50 GHz",
+                "boostClock" => "5.70 GHz",
+                "tdp" => 170,
+                "integratedGraphic" => ""
+            ],
+
+            [
+                "name" => "Intel Core i9-13900K",
+                "price" => 10879000,
+                "url" => "https://tokopedia.link/tlpU8Herbwb",
+                "coreCount" => 24,
+                "coreClock" => "3.00 GHz",
+                "boostClock" => "5.80 GHz",
+                "tdp" => 253,
+                "integratedGraphic" => "Intel UHD Graphics 770"
+            ]
         ];
 
         Cpu::insert($data);
