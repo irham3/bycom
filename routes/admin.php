@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminCpuController;
 use App\Http\Controllers\Admin\AdminUserController;
 
 // Admin Route
@@ -19,5 +20,12 @@ Route::prefix('/admin')->group(function() {
       'getAllUsers']);
       Route::post('user/update', [AdminUserController::class, 'update'])->name('updateAdminUser');
       Route::resource('user', AdminUserController::class);
+      
+      // Admin Users Route
+      Route::get('cpus', [AdminCpuController::class, 'index']);
+      Route::get('user/getAllCpus', [AdminCpuController::class,
+      'getAllCpus']);
+      Route::post('user/update', [AdminCpuController::class, 'update'])->name('updateAdminCpu');
+      Route::resource('user', AdminCpuController::class);
   });
 });

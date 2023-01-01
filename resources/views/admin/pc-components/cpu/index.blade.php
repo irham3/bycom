@@ -4,9 +4,9 @@
   <div class="card">
     <div class="card-body">
       <div id="success_message"></div>
-      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addUserModal">Add User</button>
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addCPUModal">Add CPU</button>
 
-      <p class="card-title mt-3">List User</p>
+      <p class="card-title mt-3">List CPU</p>
       <div class="row">
         <div class="col-12">
           <div class="table-responsive">
@@ -29,11 +29,11 @@
 </div>
 
 {{-- Add Modal --}}
-@include('admin.users._modal')
+@include('admin.pc-components.cpu._modal')
 
 @endsection
 
 @section('js-content')
-@include('admin.users._script')
+@include('admin.pc-components.cpu._script')
 @endsection
 

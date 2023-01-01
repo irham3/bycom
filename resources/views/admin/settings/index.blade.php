@@ -1,7 +1,5 @@
 @extends('admin.layouts.app')
 @section('content')
-<div class="main-panel">
-  <div class="content-wrapper">
     <h1 class="h3 mb-4 text-gray-800">{{ __('Settings') }}</h1>
     @if (session('success'))
         <div class="alert alert-success border-left-success alert-dismissible fade show" role="alert">
@@ -98,9 +96,5 @@
           </div>
         </div>
       </div>
-  </div>
-  
-  @include('admin.layouts.footer')
-</div>
 
 @endsection
