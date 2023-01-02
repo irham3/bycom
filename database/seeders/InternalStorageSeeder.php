@@ -18,7 +18,7 @@ class InternalStorageSeeder extends Seeder
         $data = [
             
             [
-                "name" => "Transcend MTS830 512GB M.2 SATA III ",
+                "name" => "Transcend MTS830 512GB M.2 SATA III",
                 "price" => 683000,
                 "url" => "https://tokopedia.link/2UUalAovfwb",
                 "capacity" => "512GB",

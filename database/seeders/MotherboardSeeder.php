@@ -27,7 +27,7 @@ class MotherboardSeeder extends Seeder
             ],
 
             [
-                "name" => "Asus TUF Gaming Z690-PLUS WiFi D4 ",
+                "name" => "Asus TUF Gaming Z690-PLUS WiFi D4",
                 "price" => 5051000,
                 "url" => "https://tokopedia.link/e3dVvQBUcwb",
                 "cpuSocketId" => 6,
@@ -37,7 +37,7 @@ class MotherboardSeeder extends Seeder
             ],
 
             [
-                "name" => "ASRock X570 Taichi ",
+                "name" => "ASRock X570 Taichi",
                 "price" => 4989000,
                 "url" => "https://tokopedia.link/fLJKgp2Fcwb",
                 "cpuSocketId" => 2,
