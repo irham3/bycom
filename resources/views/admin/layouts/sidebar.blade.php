@@ -22,13 +22,13 @@
       </a>
       <div class="collapse" id="pc-components">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"><a class="nav-link" href="{{ url('admin/cpu') }}">CPU</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url('admin/motherboard') }}">Motherboard</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url('admin/gpu') }}">GPU</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url('admin/ram') }}">RAM</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url('admin/psu') }}">Power Supply</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url('admin/storage') }}">Storage</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url('admin/case') }}">Casing PC</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url('admin/cpus') }}">CPU</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url('admin/motherboards') }}">Motherboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url('admin/gpus') }}">GPU</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url('admin/memories') }}">Memory</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url('admin/psus') }}">Power Supply</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url('admin/storages') }}">Storage</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url('admin/cases') }}">Casing PC</a></li>
         </ul>
       </div>
     </li>

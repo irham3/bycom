@@ -1,79 +1,578 @@
-<x-app-layout>
-    @section('content')
-      <div class="section-title container mt-5" style="border-bottom: 1px solid #000000;">
-          <h3 class="pt-3 pb-3">Cube Gaming Bruks White - ATX</h3>
-      </div>
-  
-      <section class="container d-flex justify-content-between mt-5 mb-5">
-          <div class="gallery">
-              <div class="container-gallery mb-4">
-                  <!-- Close the image -->
-                  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-  
-                  <!-- Expanded image -->
-                  <img id="expandedImg" style="width: auto" src="assets/image/marketplace/case.png">
-              </div>
-  
-              <div class="row-gallery d-flex">
-                  <div class="column-img">
-                      <center><img src="assets/image/marketplace/case.png" alt="Nature" onclick="myFunction(this);"></center>
-                  </div>
-                  <div class="column-img">
-                      <center><img src="assets/image/marketplace/case-2.png" alt="Snow" onclick="myFunction(this);">
-                      </center>
-                  </div>
-                  <div class="column-img">
-                      <center><img src="assets/image/marketplace/case-3.png" alt="Mountains" onclick="myFunction(this);">
-                      </center>
-                  </div>
-              </div>
-          </div>
-          <div class="detail-content container ms-3">
-              <div class="container bg-blur mb-3 pt-3 pb-2">
-                  <div class="d-flex justify-content-between">
-                      <h5>Harga</h5>
-                      <p><b>Rp 420.000</b></p>
-                  </div>
-                  <div class="d-flex justify-content-between">
-                      <h5>Stok</h5>
-                      <p>Tersedia <b>(20)</b></p>
-                  </div>
-              </div>
-  
-              <b>Spesifikasi Casing : </b>
-              <div class="container bg-blur mt-3 mb-3 pt-3 pb-2">
-                  <div class="d-flex justify-content-between">
-                      <h5>Merk</h5>
-                      <p>Cube Gaming</p>
-                  </div>
-                  <div class="d-flex justify-content-between">
-                      <h5>Warna</h5>
-                      <p>Putih</p>
-                  </div>
-                  <div class="d-flex justify-content-between">
-                      <h5>Kompatibilitas</h5>
-                      <p>ATX, M-ATX, ITX</p>
-                  </div>
-                  <div class="d-flex justify-content-between">
-                      <h5>Dimensi</h5>
-                      <p>400mm x 195mm x 443mm</p>
-                  </div>
-                  <div class="d-flex justify-content-between">
-                      <h5>Max Panjang GPU</h5>
-                      <p>340mm</p>
-                  </div>
-                  <div class="d-flex justify-content-between">
-                      <h5>I/O Port</h5>
-                      <p>1x Tombol Daya, Atur Ulang, 1x Usb, 3.0, 2x USB 2.0, Jack Audio 3.5mm</p>
-                  </div>
-              </div>
-  
-              <div class="d-flex justify-content-end btn-grup pt-2">
-                  <a class="btn" href="#" role="button">Masukkan Keranjang</a>
-                  <a class="btn tokopedia" href="#" role="button">Beli di Tokopedia</a>
-              </div>
-          </div>
-      </section>
-      <!--Page Content-->
-    @endsection
-</x-app-layout>
+@extends('layouts.app')
+@section('main-content')
+    <section class="home" id="home">
+    
+    <!-- gambar home  -->
+    <div class="image">
+        <img src="images/beranda/home-pc-text.png" alt="">
+    </div>
+
+    <div class="content">
+        <h3>Rakit PC Impianmu</h3>
+        <h3>Dengan <span> <strong>MUDAH</strong> </span></h3>
+        <h3>Dan <span><strong>MURAH</strong></span></h3>
+        <a href="{{ url('simulasi-rakit-pc') }}" class="btn">Mulai Rakit PC</a>
+    </div>
+
+    </section>
+
+    <section class="product" id="product">
+
+    <h1 class="heading"> <span>Paket PC Murah Berkualitas</span> </h1>
+    <div class="cat-pc">
+        <!-- KERE HORE -->
+    <div class="kategori">
+        <div class="box">
+            <img src="images/beranda/kerehore.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/beranda/pc1.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                    <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/beranda/pc2.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                    <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/beranda/pc3.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                    <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/beranda/pc4.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                    <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/beranda/pc5.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                    <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/beranda/pc6.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                    <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/beranda/pc7.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                    <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/beranda/pc8.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                    <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/beranda/pc9.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                    <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/beranda/pc10.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                    <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+            
+
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    </div>
+
+    <!-- Mendang Mending -->
+
+    <h1 class="heading"> <span>Paket PC Budget Standard</span> </h1>
+    <div class="cat-pc">
+        <!-- KERE HORE -->
+    <div class="kategori">
+        <div class="box">
+            <img src="images/beranda/mending.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/beranda/pc1.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                    <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/beranda/pc2.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                    <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/beranda/pc3.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                    <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/beranda/pc4.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                    <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/beranda/pc5.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                    <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/beranda/pc6.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                    <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/beranda/pc7.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                    <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/beranda/pc8.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                    <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/beranda/pc9.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                    <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-heart"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="images/beranda/pc10.png" alt="">
+                </div>
+                <div class="content">
+                    <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                    <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                    <a href="#" class="btn">Beli Sekarang</a>
+                </div>
+            </div>
+            
+
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    </div>
+
+    <!-- SULTHAN -->
+        <h1 class="heading"> <span>Paket PC Spek Tinggi</span> </h1>
+        <div class="cat-pc">
+            <!-- KERE HORE -->
+            <div class="kategori">
+                <div class="box">
+                    <img src="images/beranda/sulthan.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="swiper product-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide box">
+                        <div class="icons">
+                            <a href="#" class="fas fa-search"></a>
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-eye"></a>
+                        </div>
+                        <div class="image">
+                            <img src="images/beranda/pc1.png" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                            <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                            <a href="#" class="btn">Beli Sekarang</a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <div class="icons">
+                            <a href="#" class="fas fa-search"></a>
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-eye"></a>
+                        </div>
+                        <div class="image">
+                            <img src="images/beranda/pc2.png" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                            <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                            <a href="#" class="btn">Beli Sekarang</a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <div class="icons">
+                            <a href="#" class="fas fa-search"></a>
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-eye"></a>
+                        </div>
+                        <div class="image">
+                            <img src="images/beranda/pc3.png" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                            <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                            <a href="#" class="btn">Beli Sekarang</a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <div class="icons">
+                            <a href="#" class="fas fa-search"></a>
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-eye"></a>
+                        </div>
+                        <div class="image">
+                            <img src="images/beranda/pc4.png" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                            <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                            <a href="#" class="btn">Beli Sekarang</a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <div class="icons">
+                            <a href="#" class="fas fa-search"></a>
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-eye"></a>
+                        </div>
+                        <div class="image">
+                            <img src="images/beranda/pc5.jpg" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                            <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                            <a href="#" class="btn">Beli Sekarang</a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <div class="icons">
+                            <a href="#" class="fas fa-search"></a>
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-eye"></a>
+                        </div>
+                        <div class="image">
+                            <img src="images/beranda/pc6.png" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                            <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                            <a href="#" class="btn">Beli Sekarang</a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <div class="icons">
+                            <a href="#" class="fas fa-search"></a>
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-eye"></a>
+                        </div>
+                        <div class="image">
+                            <img src="images/beranda/pc7.png" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                            <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                            <a href="#" class="btn">Beli Sekarang</a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <div class="icons">
+                            <a href="#" class="fas fa-search"></a>
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-eye"></a>
+                        </div>
+                        <div class="image">
+                            <img src="images/beranda/pc8.png" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                            <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                            <a href="#" class="btn">Beli Sekarang</a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <div class="icons">
+                            <a href="#" class="fas fa-search"></a>
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-eye"></a>
+                        </div>
+                        <div class="image">
+                            <img src="images/beranda/pc9.png" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                            <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                            <a href="#" class="btn">Beli Sekarang</a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <div class="icons">
+                            <a href="#" class="fas fa-search"></a>
+                            <a href="#" class="fas fa-heart"></a>
+                            <a href="#" class="fas fa-eye"></a>
+                        </div>
+                        <div class="image">
+                            <img src="images/beranda/pc10.png" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>AMD Ryzen 5 5600G - IGPU RX AMD Radeon - RAM  16 GB - SSD 128 GB NVME</h3>
+                            <div class="harga">Rp 3.890.000 <span>Rp. 7.320.000</span></div>
+                            <a href="#" class="btn">Beli Sekarang</a>
+                        </div>
+                    </div>
+                    
+
+                </div>
+
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- product section ends -->
+
+    <!-- contact section starts -->
+
+    <section class="contact">
+
+    <form action="">
+        <h3>Tetap bersama EZPC</h3>
+        <p>Subscribe untuk mendapatkan informasi terbaru dari kami</p>
+        <input type="email" name="" placeholder="Masukan Email Mu" id="" class="box">
+        <input type="submit" value="kirim" class="btn">
+    </form>
+
+    </section>
+@endsection

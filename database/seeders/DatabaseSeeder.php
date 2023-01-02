@@ -18,6 +18,9 @@ class DatabaseSeeder extends Seeder
 
         $this->call(AdminSeeder::class);
         $this->call(UserSeeder::class);
+<<<<<<< HEAD
+
+=======
         $this->call(CPUSocketSeeder::class);
         $this->call(CpuSeeder::class);
         $this->call(PcCaseSeeder::class);
@@ -26,6 +29,7 @@ class DatabaseSeeder extends Seeder
         $this->call(GpuSeeder::class);
         $this->call(PowerSupplySeeder::class);
         $this->call(InternalStorageSeeder::class);
+>>>>>>> bf104242e9c134757ab17b842c63f9917020f9ad
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',

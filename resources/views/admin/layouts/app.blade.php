@@ -142,7 +142,12 @@
     @include('admin.layouts.navbar')
     <div class="container-fluid page-body-wrapper">
       @include('admin.layouts.sidebar')
-      @yield('content')
+      <div class="main-panel">
+        <div class="content-wrapper">
+          @yield('content')
+        </div>
+        @include('admin.layouts.footer')
+      </div>
     </div>
   </div>
   <!-- plugins:js -->
@@ -181,6 +186,5 @@
   </script>
   @yield('js-content')
 </body>
-
 </html>
 
