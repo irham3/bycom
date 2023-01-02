@@ -1,14 +1,14 @@
 {{-- Add User Modal --}}
-<div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel"  aria-hidden="true">
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel"  aria-hidden="true">
   <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="addUserModalLabel">Add User Data</h5>
+            <h5 class="modal-title" id="addModalLabel">Add Data</h5>
             <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        <form action="#" method="POST" id="add_user_form" enctype="multipart/form-data">
+        <form action="#" method="POST" id="addForm" enctype="multipart/form-data">
           @csrf
           <div class="modal-body">
               <div class="profile-pic mb-4">
@@ -47,18 +47,17 @@
   </div>
 </div>
 
-{{-- Edit User Modal --}}
-<div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel"  aria-hidden="true">
+{{-- Edit Data Modal --}}
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel"  aria-hidden="true">
   <div class="modal-dialog">
       <div class="modal-content">
           <div class="modal-header">
-              <h5 class="modal-title" id="editUserModalLabel">Edit User</h5>
+              <h5 class="modal-title" id="editModalLabel">Edit Data</h5>
               <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
           </div>
-          <form action="#" method="POST" id="edit_user_form" enctype="multipart/form-data">
-            @method('PUT')
+          <form action="#" method="POST" id="editForm" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="id" id="id" value="">
             <div class="modal-body">

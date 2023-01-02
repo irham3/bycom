@@ -21,10 +21,7 @@ class AdminCpuController extends Controller
     public function getAllUsers()
     {
         $users = DB::table('users')
-            ->select(
-                'id as id',
-                'name as name',
-                'email as email')
+            ->select('*')
             ->orderBy('id', 'asc')
             ->get();
 
@@ -69,14 +66,14 @@ class AdminCpuController extends Controller
                   ]
                 );
                 Storage::putFileAs('public/images/profile-images/user', $request->file('imgUpload'), $imgName);
-                User::create([
+                Cpu::create([
                     'name'  => $request->name,
                     'email'  => $request->email,
                     'image'  => $imgName,
                     'password'  => Hash::make($request->password),
                 ]);
             } else {
-                User::create([
+                Cpu::create([
                     'name'  => $request->name,
                     'email'  => $request->email,
                     'password'  => Hash::make($request->password),
@@ -90,7 +87,7 @@ class AdminCpuController extends Controller
 
     public function edit($id)
     {
-        $user = User::find($id);
+        $user = Cpu::find($id);
         if($user)
         {
             return response()->json([
@@ -130,7 +127,7 @@ class AdminCpuController extends Controller
         }
         else
         {
-            $user = User::find($request->id);
+            $user = Cpu::find($request->id);
             if($user)
             {
                 if($request->hasFile('imgUpload')){
@@ -178,7 +175,7 @@ class AdminCpuController extends Controller
 
     public function destroy($id)
     {
-        $user = User::findOrFail($id);
+        $user = Cpu::findOrFail($id);
         $user->delete();
     }
 }

@@ -28,15 +28,15 @@ class AdminUserController extends Controller
             ->orderBy('id', 'asc')
             ->get();
 
-            return DataTables::of($users)
-            ->addColumn('action', function($user) {
-                return view('admin.users._aksi')->with('user', $user);
-            })
-            ->addColumn('image', function($user) {
-                $imgName = User::find($user->id)->image;
-                return view('admin.users._gambar')->with('imgName', $imgName);
-            })
-            ->make(true);
+        return DataTables::of($users)
+        ->addColumn('action', function($user) {
+            return view('admin.users._aksi')->with('user', $user);
+        })
+        ->addColumn('image', function($user) {
+            $imgName = User::find($user->id)->image;
+            return view('admin.users._gambar')->with('imgName', $imgName);
+        })
+        ->make(true);
     }
 
     public function store(Request $request) {
@@ -113,7 +113,7 @@ class AdminUserController extends Controller
         //
     }
 
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
             'name'      => ['required', 'string', 'max:255'],
@@ -130,7 +130,7 @@ class AdminUserController extends Controller
         }
         else
         {
-            $user = User::find($request->id);
+            $user = User::find($id);
             if($user)
             {
                 if($request->hasFile('imgUpload')){

@@ -15,17 +15,13 @@ Route::prefix('/admin')->group(function() {
       Route::post('settings/updateAdminImage', [AdminController::class, 'updateAdminImage'])->name('updateAdminImage');
 
       // Admin Users Route
-      Route::get('users', [AdminUserController::class, 'index']);
       Route::get('user/getAllUsers', [AdminUserController::class,
       'getAllUsers']);
-      Route::post('user/update', [AdminUserController::class, 'update'])->name('updateAdminUser');
       Route::resource('user', AdminUserController::class);
       
-      // Admin Users Route
-      Route::get('cpus', [AdminCpuController::class, 'index']);
-      Route::get('user/getAllCpus', [AdminCpuController::class,
+      // Admin Cpus Route
+      Route::get('cpu/getAllCpus', [AdminCpuController::class,
       'getAllCpus']);
-      Route::post('user/update', [AdminCpuController::class, 'update'])->name('updateAdminCpu');
-      Route::resource('user', AdminCpuController::class);
+      Route::resource('cpu', AdminCpuController::class);
   });
 });

@@ -1,12 +1,6 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript">
 
-  // GLOBAL SETUP 
-  $.ajaxSetup({
-      headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      }
-  });
   // Get All Users into table
   $(document).ready(function () {
     $('.users-table').DataTable({
@@ -156,16 +150,15 @@
 
   $('#edit_user_form').submit(function(e) {
     e.preventDefault();
-    const fd = new FormData(this);
-    const id = $('#id').val();
+    const fd = new FormData(this); 
     $.ajax({
-      url: 'user/' + id,
+      url: 'user/update',
       type: 'POST',
       data: fd,
       cache: false,
-      dataType: 'json',
-      processData: false,
       contentType: false,
+      processData: false,
+      dataType: 'json',
       success: function(response) {
         if (response.errors) {
           let errors = '';
@@ -178,13 +171,13 @@
             'warning'
           )
         } else{
-          $("#editUserModal").modal('hide');
+          $('.users-table').DataTable().ajax.reload();
           Swal.fire(
             'Berhasil!',
             response.success,
             'success'
             )
-          $('.users-table').DataTable().ajax.reload();
+          $("#editUserModal").modal('hide');
         }
       },
       error: function (xhr, status, error) {
