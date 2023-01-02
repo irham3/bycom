@@ -26,7 +26,7 @@ class MemorySeeder extends Seeder
             ],
 
             [
-                "name" => "Corsair DDR4 Vengeance RGB RS PC28800 32GB ",
+                "name" => "Corsair DDR4 Vengeance RGB RS PC28800 32GB",
                 "price" => 2005000,
                 "url" => "https://tokopedia.link/NHv1xVm1cwb",
                 "type" => "DDR4-3600",
@@ -35,7 +35,7 @@ class MemorySeeder extends Seeder
             ],
 
             [
-                "name" => "ADATA DDR4 XPG SPECTRIX D50 PC28800 3600MHz 32GB  ",
+                "name" => "ADATA DDR4 XPG SPECTRIX D50 PC28800 3600MHz 32GB",
                 "price" => 1891000,
                 "url" => "https://tokopedia.link/InxovsB1cwb",
                 "type" => "DDR4-3600",

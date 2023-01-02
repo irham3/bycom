@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Cpu extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+    protected $guarded = ['id'];
 }

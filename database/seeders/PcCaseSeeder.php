@@ -57,6 +57,6 @@ class PcCaseSeeder extends Seeder
             ]
         ];
 
-        pcCase::insert($data);
+        PcCase::insert($data);
     }
 }
