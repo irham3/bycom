@@ -61,7 +61,7 @@ class GpuSeeder extends Seeder
             ],
 
             [
-                "name" => "MSI GeForce RTX™ 4090 SUPRIM X 24G",
+                "name" => "MSI GeForce RTX 4090 SUPRIM X 24G",
                 "price" => 34683000,
                 "url" => "https://tokopedia.link/bx7S5Y7Jdwb",
                 "license" => "Nvidia",
