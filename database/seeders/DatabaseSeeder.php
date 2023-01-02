@@ -21,9 +21,11 @@ class DatabaseSeeder extends Seeder
         $this->call(CPUSocketSeeder::class);
         $this->call(CpuSeeder::class);
         $this->call(PcCaseSeeder::class);
-        $this->call(MotheboardSeeder::class);
+        $this->call(MotherboardSeeder::class);
         $this->call(MemorySeeder::class);
         $this->call(GpuSeeder::class);
+        $this->call(PowerSupplySeeder::class);
+        $this->call(InternalStorageSeeder::class);
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',

@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('power_supplies', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('name');
             $table->integer('price');
             $table->string('url');
@@ -24,6 +23,7 @@ return new class extends Migration
             $table->string('efficiencyRating');
             $table->integer('wattage');
             $table->string('modular');
+            $table->timestamps();
         });
     }
 
