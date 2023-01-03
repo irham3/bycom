@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap');
 
 :root{
     --red:#ff3838;
@@ -17,7 +18,7 @@
 
 
 *{
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin:0; padding:0;
     box-sizing: border-box;
     outline: none; border:none;
@@ -57,6 +58,16 @@ html::-webkit-scrollbar-thumb{
 section{
     padding:5rem 9%;
 }
+
+section.login{
+    padding: 0px;
+}
+
+.login-image img{
+    height: 100vh;
+    width: 100%;
+}
+
 header .active{
     /* background-color: #FFAE5D;
     padding: 8px;
@@ -66,8 +77,8 @@ header .active{
   
 
 .heading{
-    text-align: center;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
+    border-bottom: 2px dashed var(--black);
     position: relative;
 }
 
@@ -78,17 +89,64 @@ header .active{
     transform: translateY(-50%);
     width: 100%;
     height:.01rem;
-    background: rgba(0,0,0,.1);
+    /* background: rgba(0,0,0,.1); */
     z-index: -1;
 }
 
-.heading span{
+.heading.title-menu{
     font-size: 3rem;
-    padding:.5rem 2rem;
+    padding: 1.5rem 2rem 2rem 0rem;
     color:var(--black);
     background: #fff;
-    border:var(--border);
+    /* border:var(--border); */
+    font-weight: bold;
 }
+
+.dropdown-item{
+    padding: 5px 10px;
+    margin: 0px;
+}
+
+.dropdown-menu.dropdown-menu-dark.show{
+    inset: 0px auto auto -50px !important;
+}
+
+.menu a{
+    margin-left: 0px;
+}
+
+.menu{
+    padding: 0px 1rem !important;
+}
+
+.menu.login{
+    border-right: 2px solid var(--orange);
+}
+
+.header-profile{
+    background: transparent !important;
+    /* border: 1px solid var(--black); */
+    padding: 2rem;
+    z-index: 1;
+}
+
+.py-4{
+    font-size: 1.5rem;
+}
+
+
+.py-4 button{
+    background: transparent;
+} 
+
+a.btn.beranda{
+    margin-left: 0px !important;
+}
+
+.btn.beranda{
+    padding: 1rem 5rem;
+}
+
 .btn{
     display: inline-block;
     padding:.8rem 3rem;
@@ -149,7 +207,7 @@ header{
   }
   
   header a{
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-left: 2rem;
     color:var(--white);
   }
@@ -232,7 +290,7 @@ header{
   
   .home .content{
     flex:1 1 40rem;
-    padding-top: 6.5rem;
+    /* padding-top: 6.5rem; */
   }
   
   .home .image{
@@ -310,9 +368,13 @@ header{
     color:var(--light-color);
 }
 
+section.product{
+    margin-top: 5rem;
+}
+
 .product .cat-pc{
     display: flex;
-    border: var(--border);
+    /* border: var(--border); */
 }
 
 .product .product-slider .box{
@@ -320,7 +382,7 @@ header{
     margin:2rem 0;
     position: relative;
     overflow: hidden;
-    border:var(--border);
+    /* border:var(--border); */
     text-align: center;
 }
 
@@ -339,7 +401,8 @@ header{
 }
 
 .product .product-slider .box .image img{
-    height: 25rem;
+    /* height: 25rem; */
+    max-height: 20rem;
 }
 
 .product .product-slider .box .icons{
@@ -372,18 +435,20 @@ header{
 }
 
 .product .product-slider .box .content h3{
-    font-size: 2rem;
+    font-size: 1.5rem;
+    font-weight: 800;
     color:var(--black);
 }
 
 .product .product-slider .box .content .harga{
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     color:var(--black);
     padding-top: 1rem;
+    font-weight: 600;
 }
 
 .product .product-slider .box .content .harga span{
-    font-size: 1.5rem;
+    font-size: 1rem;
     color:var(--light-color);
     text-decoration: line-through;
 }
@@ -391,7 +456,7 @@ header{
 .product .kategori .box img{
    margin-top: 1rem;
     padding: 1rem;
-    height: 50rem;
+    height: 53rem;
 }
 
 
@@ -425,15 +490,15 @@ header{
 .contact form{
     max-width: 45rem;
     margin-left: auto;
-    text-align: center;
     padding:5rem 0;
 }
 
 .contact form h3{
-    font-size: 2.2rem;
+    font-size: 3rem;
     color:var(--orange);
     padding-bottom: .7rem;
-    font-weight: bold;
+    font-weight: 900;
+
 }
 .contact form p{
     font-size: 1.6rem;
@@ -478,7 +543,7 @@ header{
   .footer .credit{
     text-align: center;
     border-top: .1rem solid rgba(0,0,0,.1);
-    font-size: 2rem;
+    font-size: 1.5rem;
     color:var(--white);
     padding:.5rem;
     padding-top: 1.5rem;
@@ -623,15 +688,122 @@ th {
     padding: 10px 15px;
 }
 
+/* LOGO BYCOM*/
+.tulisan{
+    position: absolute;
+    color: white;
+    margin-left: 100px;
+    margin-top: 96px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 70px;  
+}
+
+/*GAMBAR LOGIN*/
+.bg-gambarkiri{
+    background:url(../images/login.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-gambarkiri.register{
+    background: url(../images/register.png) no-repeat;
+}
+
+.bg-gambarkiri::after {
+    content: '';
+	display: block;
+	width: 50%;
+	height: 100%;
+	background: rgba(62, 62, 62, 0.5);
+	position: absolute;
+	bottom: 0;
+}
+
+.bagiankanan{
+    background: white;
+}
+
+.btn-buatakun{
+    border-radius: 106px;
+    background: var(--orange);
+    color: white;
+    font-size: 1.5rem;
+}
+
+.btn-buatakun.google{
+    background: white !important;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    color: var(--black);
+    margin-top: 0px;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.btn-buatakun.google img{
+    width: 24px;
+}
+
+.tulisandaftar{
+    font-weight: 900;
+    font-size: 3.5rem;
+}
+
+.atau{
+    margin: 1.5rem 0px;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.atau a{
+    color: var(--orange);
+}
+
+.atau.belum{
+    font-weight: 400;
+}
+
+.atau.register{
+    margin: .5rem;
+    font-weight: 600;
+}
+
+.forget-pass{
+    text-align: right;
+    margin: 1.5rem 0px;
+}
+
+.forget-pass a{
+    text-decoration: underline;
+    color: #898989;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
 .form-control {
     width: 40%;
     border: 1px solid #000000;
     border-radius: 10px;
 }
 
+.form-control.login{
+    width: 100%;
+    padding: 1.25rem;
+
+}
+
 .form-control::placeholder {
     color: #898989;
     font-size: 12px;
+}
+
+.form-label.login{
+    margin: 1rem 0px;
+}
+
+.form-label{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0.5rem 0px;
 }
 
 .btn-grup .btn {
@@ -666,12 +838,12 @@ th {
 
 tr.heading-table th {
     color: #26293b;
-    font-weight: 400;
+    font-weight: bold;
     padding: 15px 0px !important;
 }
 
 .nama-komponen {
-    font-size: 12px;
+    font-size: 1.5rem;
     color: #191b2a;
     font-weight: bold;
     padding-left: 20px;

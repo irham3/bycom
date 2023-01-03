@@ -1,5 +1,16 @@
-<section>
-    <header>
+<section  class="d-flex">
+    <div class="gambar-profil align-self-center">
+        <div class="profile-pic mb-4 me-5">
+            <label class="-label" for="file-add-user">
+                <span class="glyphicon glyphicon-camera"></span>
+                <span>Ganti Gambar</span>
+            </label>
+            <input id="file-add-user" type="file" name="imgUpload" class="upload-img add" accept=".jpeg,.png,.jpg,.svg" />
+            <img src="{{asset('/storage/images/profile-images/users/user.png')}}" class="shadow" id="output-img" width="200" alt="profile_img"/>
+        </div>
+    </div>
+    <div class="profile-content ms-5">
+        <header class="header-profile">
         <h2 class="text-lg font-medium text-gray-900">
             {{ __('Profile Information') }}
         </h2>
@@ -61,4 +72,5 @@
             @endif
         </div>
     </form>
+    </div>
 </section>

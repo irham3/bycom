@@ -73,11 +73,14 @@
                 <p>Jl. Telekomunikasi. 1, Terusan Buahbatu - Bojongsoang, Telkom University, Sukapura, Kec. Dayeuhkolot, Kabupaten Bandung, Jawa Barat 40257</p>
             </div>
         </div>
-        <div class="box">
-            <h3>Kontak Kami</h3>
-            <a href="#">bycom@gmail.com</a>
-            <a href="#">+62 000-0000-0000</a>
-
+        <div class="footer-desc">
+           <div class="logo-area">
+                <span class="logo-name">Kontak Kami</span>
+            </div>
+            <div class="desc-area">
+                <p><a href="#">bycom@gmail.com</a></p>
+                <p><a href="#">+62 000-0000-0000</a></p>
+            </div>
         </div>
 
         <div class="footer-desc">
