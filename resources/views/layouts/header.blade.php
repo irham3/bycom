@@ -30,7 +30,7 @@
                     <a href="{{ route('register') }}">Register</a>                 
                 @endauth
             </div>
-        @endif 
+    @endif 
 </header>
 <!-- header section ends -->
 <!-- home section starts  -->

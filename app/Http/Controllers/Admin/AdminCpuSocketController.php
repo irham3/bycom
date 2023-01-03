@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\CPUSocket;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Yajra\DataTables\Facades\DataTables;
 
 class AdminCpuSocketController extends Controller
 {
@@ -15,7 +17,25 @@ class AdminCpuSocketController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.pc-components.cpu-socket.index');
+    }
+
+    public function getAllData()
+    {
+        $data = DB::table('cpu_sockets')
+            ->select(
+                'id',
+                'socketName',
+                'introductionYear',
+                'cpuVendor'
+                )
+            ->orderBy('id', 'asc')
+            ->get();
+
+        return DataTables::of($data)
+        ->addColumn('action', function($datum) {
+            return view('admin.pc-components.cpu-socket._aksi')->with('datum', $datum);
+        })->make(true);
     }
 
     /**

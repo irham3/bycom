@@ -1,1 +1,0 @@
-<img src="/storage/images/profile-images/users/{{ $imgName }}" class="rounded-circle" alt="user-image"/>

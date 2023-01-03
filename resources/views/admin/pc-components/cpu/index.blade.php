@@ -10,13 +10,20 @@
       <div class="row">
         <div class="col-12">
           <div class="table-responsive">
-            <table class="table table-hover expandable-table users-table" style="width:100%">
+            <table class="table table-hover expandable-table datatable" style="width:100%">
               <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Avatar</th>
+                  <th>Id</th>
+                  <th>Gambar</th>
                   <th>Nama</th>
-                  <th>Email</th>
+                  <th>Harga</th>
+                  <th>Url</th>
+                  <th>Id Socket CPU</th>
+                  <th>Jumlah Core</th>
+                  <th>Core Clock</th>
+                  <th>Boost Clock</th>
+                  <th>TDP</th>
+                  <th>Integrated Graphic</th>
                   <th>Aksi</th>
                 </tr>
               </thead>

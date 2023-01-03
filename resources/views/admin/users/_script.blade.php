@@ -10,7 +10,7 @@
   // Get All Users into table
   $(document).ready(function () {
     $('.users-table').DataTable({
-        ajax: '{{ url("admin/user/getAllUsers") }}',
+        ajax: '{{ url("admin/user/getAllData") }}',
         serverSide: false,
         processing: true,
         deferRender: true,

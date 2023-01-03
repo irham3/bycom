@@ -1,10 +1,13 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript">
 
+  function toRupiah(number) {
+    return "Rp " + number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
   // Get All Users into table
   $(document).ready(function () {
-    $('.users-table').DataTable({
-        ajax: '{{ url("admin/user/getAllUsers") }}',
+    $('.datatable').DataTable({
+        ajax: '{{ url("admin/cpu/getAllData") }}',
         serverSide: false,
         processing: true,
         deferRender: true,
@@ -14,7 +17,14 @@
             {data:'id', name: 'id'},
             {data:'image', name: 'image', orderable: false, searchable: false},
             {data:'name', name: 'name'},
-            {data:'email', name: 'email'},
+            {data:'price', name: 'price'},
+            {data:'url', name: 'url'},
+            {data:'cpuSocketId', name: 'cpuSocketId'},
+            {data:'coreCount', name: 'coreCount'},
+            {data:'coreClock', name: 'coreClock'},
+            {data:'boostClock', name: 'boostClock'},
+            {data:'tdp', name: 'tdp'},
+            {data:'integratedGraphic', name: 'integratedGraphic'},
             {data:'action', name: 'action', orderable: false, searchable: false}
         ]
     });

@@ -18,22 +18,20 @@ class AdminCpuController extends Controller
         return view('admin.pc-components.cpu.index');
     }
 
-    public function getAllUsers()
+    public function getAllData()
     {
-        $users = DB::table('users')
-            ->select('*')
-            ->orderBy('id', 'asc')
-            ->get();
+        $data = Cpu::select('')->get();
+        // $data->price = rupiah($data->price);
 
-            return DataTables::of($users)
-            ->addColumn('action', function($user) {
-                return view('admin.users._aksi')->with('user', $user);
-            })
-            ->addColumn('image', function($user) {
-                $imgName = Cpu::find($user->id)->image;
-                return view('admin.users._gambar')->with('imgName', $imgName);
-            })
-            ->make(true);
+        return DataTables::of($data)
+        ->addColumn('action', function($datum) {
+            return view('admin.pc-components.cpu._aksi')->with('datum', $datum);
+        })
+        ->addColumn('image', function($datum) {
+            $imgName = Cpu::find($datum->id)->image;
+            return view('admin.pc-components.cpu._gambar')->with('imgName', $imgName);
+        })
+        ->make(true);
     }
 
     public function store(Request $request) {
