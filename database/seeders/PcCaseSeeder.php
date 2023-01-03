@@ -20,6 +20,7 @@ class PcCaseSeeder extends Seeder
                 "name" => "Darkflash DLX4000",
                 "price" => 1275000,
                 "url" => "https://tokopedia.link/ktkzpUkCcwb",
+                "image" => "Darkflash DLX4000.jpg",
                 "type" => "Mid Tower",
                 "hddSlot" => 3
             ],
@@ -28,6 +29,7 @@ class PcCaseSeeder extends Seeder
                 "name" => "Corsair iCUE 5000T",
                 "price" => 5576000,
                 "url" => "https://tokopedia.link/jDRtHRbCcwb",
+                "image" => "Corsair iCUE 5000T.jpg",
                 "type" => "Mid Tower",
                 "hddSlot" => 6
             ],
@@ -36,6 +38,7 @@ class PcCaseSeeder extends Seeder
                 "name" => "MSI MEG Prospect 700R",
                 "price" => 5799000,
                 "url" => "https://tokopedia.link/tjM8pV4Bcwb",
+                "image" => "MSI MEG Prospect 700R.png",
                 "type" => "Mid Tower",
                 "hddSlot" => 4
             ],
@@ -44,6 +47,7 @@ class PcCaseSeeder extends Seeder
                 "name" => "be quiet! Dark Base Pro 900",
                 "price" => 4109000,
                 "url" => "https://tokopedia.link/ZA5e8h1Bcwb",
+                "image" => "be quiet! Dark Base Pro 900.jpg",
                 "type" => "Full Tower",
                 "hddSlot" => 15
             ],
@@ -52,6 +56,7 @@ class PcCaseSeeder extends Seeder
                 "name" => "Cooler Master Cosmos C700M",
                 "price" => 6899000,
                 "url" => "https://tokopedia.link/1ODxaTNBcwb",
+                "image" => "Cooler Master Cosmos C700M.png",
                 "type" => "Full Tower",
                 "hddSlot" => 4
             ]
