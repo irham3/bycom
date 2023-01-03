@@ -59,6 +59,51 @@ class PcCaseSeeder extends Seeder
                 "image" => "Cooler Master Cosmos C700M.png",
                 "type" => "Full Tower",
                 "hddSlot" => 4
+            ],
+
+            [
+                "name" => "Paradox Gaming Case Dominion LE-01",
+                "price" => 464000,
+                "url" => "https://tokopedia.link/wtOjDTn0hwb",
+                "image" => "Paradox Gaming Case Dominion LE-01.jpg",
+                "type" => "Mid Tower",
+                "hddSlot" => 4
+            ],
+
+            [
+                "name" => "Powerlogic Armaggeddon NIMITZ N5",
+                "price" => 382000,
+                "url" => "https://tokopedia.link/TtQWyNw3hwb",
+                "image" => "Powerlogic Armaggeddon NIMITZ N5.jpg",
+                "type" => "Micro ATX",
+                "hddSlot" => 5
+            ],
+
+            [
+                "name" => "Infinity Nebula V2",
+                "price" => 387000,
+                "url" => "https://tokopedia.link/qdDDGW53hwb",
+                "image" => "Infinity Nebula V2.jpg",
+                "type" => "Mid Tower",
+                "hddSlot" => 4
+            ],
+
+            [
+                "name" => "PCCooler Platinum LM200 Mesh Black",
+                "price" => 372000,
+                "url" => "https://tokopedia.link/XHdDRis4hwb",
+                "image" => "PCCooler Platinum LM200 Mesh Black.jpg",
+                "type" => "Mid Tower",
+                "hddSlot" => 4
+            ],
+
+            [
+                "name" => "Raptor Black Strike 1660 ATX",
+                "price" => 397000,
+                "url" => "https://tokopedia.link/pHR8GlQ4hwb",
+                "image" => "Raptor Black Strike 1660 ATX.png",
+                "type" => "Mid Tower",
+                "hddSlot" => 4
             ]
         ];
 

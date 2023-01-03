@@ -32,7 +32,7 @@ class MotherboardSeeder extends Seeder
                 "price" => 5051000,
                 "url" => "https://tokopedia.link/e3dVvQBUcwb",
                 "image" => "Asus TUF Gaming Z690-PLUS WiFi D4.jpg",
-                "cpuSocketId" => 6,
+                "cpuSocketId" => 7,
                 "formFactor" => "ATX",
                 "memoryMaxGB" => 128,
                 "memorySlot" => 4
@@ -65,11 +65,66 @@ class MotherboardSeeder extends Seeder
                 "price" => 12264000,
                 "url" => "https://tokopedia.link/rXYMmldVcwb",
                 "image" => "MSI MEG Z690 ACE.jpg",
-                "cpuSocketId" => 6,
+                "cpuSocketId" => 7,
                 "formFactor" => "EATX",
                 "memoryMaxGB" => 128,
                 "memorySlot" => 4
-            ]
+            ],
+
+            [
+                "name" => "Biostar H310MHP",
+                "price" => 852000,
+                "url" => "https://tokopedia.link/GGOxH2mGhwb",
+                "image" => "Biostar H310MHP.png",
+                "cpuSocketId" => 5,
+                "formFactor" => "Micro ATX",
+                "memoryMaxGB" => 32,
+                "memorySlot" => 2
+            ],
+
+            [
+                "name" => "Asrock Fatal1ty B250 Gaming K4",
+                "price" => 1500000,
+                "url" => "https://tokopedia.link/pGziisBIhwb",
+                "image" => "Asrock Fatal1ty B250 Gaming K4.jpg",
+                "cpuSocketId" => 4,
+                "formFactor" => "ATX",
+                "memoryMaxGB" => 64,
+                "memorySlot" => 4
+            ],
+
+            [
+                "name" => "MSI H510M PRO-E",
+                "price" => 1059000,
+                "url" => "https://tokopedia.link/6z23CtTIhwb",
+                "image" => "MSI H510M PRO-E.png",
+                "cpuSocketId" => 6,
+                "formFactor" => "Micro ATX",
+                "memoryMaxGB" => 64,
+                "memorySlot" => 2
+            ],
+
+            [
+                "name" => "ASRock B450M-HDV",
+                "price" => 1051000,
+                "url" => "https://tokopedia.link/roU65RtJhwb",
+                "image" => "ASRock B450M-HDV.png",
+                "cpuSocketId" => 2,
+                "formFactor" => "Micro ATX",
+                "memoryMaxGB" => 64,
+                "memorySlot" => 2
+            ],
+
+            [
+                "name" => "Biostar A320MH",
+                "price" => 765000,
+                "url" => "https://tokopedia.link/FgzqLXQJhwb",
+                "image" => "Biostar A320MH.png",
+                "cpuSocketId" => 2,
+                "formFactor" => "Micro ATX",
+                "memoryMaxGB" => 32,
+                "memorySlot" => 2
+            ],
         ];
 
         Motherboard::insert($data);
