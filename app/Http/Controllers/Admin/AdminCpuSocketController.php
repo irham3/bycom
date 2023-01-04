@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Facades\Validator;
 
 class AdminCpuSocketController extends Controller
 {
@@ -17,7 +18,7 @@ class AdminCpuSocketController extends Controller
      */
     public function index()
     {
-        return view('admin.pc-components.cpu-socket.index');
+        return view('admin.pc-components.processor-socket.index');
     }
 
     public function getAllData()
@@ -34,18 +35,8 @@ class AdminCpuSocketController extends Controller
 
         return DataTables::of($data)
         ->addColumn('action', function($datum) {
-            return view('admin.pc-components.cpu-socket._aksi')->with('datum', $datum);
+            return view('admin.pc-components.processor-socket._aksi')->with('datum', $datum);
         })->make(true);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -56,7 +47,28 @@ class AdminCpuSocketController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(),[
+            'socketName'      => ['required', 'string', 'max:255'],
+            'introductionYear'     => ['required'],
+            'cpuVendor'  => ['required'],
+        ],
+        [
+            'socketName.required'   => 'Nama Socket harus diisi',
+            'introductionYear.required'         => 'Tahun Diperkenalkan harus diisi',
+            'cpuVendor.required'    => 'Vendor CPU harus diisi',
+        ]);
+
+        if($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()]);
+        } else {
+            CPUSocket::create([
+                'socketName'  => $request->socketName,
+                'introductionYear'  => $request->introductionYear,
+                'cpuVendor'  => $request->cpuVendor,
+            ]);
+            
+            return response()->json(['success' => "Berhasil menyimpan data"]);
+        }
     }
 
     /**
@@ -76,9 +88,24 @@ class AdminCpuSocketController extends Controller
      * @param  \App\Models\CPUSocket  $cPUSocket
      * @return \Illuminate\Http\Response
      */
-    public function edit(CPUSocket $cPUSocket)
+    public function edit($id)
     {
-        //
+        $data = CPUSocket::find($id);
+        if($data)
+        {
+            return response()->json([
+                'status'=> 200,
+                'data'=> $data,
+            ]);
+        }
+        else
+        {
+            return response()->json([
+                'status'=> 404,
+                'message'=>'No Data Is Found.'
+            ]);
+        }
+
     }
 
     /**
@@ -88,9 +115,32 @@ class AdminCpuSocketController extends Controller
      * @param  \App\Models\CPUSocket  $cPUSocket
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CPUSocket $cPUSocket)
+    public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(),[
+            'socketName'      => ['required', 'string', 'max:255'],
+            'introductionYear'     => ['required'],
+            'cpuVendor'  => ['required'],
+        ],
+        [
+            'socketName.required'   => 'Nama Socket harus diisi',
+            'introductionYear.required'         => 'Tahun Diperkenalkan harus diisi',
+            'cpuVendor.required'    => 'Vendor CPU harus diisi',
+        ]);
+
+        if($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()]);
+        } else {
+            CPUSocket::where('id', $id)->update([
+                'socketName'  => $request->socketName,
+                'introductionYear'  => $request->introductionYear,
+                'cpuVendor'  => $request->cpuVendor
+            ]);
+            return response()->json([
+                'status'=>200,
+                'message'=>'Data Updated Successfully.'
+            ]);
+        }
     }
 
     /**
@@ -99,8 +149,8 @@ class AdminCpuSocketController extends Controller
      * @param  \App\Models\CPUSocket  $cPUSocket
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CPUSocket $cPUSocket)
+    public function destroy($id)
     {
-        //
+        CPUSocket::findOrFail($id)->delete();
     }
 }

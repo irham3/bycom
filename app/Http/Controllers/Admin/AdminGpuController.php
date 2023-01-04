@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Gpu;
 use Illuminate\Http\Request;
 
 class AdminGpuController extends Controller
@@ -14,7 +15,13 @@ class AdminGpuController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.pc-components.gpu.index');
+    }
+
+    public function getAllData()
+    {
+        $model = new Gpu();
+        return parent::getPcComponentDataTable($model, 'cpu');
     }
 
     /**

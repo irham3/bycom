@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\PcCase;
 use Illuminate\Http\Request;
 
 class AdminPcCaseController extends Controller
@@ -14,7 +15,13 @@ class AdminPcCaseController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.pc-components.case.index');
+    }
+
+    public function getAllData()
+    {
+        $model = new PcCase();
+        return parent::getPcComponentDataTable($model, 'cpu');
     }
 
     /**

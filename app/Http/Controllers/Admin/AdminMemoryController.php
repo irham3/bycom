@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Memory;
 use Illuminate\Http\Request;
 
 class AdminMemoryController extends Controller
@@ -14,7 +15,13 @@ class AdminMemoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.pc-components.memory.index');
+    }
+
+    public function getAllData()
+    {
+        $model = new Memory();
+        return parent::getPcComponentDataTable($model, 'cpu');
     }
 
     /**

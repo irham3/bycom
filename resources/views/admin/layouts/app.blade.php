@@ -21,6 +21,11 @@
   <link rel="stylesheet" href="{{ URL::asset('admin/css/vertical-layout-light/style.css?v=').time()}}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{ URL::asset('admin/images/favicon.png?v=').time()}}" />
+
+  {{-- Bootstrap CSS --}}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
    {{-- CSRF TOKEN --}}
    <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -150,13 +155,11 @@
       </div>
     </div>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"   integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   <!-- plugins:js -->
   <script src="{{ URL::asset('admin/vendors/js/vendor.bundle.base.js?v=').time()}}"></script>
   <!-- endinject -->
-  {{-- <script src="{{ URL::asset('admin/vendors/chart.js/Chart.min.js?v=').time()}}"></script>
-  <script src="{{ URL::asset('admin/vendors/datatables.net/jquery.dataTables.js?v=').time()}}"></script>
-  <script src="{{ URL::asset('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.js?v=').time()}}"></script>
-  <script src="{{ URL::asset('admin/js/dataTables.select.min.js?v=').time()}}"></script> --}}
   <!-- Plugin js for this page -->
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
@@ -175,6 +178,7 @@
   <script src="{{ URL::asset('admin/js/Chart.roundedBarCharts.js?v=').time()}}"></script>
   <!-- End custom js for this page-->
 
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
     document.addEventListener('change', function (event) {
       if (event.target.matches('.upload-img')) {

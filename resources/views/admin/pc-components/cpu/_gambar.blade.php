@@ -1,1 +1,1 @@
-<img src="/storage/images/placeholder.png" alt="cpu-image"/>
+<img src="/storage/images/pc-components/cpu/{{ $imgName }}" alt="cpu-image"/>

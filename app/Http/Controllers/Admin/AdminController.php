@@ -5,6 +5,15 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Cpu;
+use App\Models\CpuSocket;
+use App\Models\Gpu;
+use App\Models\InternalStorage;
+use App\Models\Memory;
+use App\Models\Motherboard;
+use App\Models\PcCase;
+use App\Models\PowerSupply;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
@@ -44,7 +53,30 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $userCount = User::all()->count();
+        $cpuSocketCount = CpuSocket::all()->count();
+        $cpuCount = Cpu::all()->count();
+        $moboCount = Motherboard::all()->count();
+        $gpuCount = Gpu::all()->count();
+        $memoryCount = Memory::all()->count();
+        $psuCount = PowerSupply::all()->count();
+        $storageCount = InternalStorage::all()->count();
+        $caseCount = PcCase::all()->count();
+        $totalComponent = $cpuCount + $moboCount + $gpuCount + $memoryCount + $psuCount + $storageCount + $caseCount;
+
+        $countData = [
+            'user' => $userCount,
+            'cpuSocket' => $cpuSocketCount,
+            'cpu' => $cpuCount,
+            'mobo' => $moboCount,
+            'gpu' => $gpuCount,
+            'memory' => $memoryCount,
+            'storage' => $storageCount,
+            'case' => $caseCount,
+            'psu' => $psuCount,
+            'totalComponent' => $totalComponent
+        ];
+        return view('admin.dashboard', compact('countData'));
     }
 
     public function updateAdminPassword(Request $request)

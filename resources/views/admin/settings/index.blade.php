@@ -86,7 +86,7 @@
                 <div class="pl-lg-4">
                   <div class="row">
                       <div class="col text-right">
-                        <button type="reset" class="btn btn-inverse-dark">Reset</button>
+                        <button type="reset" class="btn btn-secondary">Reset</button>
                         <button type="submit" class="btn btn-primary">Save Changes</button>
                       </div>
                   </div>

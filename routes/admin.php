@@ -6,7 +6,11 @@ use App\Http\Controllers\Admin\AdminCpuController;
 use App\Http\Controllers\Admin\AdminGpuController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminCpuSocketController;
+use App\Http\Controllers\Admin\AdminInternalStorageController;
+use App\Http\Controllers\Admin\AdminMemoryController;
 use App\Http\Controllers\Admin\AdminMotherboardController;
+use App\Http\Controllers\Admin\AdminPcCaseController;
+use App\Http\Controllers\Admin\AdminPowerSupplyController;
 
 // Admin Route
 Route::prefix('/admin')->group(function() {
@@ -22,10 +26,10 @@ Route::prefix('/admin')->group(function() {
       'getAllData']);
       Route::resource('user', AdminUserController::class);
       
-      // Admin Cpu Socket Sockets Route
-      Route::get('cpu-socket/getAllData', [AdminCpuSocketController::class,
+      // Admin CpuSocket Route
+      Route::get('processor-socket/getAllData', [AdminCpuSocketController::class,
       'getAllData']);
-      Route::resource('cpu-socket', AdminCpuSocketController::class);
+      Route::resource('processor-socket', AdminCpuSocketController::class);
 
       // Admin Cpu Route
       Route::get('cpu/getAllData', [AdminCpuController::class,
@@ -37,9 +41,29 @@ Route::prefix('/admin')->group(function() {
       'getAllData']);
       Route::resource('gpu', AdminGpuController::class);
 
+      // Admin InternalStorage Route
+      Route::get('internal-storage/getAllData', [AdminInternalStorageController::class,
+      'getAllData']);
+      Route::resource('internal-storage', AdminInternalStorageController::class);
+
       // Admin Motherboard Route
       Route::get('motherboard/getAllData', [AdminMotherboardController::class,
       'getAllData']);
       Route::resource('motherboard', AdminMotherboardController::class);
+
+      // Admin PcCase Route
+      Route::get('case/getAllData', [AdminPcCaseController::class,
+      'getAllData']);
+      Route::resource('case', AdminPcCaseController::class);
+
+      // Admin PowerSupply Route
+      Route::get('psu/getAllData', [AdminPowerSupplyController::class,
+      'getAllData']);
+      Route::resource('psu', AdminPowerSupplyController::class);
+
+      // Admin Memory Route
+      Route::get('memory/getAllData', [AdminMemoryController::class,
+      'getAllData']);
+      Route::resource('memory', AdminMemoryController::class);
   });
 });

@@ -1,9 +1,5 @@
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript">
 
-  function toRupiah(number) {
-    return "Rp " + number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
   // Get All Users into table
   $(document).ready(function () {
     $('.datatable').DataTable({
@@ -19,23 +15,17 @@
             {data:'name', name: 'name'},
             {data:'price', name: 'price'},
             {data:'url', name: 'url'},
-            {data:'cpuSocketId', name: 'cpuSocketId'},
-            {data:'coreCount', name: 'coreCount'},
-            {data:'coreClock', name: 'coreClock'},
-            {data:'boostClock', name: 'boostClock'},
-            {data:'tdp', name: 'tdp'},
-            {data:'integratedGraphic', name: 'integratedGraphic'},
             {data:'action', name: 'action', orderable: false, searchable: false}
         ]
     });
   });
 
   // Store
-  $('#add_user_form').submit(function(e) {
+  $('#addForm').submit(function(e) {
     e.preventDefault();
     const fd = new FormData(this);
     $.ajax({
-      url: 'user',
+      url: '{{ url("admin/cpu") }}',
       method: 'post',
       data: fd,
       cache: false,
@@ -54,13 +44,13 @@
             'warning'
           )
         } else{
-          $('.users-table').DataTable().ajax.reload();
+          $('.datatable').DataTable().ajax.reload();
           Swal.fire(
             'Berhasil!',
             response.success,
             'success'
             )
-          $("#addUserModal").modal('hide');
+          $("#addModal").modal('hide');
         }
       },
       error: function (xhr, status, error) {
@@ -84,7 +74,7 @@
         csrf_token = $('meta[name="csrf-token"]').attr('content');
 
     Swal.fire({
-      title: 'Anda yakin ingin menghapus user ini ?',
+      title: 'Anda yakin ingin menghapus data ini ?',
       text: 'Anda tidak bisa mengembalikannya lagi',
       icon: 'warning',
       showCancelButton: true,
@@ -102,7 +92,7 @@
                   '_token': csrf_token
               },
               success: function (response) {
-                $('.users-table').DataTable().ajax.reload();
+                $('.datatable').DataTable().ajax.reload();
                 Swal.fire(
                   'Terhapus!',
                   'Data berhasil dihapus.',
@@ -136,15 +126,15 @@
           '_method': 'GET',
         },
         success: function(response) {
-          $('#editUserModal').modal('show');
-          $('#editUserModal .btn-close').click(function (e) { 
+          $('#editModal').modal('show');
+          $('#editModal .btn-close').click(function (e) { 
             e.preventDefault();
-            $('#editUserModal').modal('hide');
+            $('#editModal').modal('hide');
           });
-          $('#editUserModal #output-img').attr('src', '/storage/images/profile-images/users/' + response.user.image);
-          $('#editUserModal #id').val(response.user.id);
-          $('#editUserModal #name').val(response.user.name);
-          $('#editUserModal #email').val(response.user.email);
+          $('#editModal #id').val(response.data.id);
+          $('#editModal #socketName').val(response.data.socketName);
+          $('#editModal #introductionYear').val(response.data.introductionYear);
+          $('#editModal #cpuVendor').val(response.data.cpuVendor);
         }, 
         error: function (xhr, status, error) {
           var err = eval("(" + xhr.responseText + ")"); 
@@ -158,17 +148,18 @@
     });
   });
 
-  $('#edit_user_form').submit(function(e) {
+  $('#editForm').submit(function(e) {
     e.preventDefault();
-    const fd = new FormData(this); 
+    const fd = new FormData(this);
+    const id = $('#id').val();
     $.ajax({
-      url: 'user/update',
+      url: 'cpu/' + id,
       type: 'POST',
       data: fd,
       cache: false,
-      contentType: false,
-      processData: false,
       dataType: 'json',
+      processData: false,
+      contentType: false,
       success: function(response) {
         if (response.errors) {
           let errors = '';
@@ -181,13 +172,13 @@
             'warning'
           )
         } else{
-          $('.users-table').DataTable().ajax.reload();
+          $("#editModal").modal('hide');
           Swal.fire(
             'Berhasil!',
             response.success,
             'success'
             )
-          $("#editUserModal").modal('hide');
+          $('.datatable').DataTable().ajax.reload();
         }
       },
       error: function (xhr, status, error) {

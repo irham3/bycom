@@ -23,6 +23,7 @@ class AdminUserController extends Controller
         $users = DB::table('users')
             ->select(
                 'id as id',
+                'image as image',
                 'name as name',
                 'email as email')
             ->orderBy('id', 'asc')
@@ -33,8 +34,7 @@ class AdminUserController extends Controller
             return view('admin.users._aksi')->with('user', $user);
         })
         ->addColumn('image', function($user) {
-            $imgName = User::find($user->id)->image;
-            return view('admin.users._gambar')->with('imgName', $imgName);
+            return view('admin.users._gambar')->with('imgName', $user->image);
         })
         ->make(true);
     }
