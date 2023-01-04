@@ -1,4 +1,4 @@
-<script type="text/javascript">
+<script>
 
   // Get All Users into table
   $(document).ready(function () {
@@ -54,7 +54,6 @@
         }
       },
       error: function (xhr, status, error) {
-        console.log(fd);
         console.log(xhr.responseText);
         Swal.fire(
           'Error',
@@ -117,7 +116,6 @@
   //Edit
   $(document).on('click', '.btn-edit', function(e) {
     e.preventDefault();
-    var id = $(this).data('id');
     var url = $(this).attr('href');
     $.ajax({
         url: url,
@@ -132,9 +130,16 @@
             $('#editModal').modal('hide');
           });
           $('#editModal #id').val(response.data.id);
-          $('#editModal #socketName').val(response.data.socketName);
-          $('#editModal #introductionYear').val(response.data.introductionYear);
-          $('#editModal #cpuVendor').val(response.data.cpuVendor);
+          $('#editModal #output-img').attr('src', '/storage/images/pc-components/cpu/' + response.data.image);
+          $('#editModal #name').val(response.data.name);
+          $('#editModal #price').val(response.data.price);
+          $('#editModal #url').val(response.data.url);
+          $('#editModal #coreCount').val(response.data.coreCount);
+          $('#editModal #cpuSocketId').val(response.data.cpuSocketId);
+          $('#editModal #coreClock').val(response.data.coreClock);
+          $('#editModal #boostClock').val(response.data.boostClock);
+          $('#editModal #tdp').val(response.data.tdp);
+          $('#editModal #integratedGraphic').val(response.data.integratedGraphic);
         }, 
         error: function (xhr, status, error) {
           var err = eval("(" + xhr.responseText + ")"); 

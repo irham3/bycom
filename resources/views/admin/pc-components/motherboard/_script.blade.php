@@ -3,7 +3,7 @@
   // Get All Users into table
   $(document).ready(function () {
     $('.datatable').DataTable({
-        ajax: '{{ url("admin/processor-socket/getAllData") }}',
+        ajax: '{{ url("admin/motherboard/getAllData") }}',
         serverSide: false,
         processing: true,
         deferRender: true,
@@ -11,9 +11,10 @@
         destroy:true,
         columns: [
             {data:'id', name: 'id'},
-            {data:'socketName', name: 'socketName'},
-            {data:'introductionYear', name: 'introductionYear'},
-            {data:'cpuVendor', name: 'cpuVendor'},
+            {data:'image', name: 'image', orderable: false, searchable: false},
+            {data:'name', name: 'name'},
+            {data:'price', name: 'price'},
+            {data:'url', name: 'url'},
             {data:'action', name: 'action', orderable: false, searchable: false}
         ]
     });

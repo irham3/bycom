@@ -1,1 +1,0 @@
-<img src="/storage/images/pc-components/cpu/{{ $imgName }}" alt="cpu-image"/>

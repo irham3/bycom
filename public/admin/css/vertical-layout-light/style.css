@@ -24631,7 +24631,7 @@ dl li {
 .table td img, .jsgrid .jsgrid-table td img {
   width: 36px;
   height: 36px;
-  border-radius: 100%;
+  /* border-radius: 100%; */
 }
 
 .table td .badge, .jsgrid .jsgrid-table td .badge {

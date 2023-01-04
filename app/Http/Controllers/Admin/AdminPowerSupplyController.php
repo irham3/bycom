@@ -21,7 +21,7 @@ class AdminPowerSupplyController extends Controller
     public function getAllData()
     {
         $model = new PowerSupply();
-        return parent::getPcComponentDataTable($model, 'cpu');
+        return parent::getPcComponentDataTable($model, 'psu');
     }
 
     /**

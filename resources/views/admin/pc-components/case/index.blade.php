@@ -14,9 +14,10 @@
               <thead>
                 <tr>
                   <th>Id</th>
-                  <th>Nama Soket CPU</th>
-                  <th>Tahun Diperkenalkan</th>
-                  <th>Vendor CPU</th>
+                  <th>Gambar</th>
+                  <th>Nama</th>
+                  <th>Harga</th>
+                  <th>Url</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
@@ -28,12 +29,11 @@
     </div>
 </div>
 
-{{-- Add Modal --}}
-@include('admin.pc-components.processor-socket._modal')
+@include('admin.pc-components.case._modal')
 
 @endsection
 
 @section('js-content')
-@include('admin.pc-components.processor-socket._script')
+@include('admin.pc-components.case._script')
 @endsection
 

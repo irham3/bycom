@@ -33,7 +33,7 @@
     label {
       font-weight: bold;
     }
-    .profile-pic {
+    .profile-pic, .component-pic{
       color: transparent;
       transition: all 0.3s ease;
       display: flex;
@@ -43,7 +43,7 @@
       position: relative;
       transition: all 0.3s ease;
     }
-    .profile-pic input {
+    .profile-pic input, .component-pic input{
       display: none;
     }
     .profile-pic img {
@@ -55,7 +55,15 @@
       border-radius: 100px;
       z-index: 0;
     }
-    .profile-pic .-label {
+    .component-pic img {
+      position: absolute;
+      object-fit: cover;
+      width: 165px;
+      height: 165px;
+      box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.35);
+      z-index: 0;
+    }
+    .profile-pic .-label, .component-pic .-label {
       cursor: pointer;
       height: 165px;
       width: 165px;
@@ -71,7 +79,17 @@
       border-radius: 100px;
       margin-bottom: 0;
     }
-    .profile-pic span {
+    .component-pic:hover .-label {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 10000;
+      color: #fafafa;
+      transition: background-color 0.2s ease-in-out;
+      margin-bottom: 0;
+    }
+    .profile-pic span, .component-pic span {
       display: inline-flex;
       padding: 0.2em;
       height: 2em;
@@ -171,11 +189,9 @@
   <script src="{{ URL::asset('admin/js/hoverable-collapse.js?v=').time()}}"></script>
   <script src="{{ URL::asset('admin/js/template.js?v=').time()}}"></script>
   <script src="{{ URL::asset('admin/js/settings.js?v=').time()}}"></script>
-  <script src="{{ URL::asset('admin/js/todolist.js?v=').time()}}"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
   <script src="{{ URL::asset('admin/js/dashboard.js?v=').time()}}"></script>
-  <script src="{{ URL::asset('admin/js/Chart.roundedBarCharts.js?v=').time()}}"></script>
   <!-- End custom js for this page-->
 
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

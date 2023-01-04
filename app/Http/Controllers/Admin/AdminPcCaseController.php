@@ -21,7 +21,7 @@ class AdminPcCaseController extends Controller
     public function getAllData()
     {
         $model = new PcCase();
-        return parent::getPcComponentDataTable($model, 'cpu');
+        return parent::getPcComponentDataTable($model, 'case');
     }
 
     /**

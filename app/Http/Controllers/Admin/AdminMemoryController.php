@@ -21,7 +21,7 @@ class AdminMemoryController extends Controller
     public function getAllData()
     {
         $model = new Memory();
-        return parent::getPcComponentDataTable($model, 'cpu');
+        return parent::getPcComponentDataTable($model, 'memory');
     }
 
     /**

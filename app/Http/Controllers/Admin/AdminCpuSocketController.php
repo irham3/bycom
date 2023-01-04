@@ -35,7 +35,7 @@ class AdminCpuSocketController extends Controller
 
         return DataTables::of($data)
         ->addColumn('action', function($datum) {
-            return view('admin.pc-components.processor-socket._aksi')->with('datum', $datum);
+            return view('admin.pc-components._aksi')->with('actionUrl', 'processor-socket/'.$datum->id);
         })->make(true);
     }
 

@@ -5,29 +5,73 @@
         <div class="modal-header">
             <h5 class="modal-title" id="addModalLabel">Add Data</h5>
             <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        <form action="#" method="POST" id="addForm">
+        <form action="#" method="POST" id="addForm" enctype="multipart/form-data">
           @csrf
           <div class="modal-body">
-              <div class="form-group mb-3">
-                  <input type="text" required class="socketName form-control" id="socketName" name="socketName" autocomplete="off" placeholder="Nama Socket CPU">
-              </div>
-              <div class="row">
-                  <div class="col-lg-6">
-                    <div class="form-group">
-                      <input type="month" class="form-control" id="introductionYear" placeholder="Tahun Diperkenalkan" name="introductionYear">
-                    </div>
-                  </div>
-                  <div class="col-lg-6">
-                    <select id="cpuVendor" name="cpuVendor" class="form-select form-select-lg mb-3" required>
-                      <option> - Vendor CPU - </option>
-                      <option value="AMD">AMD</option>
-                      <option value="Intel">Intel</option>
-                    </select>
+            <div class="component-pic mb-4">
+                <label class="-label" for="file-add">
+                  <span class="glyphicon glyphicon-camera"></span>
+                  <span>Pilih Gambar</span>
+                </label>
+                <input id="file-add" type="file" name="imgUpload" class="upload-img add" accept=".jpeg,.png,.jpg,.svg" />
+                <img src="{{url('images/placeholder.jpg')}}" class="img-thumbnail shadow" id="output-img" width="200" alt="image"/>
+            </div>
+            <div class="form-group mb-3">
+                <input type="text" required class="name form-control" id="name" name="name" autocomplete="off" placeholder="Nama Komponen">
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <input type="number" min="0" class="form-control" id="price" placeholder="Harga" name="price">
                   </div>
                 </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="url" placeholder="Link URL Ecommerce" name="url">
+                  </div>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <input type="number" class="form-control" id="coreCount" placeholder="Jumlah Core" name="coreCount">
+                </div>
+              </div>
+                <div class="col-lg-6">
+                  <select id="cpuSocketId" name="cpuSocketId" class="form-select p-2" required>
+                    <option>-Jenis Socket-</option>
+                    {{-- @foreach ($cpuSockets as $cpuSocket)
+                      <option value="{{ $cpuSocket->id }}">{{ $cpuSocket->socketName }}</option>
+                    @endforeach --}}
+                  </select>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="coreClock" placeholder="Core Clock" name="coreClock">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="boostClock" placeholder="Boost Clock" name="boostClock">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <input type="number" min="0" class="form-control" id="tdp" placeholder="TDP (watt)" name="tdp">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="integratedgGraphic" placeholder="Integrated Graphic" name="integratedgGraphic">
+                </div>
+              </div>
+            </div>
           </div>
           <div class="modal-footer">
               <button type="reset" class="btn btn-secondary">Reset</button>
@@ -48,32 +92,77 @@
                 <span aria-hidden="true">&times;</span>
               </button>
           </div>
-          <form action="#" method="POST" id="editForm">
+          <form action="#" method="POST" id="addForm" enctype="multipart/form-data">
             @method('PUT')
             @csrf
-            <input type="hidden" name="id" id="id" value="">
+            <input type="hidden" name="id">
             <div class="modal-body">
+              <div class="component-pic mb-4">
+                  <label class="-label" for="file-add">
+                    <span class="glyphicon glyphicon-camera"></span>
+                    <span>Pilih Gambar</span>
+                  </label>
+                  <input id="file-add" type="file" name="imgUpload" class="upload-img add" accept=".jpeg,.png,.jpg,.svg" />
+                  <img src="" class="img-thumbnail shadow" id="output-img" width="200" alt="image"/>
+              </div>
               <div class="form-group mb-3">
-                  <input type="text" required class="socketName form-control" id="socketName" name="socketName" autocomplete="off" placeholder="Nama Socket CPU">
+                  <input type="text" required class="name form-control" id="name" name="name" autocomplete="off" placeholder="Nama Komponen">
               </div>
               <div class="row">
                   <div class="col-lg-6">
                     <div class="form-group">
-                      <input type="month" class="form-control" id="introductionYear" placeholder="Tahun Diperkenalkan" name="introductionYear">
+                      <input type="number" min="0" class="form-control" id="price" placeholder="Harga" name="price">
                     </div>
                   </div>
                   <div class="col-lg-6">
-                    <select id="cpuVendor" name="cpuVendor" class="form-select form-select-lg mb-3" required>
-                      <option> - Vendor CPU - </option>
-                      <option value="AMD">AMD</option>
-                      <option value="Intel">Intel</option>
-                    </select>
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="url" placeholder="Link URL Ecommerce" name="url">
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <input type="number" class="form-control" id="coreCount" placeholder="Jumlah Core" name="coreCount">
                   </div>
                 </div>
-          </div>
+                  <div class="col-lg-6">
+                    <select id="cpuSocketId" name="cpuSocketId" class="form-select p-2" required>
+                      <option>-Jenis Socket-</option>
+                      {{-- @foreach ($cpuSockets as $cpuSocket)
+                        <option value="{{ $cpuSocket->id }}">{{ $cpuSocket->socketName }}</option>
+                      @endforeach --}}
+                    </select>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="coreClock" placeholder="Core Clock" name="coreClock">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="boostClock" placeholder="Boost Clock" name="boostClock">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <input type="number" min="0" class="form-control" id="tdp" placeholder="TDP (watt)" name="tdp">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="integratedgGraphic" placeholder="Integrated Graphic" name="integratedgGraphic">
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="modal-footer">
-              <button type="reset" class="btn btn-secondary">Reset</button>
-              <button type="submit" class="btn btn-primary btn-update-user">Update</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+                <button type="submit" class="btn btn-primary btn-add-user">Create</button>
             </div>
           </form>
       </div>

@@ -26,11 +26,11 @@ class Controller extends BaseController
         ->addColumn('url', function($data) {
             return view('admin.pc-components._link')->with('linkUrl', $data->url);
         })
-        ->addColumn('action', function($data) use($pcComponentView) {
-            return view('admin.pc-components.'.$pcComponentView.'._aksi')->with('data', $data);
+        ->addColumn('action', function($data) use(&$pcComponentView) {
+            return view('admin.pc-components._aksi')->with('actionUrl', $pcComponentView.'/'.$data->id);
         })
-        ->addColumn('image', function($data) use($pcComponentView) {
-            return view('admin.pc-components.'.$pcComponentView.'._gambar')->with('imgName', $data->image);
+        ->addColumn('image', function($data) use(&$pcComponentView) {
+            return view('admin.pc-components._gambar')->with('imgName', $pcComponentView.'/'.$data->image);
         })
         ->make(true);
     }

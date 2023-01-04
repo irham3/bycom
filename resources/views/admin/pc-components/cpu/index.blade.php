@@ -29,7 +29,6 @@
     </div>
 </div>
 
-{{-- Add Modal --}}
 @include('admin.pc-components.cpu._modal')
 
 @endsection

@@ -1,1 +1,0 @@
-<a href="{{ $linkUrl }}" target="_blank">{{ $linkUrl }} </a>

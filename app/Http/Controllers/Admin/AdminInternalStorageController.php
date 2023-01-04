@@ -21,7 +21,7 @@ class AdminInternalStorageController extends Controller
     public function getAllData()
     {
         $model = new InternalStorage();
-        return parent::getPcComponentDataTable($model, 'cpu');
+        return parent::getPcComponentDataTable($model, 'internal-storage');
     }
 
     /**

@@ -21,7 +21,7 @@ class AdminMotherboardController extends Controller
     public function getAllData()
     {
         $model = new Motherboard();
-        return parent::getPcComponentDataTable($model, 'cpu');
+        return parent::getPcComponentDataTable($model, 'motherboard');
     }
 
     /**
