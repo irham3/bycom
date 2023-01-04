@@ -1,0 +1,1 @@
+<img src="/storage/images/pc-components/gpu/{{ $imgName }}" alt="gpu-image"/>

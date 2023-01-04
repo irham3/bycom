@@ -30,11 +30,11 @@
 </div>
 
 {{-- Add Modal --}}
-@include('admin.pc-components.cpu._modal')
+@include('admin.pc-components.gpu._modal')
 
 @endsection
 
 @section('js-content')
-@include('admin.pc-components.cpu._script')
+@include('admin.pc-components.gpu._script')
 @endsection
 

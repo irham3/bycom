@@ -1,10 +1,9 @@
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript">
 
   // Get All Users into table
   $(document).ready(function () {
-    $('.users-table').DataTable({
-        ajax: '{{ url("admin/user/getAllUsers") }}',
+    $('.datatable').DataTable({
+        ajax: '{{ url("admin/processor-socket/getAllData") }}',
         serverSide: false,
         processing: true,
         deferRender: true,
@@ -12,9 +11,9 @@
         destroy:true,
         columns: [
             {data:'id', name: 'id'},
-            {data:'image', name: 'image', orderable: false, searchable: false},
-            {data:'name', name: 'name'},
-            {data:'email', name: 'email'},
+            {data:'socketName', name: 'socketName'},
+            {data:'introductionYear', name: 'introductionYear'},
+            {data:'cpuVendor', name: 'cpuVendor'},
             {data:'action', name: 'action', orderable: false, searchable: false}
         ]
     });

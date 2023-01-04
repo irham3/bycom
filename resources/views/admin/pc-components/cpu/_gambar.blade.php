@@ -1,1 +1,1 @@
-<img src="/storage/images/profile-images/users/{{ $imgName }}" alt="user-image"/>
+<img src="/storage/images/pc-components/cpu/{{ $imgName }}" alt="cpu-image"/>

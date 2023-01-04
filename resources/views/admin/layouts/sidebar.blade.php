@@ -22,33 +22,25 @@
       </a>
       <div class="collapse" id="pc-components">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"><a class="nav-link" href="{{ url('admin/cpu-socket') }}">CPU Socket</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url('admin/processor-socket') }}">CPU Socket</a></li>
           <li class="nav-item"><a class="nav-link" href="{{ url('admin/cpu') }}">CPU</a></li>
           <li class="nav-item"><a class="nav-link" href="{{ url('admin/motherboard') }}">Motherboard</a></li>
           <li class="nav-item"><a class="nav-link" href="{{ url('admin/gpu') }}">GPU</a></li>
           <li class="nav-item"><a class="nav-link" href="{{ url('admin/memory') }}">Memory</a></li>
           <li class="nav-item"><a class="nav-link" href="{{ url('admin/psu') }}">Power Supply</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url('admin/storage') }}">Storage</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url('admin/internal-storage') }}">Storage</a></li>
           <li class="nav-item"><a class="nav-link" href="{{ url('admin/case') }}">Casing PC</a></li>
         </ul>
       </div>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#pcbulds" aria-expanded="false" aria-controls="pcbulds">
+      <a class="nav-link" href="{{ url('admin/pc-builds') }}">
         <i class="ti-package menu-icon"></i>
         <span class="menu-title">Full PC Builds</span>
-        <i class="menu-arrow"></i>
       </a>
-      <div class="collapse" id="pcbulds">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"><a class="nav-link" href="{{ url('admin/good-pcbuild') }}">Good</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url('admin/better-pcbuild') }}">Better</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url('admin/best-pcbuild') }}">Best</a></li>
-        </ul>
-      </div>
     </li>
-
+    
     <li class="nav-item">
       <a class="nav-link" href="{{ url('admin/settings') }}">
         <i class="ti-settings menu-icon"></i>

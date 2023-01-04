@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Memory;
+use App\Models\InternalStorage;
 use Illuminate\Http\Request;
 
-class AdminMemoryController extends Controller
+class AdminInternalStorageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +15,12 @@ class AdminMemoryController extends Controller
      */
     public function index()
     {
-        return view('admin.pc-components.memory.index');
+        return view('admin.pc-components.internal-storage.index');
     }
 
     public function getAllData()
     {
-        $model = new Memory();
+        $model = new InternalStorage();
         return parent::getPcComponentDataTable($model, 'cpu');
     }
 

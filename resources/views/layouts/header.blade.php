@@ -1,6 +1,6 @@
 <header>
     <a class="navbar-brand" href="{{ route('beranda') }}">
-        <img src="images/logo.png" alt="Logo" class="d-inline-block align-text-top">
+        <img src="{{ url('images/logo.png') }}" alt="Logo" class="d-inline-block align-text-top">
     </a>
     <nav class="navbar">
         <a href="{{ route('beranda') }}" class="{{ (request()->is('/')) ? 'active' : '' }}">Beranda</a>
@@ -30,7 +30,7 @@
                     <div class="menu"><a href="{{ route('register') }}">Register</a></div>              
                 @endauth
             </div>
-        @endif 
+    @endif 
 </header>
 <!-- header section ends -->
 <!-- home section starts  -->

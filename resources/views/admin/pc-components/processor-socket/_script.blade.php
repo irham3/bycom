@@ -1,15 +1,9 @@
 <script type="text/javascript">
 
-  // GLOBAL SETUP 
-  $.ajaxSetup({
-      headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      }
-  });
   // Get All Users into table
   $(document).ready(function () {
-    $('.users-table').DataTable({
-        ajax: '{{ url("admin/user/getAllData") }}',
+    $('.datatable').DataTable({
+        ajax: '{{ url("admin/processor-socket/getAllData") }}',
         serverSide: false,
         processing: true,
         deferRender: true,
@@ -17,20 +11,20 @@
         destroy:true,
         columns: [
             {data:'id', name: 'id'},
-            {data:'image', name: 'image', orderable: false, searchable: false},
-            {data:'name', name: 'name'},
-            {data:'email', name: 'email'},
+            {data:'socketName', name: 'socketName'},
+            {data:'introductionYear', name: 'introductionYear'},
+            {data:'cpuVendor', name: 'cpuVendor'},
             {data:'action', name: 'action', orderable: false, searchable: false}
         ]
     });
   });
 
   // Store
-  $('#add_user_form').submit(function(e) {
+  $('#addForm').submit(function(e) {
     e.preventDefault();
     const fd = new FormData(this);
     $.ajax({
-      url: 'user',
+      url: 'processor-socket',
       method: 'post',
       data: fd,
       cache: false,
@@ -49,13 +43,13 @@
             'warning'
           )
         } else{
-          $('.users-table').DataTable().ajax.reload();
+          $('.datatable').DataTable().ajax.reload();
           Swal.fire(
             'Berhasil!',
             response.success,
             'success'
             )
-          $("#addUserModal").modal('hide');
+          $("#addModal").modal('hide');
         }
       },
       error: function (xhr, status, error) {
@@ -79,7 +73,7 @@
         csrf_token = $('meta[name="csrf-token"]').attr('content');
 
     Swal.fire({
-      title: 'Anda yakin ingin menghapus user ini ?',
+      title: 'Anda yakin ingin menghapus data ini ?',
       text: 'Anda tidak bisa mengembalikannya lagi',
       icon: 'warning',
       showCancelButton: true,
@@ -97,7 +91,7 @@
                   '_token': csrf_token
               },
               success: function (response) {
-                $('.users-table').DataTable().ajax.reload();
+                $('.datatable').DataTable().ajax.reload();
                 Swal.fire(
                   'Terhapus!',
                   'Data berhasil dihapus.',
@@ -131,15 +125,15 @@
           '_method': 'GET',
         },
         success: function(response) {
-          $('#editUserModal').modal('show');
-          $('#editUserModal .btn-close').click(function (e) { 
+          $('#editModal').modal('show');
+          $('#editModal .btn-close').click(function (e) { 
             e.preventDefault();
-            $('#editUserModal').modal('hide');
+            $('#editModal').modal('hide');
           });
-          $('#editUserModal #output-img').attr('src', '/storage/images/profile-images/users/' + response.user.image);
-          $('#editUserModal #id').val(response.user.id);
-          $('#editUserModal #name').val(response.user.name);
-          $('#editUserModal #email').val(response.user.email);
+          $('#editModal #id').val(response.data.id);
+          $('#editModal #socketName').val(response.data.socketName);
+          $('#editModal #introductionYear').val(response.data.introductionYear);
+          $('#editModal #cpuVendor').val(response.data.cpuVendor);
         }, 
         error: function (xhr, status, error) {
           var err = eval("(" + xhr.responseText + ")"); 
@@ -153,12 +147,12 @@
     });
   });
 
-  $('#edit_user_form').submit(function(e) {
+  $('#editForm').submit(function(e) {
     e.preventDefault();
     const fd = new FormData(this);
     const id = $('#id').val();
     $.ajax({
-      url: 'user/' + id,
+      url: 'processor-socket/' + id,
       type: 'POST',
       data: fd,
       cache: false,
@@ -177,13 +171,13 @@
             'warning'
           )
         } else{
-          $("#editUserModal").modal('hide');
+          $("#editModal").modal('hide');
           Swal.fire(
             'Berhasil!',
             response.success,
             'success'
             )
-          $('.users-table').DataTable().ajax.reload();
+          $('.datatable').DataTable().ajax.reload();
         }
       },
       error: function (xhr, status, error) {

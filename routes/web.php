@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\MarketplaceController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SimulatorController;
 use Illuminate\Support\Facades\Route;
 

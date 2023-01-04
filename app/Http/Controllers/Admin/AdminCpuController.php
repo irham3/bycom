@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Cpu;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
@@ -17,68 +16,41 @@ class AdminCpuController extends Controller
     public function index() {
         return view('admin.pc-components.cpu.index');
     }
-
-    public function getAllUsers()
+    
+    public function getAllData()
     {
-        $users = DB::table('users')
-            ->select('*')
-            ->orderBy('id', 'asc')
-            ->get();
-
-            return DataTables::of($users)
-            ->addColumn('action', function($user) {
-                return view('admin.users._aksi')->with('user', $user);
-            })
-            ->addColumn('image', function($user) {
-                $imgName = Cpu::find($user->id)->image;
-                return view('admin.users._gambar')->with('imgName', $imgName);
-            })
-            ->make(true);
+        $model = new Cpu();
+        return parent::getPcComponentDataTable($model, 'cpu');
     }
 
     public function store(Request $request) {
        $validator = Validator::make($request->all(),[
-            'name'      => ['required', 'string', 'max:255'],
-            'email'     => ['required', 'email', 'unique:'.User::class],
-            'password'  => ['required', 'confirmed', Password::defaults()],
-        ],
+            'imgUpload' => 'required|image|mimes:jpeg,png,jpg,svg|max:5000',
+            'name'      => ['required', 'string', 'max:200'],
+            'price'     => ['required'],
+            'url'     => ['required'],
+            'cpuSocketId'     => ['required'],
+        ], 
         [
-            'name.required'     => 'Nama harus diisi',
-            'email.required'    => 'Email harus diisi',
-            'password.required' => 'Password harus diisi',
+        'imgUpload.image' => 'File yang dipilih bukan gambar',
+        'imgUpload.mimes' => 'Format gambar harus jpeg, png, jpg, svg',
+        'max' => 'Ukuran gambar maksimal 5MB'
         ]);
 
         if($validator->fails()) {
             return response()->json(['errors' => $validator->errors()]);
         } else {
-            if($request->hasFile('imgUpload')){
-                $extension = $request->file('imgUpload')->extension();
-                $imgName = date('dmyHis').uniqid().'.'.$extension;
-    
-                $this->validate($request, 
-                  [
-                    'imgUpload' => 'required|image|mimes:jpeg,png,jpg,svg|max:5000',
-                  ], 
-                  [
-                    'imgUpload.image' => 'File yang dipilih bukan gambar',
-                    'imgUpload.mimes' => 'Format gambar harus jpeg, png, jpg, svg',
-                    'max' => 'Ukuran gambar maksimal 5MB'
-                  ]
-                );
-                Storage::putFileAs('public/images/profile-images/user', $request->file('imgUpload'), $imgName);
-                Cpu::create([
-                    'name'  => $request->name,
-                    'email'  => $request->email,
-                    'image'  => $imgName,
-                    'password'  => Hash::make($request->password),
-                ]);
-            } else {
-                Cpu::create([
-                    'name'  => $request->name,
-                    'email'  => $request->email,
-                    'password'  => Hash::make($request->password),
-                ]);
-            }
+            $extension = $request->file('imgUpload')->extension();
+            $imgName = $request->name . '-' . date('dmyHis') . uniqid() . '.' .$extension;
+
+            $path = 'public/images/pc-components/cpu';
+            Storage::putFileAs($path, $request->file('imgUpload'), $imgName);
+            Cpu::create([
+                'image'  => $imgName,
+                'name'  => $request->name,
+                'price'  => $request->price,
+                'url'  => $request->url,
+            ]);
             
             return response()->json(['success' => "Berhasil menyimpan data"]);
         }
@@ -87,19 +59,19 @@ class AdminCpuController extends Controller
 
     public function edit($id)
     {
-        $user = Cpu::find($id);
-        if($user)
+        $data = Cpu::find($id);
+        if($data)
         {
             return response()->json([
                 'status'=>200,
-                'user'=> $user,
+                'data'=> $data,
             ]);
         }
         else
         {
             return response()->json([
                 'status'=>404,
-                'message'=>'No User Found.'
+                'message'=>'No data Found.'
             ]);
         }
 

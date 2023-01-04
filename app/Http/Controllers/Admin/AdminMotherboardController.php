@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Motherboard;
 use Illuminate\Http\Request;
 
 class AdminMotherboardController extends Controller
@@ -14,7 +15,13 @@ class AdminMotherboardController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.pc-components.motherboard.index');
+    }
+
+    public function getAllData()
+    {
+        $model = new Motherboard();
+        return parent::getPcComponentDataTable($model, 'cpu');
     }
 
     /**
