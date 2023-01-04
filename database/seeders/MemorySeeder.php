@@ -64,6 +64,56 @@ class MemorySeeder extends Seeder
                 "type" => "DDR5-5600",
                 "count" => 2,
                 "capacityPerPiece" => 32
+            ],
+
+            [
+                "name" => "Apacer DDR4 PC21000 2666Mhz 8GB",
+                "price" => 413000,
+                "url" => "https://tokopedia.link/ywz5Z9SLiwb",
+                "image" => "Apacer DDR4 PC21000 2666Mhz 8GB.jpg",
+                "type" => "DDR4-2666",
+                "count" => 1,
+                "capacityPerPiece" => 8
+            ],
+
+            [
+                "name" => "Team Elite Plus Black DDR4 PC19200 2400Mhz 8GB",
+                "price" => 408000,
+                "url" => "https://tokopedia.link/rA3J71dMiwb",
+                "image" => "Team Elite Plus Black DDR4 PC19200 2400Mhz 8GB.jpg",
+                "type" => "DDR4-2400",
+                "count" => 1,
+                "capacityPerPiece" => 8
+            ],
+
+            [
+                "name" => "KINGSTON HYPERX FURY DDR4 8GB 2666MHz 21300",
+                "price" => 390000,
+                "url" => "https://tokopedia.link/LCQjSm6Miwb",
+                "image" => "RAM KINGSTON HYPERX FURY DDR4 8GB 2666MHz 21300.jpg",
+                "type" => "DDR4-2666",
+                "count" => 1,
+                "capacityPerPiece" => 8
+            ],
+
+            [
+                "name" => "Team T-Force Vulcan Z Red DDR4 PC25600 3200MHz",
+                "price" => 831000,
+                "url" => "https://tokopedia.link/BfpCWMcOiwb",
+                "image" => "Team T-Force Vulcan Z Red DDR4 PC25600 3200MHz.jpg",
+                "type" => "DDR4-3200",
+                "count" => 2,
+                "capacityPerPiece" => 16
+            ],
+
+            [
+                "name" => "Avexir DDR4 Budget 2400MHZ 8GB",
+                "price" => 514000,
+                "url" => "https://tokopedia.link/x1YRSupOiwb",
+                "image" => "Avexir DDR4 Budget 2400MHZ 8GB.jpg",
+                "type" => "DDR4-2400",
+                "count" => 1,
+                "capacityPerPiece" => 8
             ]
         ];
 

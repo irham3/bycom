@@ -20,7 +20,7 @@ class CpuSocketSeeder extends Seeder
                 // cpuSocketId = 1
                 // Processor FX Series
                 "socketName" => "AM3+",
-                "introductionYear" => "Maret 2012",
+                "introductionYear" => "2012-03",
                 "cpuVendor" => "AMD"
             ],
 
@@ -28,7 +28,7 @@ class CpuSocketSeeder extends Seeder
                 // cpuSocketId = 2
                 // Ryzen Gen 1 - Gen 5
                 "socketName" => "AM4",
-                "introductionYear" => "September 2016",
+                "introductionYear" => "2016-10",
                 "cpuVendor" => "AMD"
             ],
 
@@ -36,7 +36,7 @@ class CpuSocketSeeder extends Seeder
                 // cpuSocketId = 3
                 // Ryzen Gen 7 keatas, (Gen 6 belum ada buat Desktop)
                 "socketName" => "AM5",
-                "introductionYear" => "September 2022",
+                "introductionYear" => "2022-10",
                 "cpuVendor" => "AMD"
             ],
 
@@ -44,7 +44,7 @@ class CpuSocketSeeder extends Seeder
                 // cpuSocketId = 4
                 //Buat processor Skylake (Gen 6) & Kaby Lake (Gen 7) 
                 "socketName" => "LGA 1151", 
-                "introductionYear" => "Agustus 2015",
+                "introductionYear" => "2015-08",
                 "cpuVendor" => "Intel"
             ],
 
@@ -52,7 +52,7 @@ class CpuSocketSeeder extends Seeder
                 // cpuSocketId = 5
                 //  Kabby Lake Refresh (Gen 8) & Coffe Lake (Gen 9)
                 "socketName" => "LGA 1151 v2", 
-                "introductionYear" => "Agustus 2017",
+                "introductionYear" => "2017-08",
                 "cpuVendor" => "Intel"
             ],
 
@@ -60,7 +60,7 @@ class CpuSocketSeeder extends Seeder
                 // cpuSocketId = 6
                 // Buat Processor Gen 10 & Gen 11
                 "socketName" => "LGA 1200",
-                "introductionYear" => "April 2020",
+                "introductionYear" => "2020-04",
                 "cpuVendor" => "Intel"
             ], 
 
@@ -68,7 +68,7 @@ class CpuSocketSeeder extends Seeder
                 // cpuSocketId = 7
                 // Buat Processor Gen 12 & Gen 13
                 "socketName" => "LGA 1700",
-                "introductionYear" => "November 2021",
+                "introductionYear" => "2021-11",
                 "cpuVendor" => "Intel"
             ]
         ];
