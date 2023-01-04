@@ -134,6 +134,66 @@ class GpuSeeder extends Seeder
                 "tdp" => 120,
                 "boostClock" => "1785 Mhz",
                 "length" => 228
+            ],
+
+            [
+                "name" => "Asus GeForce GTX 1050 Ti 4GB DDR5",
+                "price" => 2978000,
+                "url" => "https://tokopedia.link/5ruzWm19iwb",
+                "image" => "Asus GeForce GTX 1050 Ti 4GB DDR5.png",
+                "license" => "Nvidia",
+                "memorySize" => "4GB",
+                "tdp" => 75,
+                "boostClock" => "1455 MHz",
+                "length" => 203
+            ],
+
+            [
+                "name" => "MSI GeForce GT 1030 AERO ITX 2GD4 OC",
+                "price" => 1539000,
+                "url" => "https://tokopedia.link/KTLndHlajwb",
+                "image" => "MSI GeForce GT 1030 AERO ITX 2GD4 OC.png",
+                "license" => "Nvidia",
+                "memorySize" => "2GB",
+                "tdp" => 20,
+                "boostClock" => "1430 MHz",
+                "length" => 147
+            ],
+
+            [
+                "name" => "Biostar Radeon RX 550 4GB DDR5",
+                "price" => 1708000,
+                "url" => "https://tokopedia.link/sRsvMiuajwb",
+                "image" => "Biostar Radeon RX 550 4GB DDR5.jpg",
+                "license" => "AMD",
+                "memorySize" => "4GB",
+                "tdp" => 60,
+                "boostClock" => "1183 MHz",
+                "length" => 171
+            ],
+
+            [
+                "name" => "Biostar Radeon RX 560 4GB DDR5",
+                "price" => 2127000,
+                "url" => "https://tokopedia.link/nICE7sUajwb",
+                "image" => "Biostar Radeon RX 560 4GB DDR5.jpg",
+                "license" => "AMD",
+                "memorySize" => "4GB",
+                "tdp" => 75,
+                "boostClock" => "1275 MHz",
+                "length" => 170 //info soal length gpu ini gajelas di web resminya gaada, di google masih simpang siur
+            ],
+
+            [
+                "name" => "MSI GTX 1060 Gaming X 6GB",
+                "price" => 2150000,
+                "url" => "https://tokopedia.link/7O7huZnbjwb",
+                "image" => "MSI GTX 1060 Gaming X 6GB.png",
+                "license" => "Nvidia",
+                "memorySize" => "6GB",
+                "tdp" => 120,
+                "boostClock" => "1784 MHz",
+                "length" => 277
             ]
         ];
 

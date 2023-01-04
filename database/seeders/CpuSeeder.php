@@ -145,8 +145,73 @@ class CpuSeeder extends Seeder
                 "boostClock" => "4.2 GHz",
                 "tdp" => 65,
                 "integratedGraphic" => ""
-            ]
+            ],
 
+            [
+                "name" => "Intel Core i3-10105F",
+                "price" => 1129000,
+                "url" => "https://tokopedia.link/PEJLQMfSiwb",
+                "image" => "Intel Core i3-10105F.jpg",
+                "cpuSocketId" => 6,
+                "coreCount" => 4,
+                "coreClock" => "3.70 GHz",
+                "boostClock" => "4.40 GHz",
+                "tdp" => 65,
+                "integratedGraphic" => ""
+            ],
+
+            [
+                "name" => "Intel Core i3 12100F",
+                "price" => 1673000,
+                "url" => "https://tokopedia.link/oclcCauSiwb",
+                "image" => "Intel Core i3 12100F.jpg",
+                "cpuSocketId" => 7,
+                "coreCount" => 4,
+                "coreClock" => "3.30 GHz",
+                "boostClock" => "4.30 GHz",
+                "tdp" => 89,
+                "integratedGraphic" => ""
+            ],
+
+            [
+                "name" => "Intel Core i3 13100",
+                "price" => 2520000,
+                "url" => "https://tokopedia.link/SZkUlIhUiwb",
+                "image" => "Intel Core i3 13100.png",
+                "cpuSocketId" => 7,
+                "coreCount" => 4,
+                "coreClock" => "3.40 GHz",
+                "boostClock" => "4.50 GHz",
+                "tdp" => 89,
+                "integratedGraphic" => "Intel UHD Graphics 730"
+            ],
+
+            [
+                "name" => "AMD Ryzen 3 3200G",
+                "price" => 1489000,
+                "url" => "https://tokopedia.link/vu19wwEUiwb",
+                "image" => "AMD Ryzen 3 3200G.jpg",
+                "cpuSocketId" => 2,
+                "coreCount" => 4,
+                "coreClock" => "3.6 GHz",
+                "boostClock" => "4.0 GHz",
+                "tdp" => 65,
+                "integratedGraphic" => "Radeon Vega 8"
+            ], 
+
+            [
+                "name" => "AMD Ryzen 3 4100",
+                "price" => 1135000,
+                "url" => "https://tokopedia.link/fxnVcLiViwb",
+                "image" => "AMD Ryzen 3 4100.jpg",
+                "cpuSocketId" => 2,
+                "coreCount" => 4,
+                "coreClock" => "3.8 GHz",
+                "boostClock" => "4.0 GHz",
+                "tdp" => 65,
+                "integratedGraphic" => ""
+            ]
+            
         ];
 
         Cpu::insert($data);

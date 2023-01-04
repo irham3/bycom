@@ -104,6 +104,51 @@ class PcCaseSeeder extends Seeder
                 "image" => "Raptor Black Strike 1660 ATX.png",
                 "type" => "Mid Tower",
                 "hddSlot" => 4
+            ],
+
+            [
+                "name" => "Paradox Gaming Case Ignis",
+                "price" => 341000,
+                "url" => "https://tokopedia.link/APFqQAPhjwb",
+                "image" => "Paradox Gaming Case Ignis.jpg",
+                "type" => "Mid Tower",
+                "hddSlot" => 5
+            ],
+
+            [
+                "name" => "Simbadda BattleGround 20",
+                "price" => 316000,
+                "url" => "https://tokopedia.link/JUg9Eb2hjwb",
+                "image" => "Simbadda BattleGround 20.jpg",
+                "type" => "Mid Tower",
+                "hddSlot" => 3
+            ],
+
+            [
+                "name" => "Fractal Pop Mini Air RGB Black TG Clear Tint",
+                "price" => 1080000,
+                "url" => "https://tokopedia.link/6uUzdDhijwb",
+                "image" => "Fractal Pop Mini Air RGB Black TG Clear Tint.jpg",
+                "type" => "Mini Tower",
+                "hddSlot" => 4
+            ],
+
+            [
+                "name" => "LIAN LI O11 DYNAMIC MINI BLACK",
+                "price" => 1890000,
+                "url" => "https://tokopedia.link/aCQVlSqijwb",
+                "image" => "LIAN LI O11 DYNAMIC MINI BLACK.jpg",
+                "type" => "Mini Tower",
+                "hddSlot" => 4
+            ],
+
+            [
+                "name" => "Fractal Meshify 2 Mini White TG Clear Tint",
+                "price" => 1846000,
+                "url" => "https://tokopedia.link/oP1HC1yijwbs",
+                "image" => "Fractal Meshify 2 Mini White TG Clear Tint.jpg",
+                "type" => "Mini Tower",
+                "hddSlot" => 4
             ]
         ];
 

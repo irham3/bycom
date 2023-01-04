@@ -125,6 +125,61 @@ class MotherboardSeeder extends Seeder
                 "memoryMaxGB" => 32,
                 "memorySlot" => 2
             ],
+
+            [
+                "name" => "ASRock H510M-HVS R2.0",
+                "price" => 1040000,
+                "url" => "https://tokopedia.link/ffp8jM8Viwb",
+                "image" => "ASRock H510M-HVS R2.0.png",
+                "cpuSocketId" => 6,
+                "formFactor" => "Micro ATX",
+                "memoryMaxGB" => 64,
+                "memorySlot" => 2
+            ],
+
+            [
+                "name" => "Biostar H610MH",
+                "price" => 1295000,
+                "url" => "https://tokopedia.link/htLm9BqWiwb",
+                "image" => "Biostar H610MH.png",
+                "cpuSocketId" => 7,
+                "formFactor" => "Micro ATX",
+                "memoryMaxGB" => 64,
+                "memorySlot" => 2
+            ],
+
+            [
+                "name" => "MSI MAG B660M Bazooka DDR4",
+                "price" => 2857000,
+                "url" => "https://tokopedia.link/iIdkQ8Sljwb",
+                "image" => "MSI MAG B660M Bazooka DDR4.png",
+                "cpuSocketId" => 7,
+                "formFactor" => "Micro ATX",
+                "memoryMaxGB" => 128,
+                "memorySlot" => 4
+            ],
+
+            [
+                "name" => "ASRock A520M-HVS",
+                "price" => 984000,
+                "url" => "https://tokopedia.link/uuN1FTOWiwb",
+                "image" => "ASRock A520M-HVS.png",
+                "cpuSocketId" => 2,
+                "formFactor" => "Micro ATX",
+                "memoryMaxGB" => 64,
+                "memorySlot" => 2
+            ],
+
+            [
+                "name" => "ASRock B550M PG Riptide",
+                "price" => 1892000,
+                "url" => "https://tokopedia.link/clyxXU7Wiwb",
+                "image" => "ASRock B550M PG Riptide.png",
+                "cpuSocketId" => 2,
+                "formFactor" => "Micro ATX",
+                "memoryMaxGB" => 128,
+                "memorySlot" => 4
+            ]
         ];
 
         Motherboard::insert($data);
