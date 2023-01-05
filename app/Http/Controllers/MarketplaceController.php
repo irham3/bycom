@@ -65,43 +65,25 @@ class MarketplaceController extends Controller
         }
         $data->pcComponents = $pcComponents;
 
-        return view('marketplace.category', compact('data'));
+        return view('marketplace.category', compact('data','table'));
     }
 
     public function detailComponent($table, $id)
     {
-        $detailComponent = new stdClass();
-        switch ($table) {
-            case "cpus":
-                $specificDetail = Cpu::where('id', $id)->select('cpuSocketId', 'coreCount', 'coreClock', 'boostClock', 'tdp', 'integratedGraphic');
-              break;
-            case "motherboards":
-
-              break;
-            case "gpus":
-
-              break;
-            case "internal_storages":
-
-              break;
-            case "memories":
-
-              break;
-            case "power_supplies":
-
-              break;
-            case "cases":
-
-              break;
-            default:
-            return redirect()->route('marketplace');
-          }
-          $generalDetail = DB::table($table)->select('name','price','url', 'image')->where('id', $id)->get();
-          $detailComponent->general = $generalDetail;
-          $detailComponent->specific = $specificDetail;
-          dd($detailComponent);
+        $imageFolder = match($table) {
+          'cpus' => 'cpu',
+          'gpus' => 'gpu',
+          'motherboards' => 'motherboard',
+          'cases' => 'case',
+          'internal_storages' => 'internal-storage',
+          'memories' => 'memory',
+          'power_supplies' => 'psu',
+          default => '',
+        };
+        $detailComponent = DB::table($table)->select('name','price','url', 'image', 'description')->where('id', $id)->get()[0];
+        $detailComponent->price = parent::rupiah($detailComponent->price);
 
         // dd($columnNames);
-        // return view('marketplace.detail-component', compact('detailComponent'));
+        return view('marketplace.detail-component', compact('detailComponent', 'imageFolder'));
     }
 }

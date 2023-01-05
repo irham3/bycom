@@ -599,16 +599,4 @@
 
     <!-- product section ends -->
 
-    <!-- contact section starts -->
-
-    <section class="contact">
-
-    <form action="">
-        <h3>Tetap bersama EZPC</h3>
-        <p>Subscribe untuk mendapatkan informasi <br> terbaru dari kami</p>
-        <input type="email" name="" placeholder="Masukan Email Mu" id="" class="box">
-        <input type="submit" value="kirim" class="btn beranda">
-    </form>
-
-    </section>
 @endsection

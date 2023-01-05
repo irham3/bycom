@@ -16,11 +16,12 @@
           </div>
           <div class="card-content d-flex justify-content-evenly pt-3" style="padding-left: 30px;">
             @foreach ($data->cases as $dataComponent)
-            <div class="card">
+            <div class="card position-relative">
                 <center><img src="{{ asset('storage/images/pc-components/case/'. $dataComponent->image) }}" class="card-img-top" alt="case"></center>
                 <div class="card-body mt-3">
                     <h5 class="card-title">{{ $dataComponent->name }}</h5>
                     <p class="card-text">{{ $dataComponent->price }}</p>
+                    <a href="{{ url('marketplace/cases/'.$dataComponent->id) }}" class="btn ">Lihat Detail</a>
                 </div>
             </div>
             @endforeach
@@ -39,6 +40,7 @@
                 <div class="card-body mt-3">
                     <h5 class="card-title">{{ $dataComponent->name }}</h5>
                     <p class="card-text">{{ $dataComponent->price }}</p>
+                    <a href="{{ url('marketplace/motherboards/'.$dataComponent->id) }}" class="btn ">Lihat Detail</a>
                 </div>
             </div>
             @endforeach
@@ -57,6 +59,7 @@
                 <div class="card-body mt-3">
                     <h5 class="card-title">{{ $dataComponent->name }}</h5>
                     <p class="card-text">{{ $dataComponent->price }}</p>
+                    <a href="{{ url('marketplace/cpus/'.$dataComponent->id) }}" class="btn ">Lihat Detail</a>
                 </div>
             </div>
             @endforeach
@@ -74,6 +77,7 @@
                 <div class="card-body mt-3">
                     <h5 class="card-title">{{ $dataComponent->name }}</h5>
                     <p class="card-text">{{ $dataComponent->price }}</p>
+                    <a href="{{ url('marketplace/gpus/'.$dataComponent->id) }}" class="btn ">Lihat Detail</a>
                 </div>
             </div>
             @endforeach
@@ -91,6 +95,7 @@
                 <div class="card-body mt-3">
                     <h5 class="card-title">{{ $dataComponent->name }}</h5>
                     <p class="card-text">{{ $dataComponent->price }}</p>
+                    <a href="{{ url('marketplace/memories/'.$dataComponent->id) }}" class="btn ">Lihat Detail</a>
                 </div>
             </div>
             @endforeach
@@ -108,6 +113,7 @@
                 <div class="card-body mt-3">
                     <h5 class="card-title">{{ $dataComponent->name }}</h5>
                     <p class="card-text">{{ $dataComponent->price }}</p>
+                    <a href="{{ url('marketplace/power_supplies/'.$dataComponent->id) }}" class="btn ">Lihat Detail</a>
                 </div>
             </div>
             @endforeach
@@ -125,6 +131,7 @@
                 <div class="card-body mt-3">
                     <h5 class="card-title">{{ $dataComponent->name }}</h5>
                     <p class="card-text">{{ $dataComponent->price }}</p>
+                    <a href="{{ url('marketplace/internal_storages/'.$dataComponent->id) }}" class="btn ">Lihat Detail</a>
                 </div>
             </div>
             @endforeach

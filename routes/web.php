@@ -20,6 +20,10 @@ Route::get('/', function () {
 })->name('beranda');
 
 Route::get('/simulasi-rakit-pc', [SimulatorController::class, 'index'])->name('simulasi');
+Route::post('/simulasi-rakit-pc/{key}', [SimulatorController::class, 'deleteSelectedItem'])->name('hapusItemSimulasi');
+Route::get('/simulasi-rakit-pc/addComponent/{table}', [SimulatorController::class, 'addComponent']);
+Route::post('/simulasi-rakit-pc/addComponent/{table}/{id}', [SimulatorController::class, 'addComponentItem']);
+
 Route::get('/marketplace', [MarketplaceController::class, 'index'])->name('marketplace');
 Route::get('/marketplace/{table}', [MarketplaceController::class, 'category']);
 Route::get('/marketplace/{table}/{id}', [MarketplaceController::class, 'detailComponent']);

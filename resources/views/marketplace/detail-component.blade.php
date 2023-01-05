@@ -1,96 +1,32 @@
 @extends('layouts.app')
 
 @section('main-content')
-<div class="section-title komponen container mt-5">
-  <h3 class="pt-3 pb-3">DETAIL {NAMA RAKITAN}</h3>
+<div class="section-title container mt-5" style="border-bottom: 1px solid #000000;">
+    <h3 class="pt-3 pb-3">{{ $detailComponent->name }}</h3>
 </div>
 
 <section class="container d-flex justify-content-between mt-5 mb-5">
-  <table class="table">
-      <thead>
-          <tr class="heading-table">
-              <th scope="col">Kategori Komponen</th>
-              <th scope="col">Nama Komponen</th>
-              <th scope="col">Harga</th>
-              <th scope="col">E-commerce</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-              <th class="py-4 category">CPU Cooler</th>
-              <td>
-                  <div class="d-flex align-items-center komponen">
-                      <div class="flex-shrink-0">
-                          <img src="assets/image/keranjang/contoh.png" alt="...">
-                      </div>
-                      <div class="nama-komponen">
-                          Thermalright Peerless Assassin 66.17 CFM CPU Cooler
-                      </div>
-                  </div>
-              </td>
-              <td class="py-4">$41.30</td>
-              <td class="py-4"><img src="assets/image/keranjang/logo-tokped.png" alt=""></td>
-          </tr>
-          <tr>
-              <th class="py-4 category">CPU Cooler</th>
-              <td>
-                  <div class="d-flex align-items-center komponen">
-                      <div class="flex-shrink-0">
-                          <img src="assets/image/keranjang/contoh.png" alt="...">
-                      </div>
-                      <div class="nama-komponen">
-                          Thermalright Peerless Assassin 66.17 CFM CPU Cooler
-                      </div>
-                  </div>
-              </td>
-              <td class="py-4">$41.30</td>
-              <td class="py-4"><img src="assets/image/keranjang/logo-tokped.png" alt=""></td>
-          </tr>
-          <tr>
-              <th class="py-4 category">CPU Cooler</th>
-              <td>
-                  <div class="d-flex align-items-center komponen">
-                      <div class="flex-shrink-0">
-                          <img src="assets/image/keranjang/contoh.png" alt="...">
-                      </div>
-                      <div class="nama-komponen">
-                          Thermalright Peerless Assassin 66.17 CFM CPU Cooler
-                      </div>
-                  </div>
-              </td>
-              <td class="py-4">$41.30</td>
-              <td class="py-4"><img src="assets/image/keranjang/logo-tokped.png" alt=""></td>
-          </tr>
-          <tr>
-              <th class="py-4 category">CPU Cooler</th>
-              <td>
-                  <div class="d-flex align-items-center komponen py-2">
-                      <a class="btn add" href="#" role="button"> + Add Item</a>
-                  </div>
-              </td>
-              <td class="py-4"></td>
-              <td class="py-4"></td>
-          </tr>
-           <tr>
-               <th class="py-4 category">CPU Cooler</th>
-               <td>
-                   <div class="d-flex align-items-center komponen py-2">
-                       <a class="btn add" href="#" role="button"> + Add Item</a>
-                   </div>
-               </td>
-               <td class="py-4"></td>
-               <td class="py-4"></td>
-           </tr>
-      </tbody>
-  </table>
-</section>
+    <div class="gallery">
+        <div class="container-gallery mb-4">
+            <!-- Expanded image -->
+            <img id="expandedImg" style="width: 200px" src="{{ asset('storage/images/pc-components/'.$imageFolder .'/' .$detailComponent->image) }}">
+        </div>
+    </div>
+    <div class="detail-content container ms-3">
+        <div class="container bg-blur mb-3 pt-3 pb-2">
+            <div class="d-flex justify-content-between">
+                <h5>Harga</h5>
+                <p><b>{{ $detailComponent->price }}</b></p>
+            </div>
+        </div>
+        <div class="container bg-blur mt-3 mb-3 pt-3 pb-2">
+           <pre>{{ $detailComponent->description }}</pre> 
+        </div>
 
-<div class="container">
-  <div class="d-flex justify-content-end">
-      <h3>Total : </h3>
-      <h3 class="ms-3"><b>Rp 25.000.000</b></h3>
-  </div>
-  <div class="pt-1 pb-5" style="text-align: end;"><a class="btn tokopedia" href="#" role="button">Beli di
-          Tokopedia</a></div>
-</div>
+        <div class="d-flex justify-content-end btn-grup pt-2">
+            {{-- <a class="btn" href="#" role="button">Masukkan Keranjang</a> --}}
+            <a class="btn tokopedia" href="{{ $detailComponent->url }}" target="_blank" role="button">Beli di Tokopedia</a>
+        </div>
+    </div>
+</section>
 @endsection

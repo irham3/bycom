@@ -27,6 +27,20 @@
     transition:all .2s linear;
 }
 
+pre {
+    font-size: 16px;   
+    font-family: var(--body-font);
+    text-align: justify;
+    color: #000;
+    margin-top: 2em;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+  }
+
 a{
     text-decoration: none;
 }
