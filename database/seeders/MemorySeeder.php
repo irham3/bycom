@@ -31,7 +31,7 @@ class MemorySeeder extends Seeder
                 "price" => 4382000,
                 "url" => "https://tokopedia.link/bBHFoXc2cwb",
                 "image" => "Team Elite Plus Black DDR5 PC38400 64GB.jpg",
-                "type" => "DDR5-5200",
+                "type" => "DDR5-4800",
                 "count" => 2,
                 "capacityPerPiece" => 32
             ],
