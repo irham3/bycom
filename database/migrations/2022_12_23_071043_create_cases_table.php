@@ -21,9 +21,7 @@ return new class extends Migration
             $table->string('image')->default('placeholder.png');
             $table->string('type');
             $table->tinyInteger('hddSlot');
-            $table->mediumText('description')->nullable();          
-            $table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
-            $table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
+            $table->mediumText('description')->nullable();         
         });
     }
 

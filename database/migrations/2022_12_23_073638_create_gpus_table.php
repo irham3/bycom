@@ -25,8 +25,6 @@ return new class extends Migration
             $table->string('boostClock');
             $table->integer('length');
             $table->mediumText('description')->nullable();          
-            $table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
-            $table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
         });
     }
 

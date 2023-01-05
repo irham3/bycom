@@ -24,8 +24,6 @@ return new class extends Migration
             $table->integer('wattage');
             $table->string('modular');
             $table->mediumText('description')->nullable();          
-            $table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
-            $table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
         });
     }
 

@@ -25,8 +25,6 @@ return new class extends Migration
             $table->integer('memoryMaxGB');
             $table->integer('memorySlot');
             $table->mediumText('description')->nullable();          
-            $table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
-            $table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
         });
     }
 
