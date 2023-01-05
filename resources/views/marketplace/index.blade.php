@@ -12,239 +12,123 @@
       <div class="pt-5 pb-5" id="casing-pc">
           <div class="container d-flex justify-content-between">
           <h3>Casing PC</h3>
-          <a class="btn" href="view-all.html" role="button">Lihat Lainnya</a>
+          <a class="btn" href="{{ url('marketplace/cases') }}" role="button">Lihat Lainnya</a>
           </div>
           <div class="card-content d-flex justify-content-evenly pt-3" style="padding-left: 30px;">
-              <div class="card">
-                  <center><img src="images/marketplace/case.png" class="card-img-top" alt="..."></center>
-                  <div class="card-body mt-3">
-                      <h5 class="card-title">Cube Gaming Bruks White - ATX</h5>
-                      <p class="card-text">Rp 420.000</p>
-                  </div>
-              </div>
-              <div class="card">
-                  <center><img src="images/marketplace/case-2.png" class="card-img-top" alt="..."></center>
-                  <div class="card-body mt-3">
-                      <h5 class="card-title">Aerocool Casing Carbonite</h5>
-                      <p class="card-text">Rp 350.000</p>
-                  </div>
-              </div>
-              <div class="card">
-                  <center><img src="images/marketplace/case-3.png" class="card-img-top" alt="..."></center>
-                  <div class="card-body mt-3">
-                      <h5 class="card-title">MSI MPG QUIETUDE 100S</h5>
-                      <p class="card-text">Rp 1.975.000</p>
-                  </div>
-              </div>
-              <div class="card">
-                  <center><img src="images/marketplace/case-3.png" class="card-img-top" alt="..."></center>
-                  <div class="card-body mt-3">
-                      <h5 class="card-title">MSI MPG QUIETUDE 100S</h5>
-                      <p class="card-text">Rp 1.975.000</p>
-                  </div>
-              </div>
+            @foreach ($data->cases as $dataComponent)
+            <div class="card">
+                <center><img src="{{ asset('storage/images/pc-components/case/'. $dataComponent->image) }}" class="card-img-top" alt="case"></center>
+                <div class="card-body mt-3">
+                    <h5 class="card-title">{{ $dataComponent->name }}</h5>
+                    <p class="card-text">{{ $dataComponent->price }}</p>
+                </div>
+            </div>
+            @endforeach
           </div>
       </div>
 
       <div class="pt-5 pb-5" id="motherboard">
-      <div class="container d-flex justify-content-between">
-          <h3>Motherboard</h3>
-          <a class="btn" href="#" role="button">Lihat Lainnya</a>
-      </div>
-      <div class="card-content d-flex justify-content-evenly pt-3" style="padding-left: 30px;">
-          <div class="card">
-              <center><img src="images/marketplace/motherboard.png" class="card-img-top" alt="..."></center>
-              <div class="card-body mt-3">
-                  <h5 class="card-title">Cube Gaming Bruks White - ATX</h5>
-                  <p class="card-text">Rp 420.000</p>
-              </div>
-          </div>
-          <div class="card">
-              <center><img src="images/marketplace/motherboard-2.png" class="card-img-top" alt="...">
-              </center>
-              <div class="card-body mt-3">
-                  <h5 class="card-title">Aerocool Casing Carbonite</h5>
-                  <p class="card-text">Rp 350.000</p>
-              </div>
-          </div>
-          <div class="card">
-              <center><img src="images/marketplace/motherboard-3.png" class="card-img-top" alt="...">
-              </center>
-              <div class="card-body mt-3">
-                  <h5 class="card-title">MSI MPG QUIETUDE 100S</h5>
-                  <p class="card-text">Rp 1.975.000</p>
-              </div>
-          </div>
-          <div class="card">
-              <center><img src="images/marketplace/motherboard-3.png" class="card-img-top" alt="...">
-              </center>
-              <div class="card-body mt-3">
-                  <h5 class="card-title">MSI MPG QUIETUDE 100S</h5>
-                  <p class="card-text">Rp 1.975.000</p>
-              </div>
-          </div>
-      </div>
+        <div class="container d-flex justify-content-between">
+            <h3>Motherboard</h3>
+            <a class="btn" href="{{ url('marketplace/motherboards') }}" role="button">Lihat Lainnya</a>
+        </div>
+        <div class="card-content d-flex justify-content-evenly pt-3" style="padding-left: 30px;">
+            @foreach ($data->motherboards as $dataComponent)
+            <div class="card">
+                <center><img src="{{ asset('storage/images/pc-components/motherboard/'. $dataComponent->image) }}" class="card-img-top" alt="motherboard"></center>
+                <div class="card-body mt-3">
+                    <h5 class="card-title">{{ $dataComponent->name }}</h5>
+                    <p class="card-text">{{ $dataComponent->price }}</p>
+                </div>
+            </div>
+            @endforeach
+        </div>
       </div>
 
       <div class="pt-5 pb-5" id="cpu">
-      <div class="container d-flex justify-content-between">
-          <h3>CPU</h3>
-          <a class="btn" href="#" role="button">Lihat Lainnya</a>
-      </div>
-      <div class="card-content d-flex justify-content-evenly pt-3" style="padding-left: 30px;">
-          <div class="card">
-              <center><img src="images/marketplace/cpu.png" class="card-img-top" alt="...">
-              </center>
-              <div class="card-body mt-3">
-                  <h5 class="card-title">Cube Gaming Bruks White - ATX</h5>
-                  <p class="card-text">Rp 420.000</p>
-              </div>
-          </div>
-          <div class="card">
-              <center><img src="images/marketplace/cpu-2.png" class="card-img-top" alt="...">
-              </center>
-              <div class="card-body mt-3">
-                  <h5 class="card-title">Aerocool Casing Carbonite</h5>
-                  <p class="card-text">Rp 350.000</p>
-              </div>
-          </div>
-          <div class="card">
-              <center><img src="images/marketplace/cpu-3.png" class="card-img-top" alt="...">
-              </center>
-              <div class="card-body mt-3">
-                  <h5 class="card-title">MSI MPG QUIETUDE 100S</h5>
-                  <p class="card-text">Rp 1.975.000</p>
-              </div>
-          </div>
-          <div class="card">
-              <center><img src="images/marketplace/cpu-3.png" class="card-img-top" alt="...">
-              </center>
-              <div class="card-body mt-3">
-                  <h5 class="card-title">MSI MPG QUIETUDE 100S</h5>
-                  <p class="card-text">Rp 1.975.000</p>
-              </div>
-          </div>
-      </div>
+        <div class="container d-flex justify-content-between">
+            <h3>CPU</h3>
+            <a class="btn" href="{{ url('marketplace/cpus') }}" role="button">Lihat Lainnya</a>
+        </div>
+        <div class="card-content d-flex justify-content-evenly pt-3" style="padding-left: 30px;">
+            @foreach ($data->cpus as $dataComponent)
+            <div class="card">
+                <center><img src="{{ asset('storage/images/pc-components/cpu/'. $dataComponent->image) }}" class="card-img-top" alt="cpu"></center>
+                <div class="card-body mt-3">
+                    <h5 class="card-title">{{ $dataComponent->name }}</h5>
+                    <p class="card-text">{{ $dataComponent->price }}</p>
+                </div>
+            </div>
+            @endforeach
+        </div>
       </div>
       <div class="pt-5 pb-5" id="gpu">
           <div class="container d-flex justify-content-between">
               <h3>GPU</h3>
-              <a class="btn" href="#" role="button">Lihat Lainnya</a>
+              <a class="btn" href="{{ url('marketplace/gpus') }}" role="button">Lihat Lainnya</a>
           </div>
           <div class="card-content d-flex justify-content-evenly pt-3" style="padding-left: 30px;">
-              <div class="card">
-                  <center><img src="images/marketplace/gpu.png" class="card-img-top" alt="...">
-                  </center>
-                  <div class="card-body mt-3">
-                      <h5 class="card-title">Cube Gaming Bruks White - ATX</h5>
-                      <p class="card-text">Rp 420.000</p>
-                  </div>
-              </div>
-              <div class="card">
-                  <center><img src="images/marketplace/gpu-2.png" class="card-img-top" alt="...">
-                  </center>
-                  <div class="card-body mt-3">
-                      <h5 class="card-title">Aerocool Casing Carbonite</h5>
-                      <p class="card-text">Rp 350.000</p>
-                  </div>
-              </div>
-              <div class="card">
-                  <center><img src="images/marketplace/gpu-3.png" class="card-img-top" alt="...">
-                  </center>
-                  <div class="card-body mt-3">
-                      <h5 class="card-title">MSI MPG QUIETUDE 100S</h5>
-                      <p class="card-text">Rp 1.975.000</p>
-                  </div>
-              </div>
-              <div class="card">
-                  <center><img src="images/marketplace/gpu-3.png" class="card-img-top" alt="...">
-                  </center>
-                  <div class="card-body mt-3">
-                      <h5 class="card-title">MSI MPG QUIETUDE 100S</h5>
-                      <p class="card-text">Rp 1.975.000</p>
-                  </div>
-              </div>
+            @foreach ($data->gpus as $dataComponent)
+            <div class="card">
+                <center><img src="{{ asset('storage/images/pc-components/gpu/'. $dataComponent->image) }}" class="card-img-top" alt="gpu"></center>
+                <div class="card-body mt-3">
+                    <h5 class="card-title">{{ $dataComponent->name }}</h5>
+                    <p class="card-text">{{ $dataComponent->price }}</p>
+                </div>
+            </div>
+            @endforeach
           </div>
       </div>
       <div class="pt-5 pb-5" id="ram">
-      <div class="container d-flex justify-content-between">
-          <h3>RAM</h3>
-          <a class="btn" href="#" role="button">Lihat Lainnya</a>
-      </div>
-      <div class="card-content d-flex justify-content-evenly pt-3" style="padding-left: 30px;">
-          <div class="card">
-              <center><img src="images/marketplace/ram.png" class="card-img-top" alt="...">
-              </center>
-              <div class="card-body mt-3">
-                  <h5 class="card-title">Cube Gaming Bruks White - ATX</h5>
-                  <p class="card-text">Rp 420.000</p>
-              </div>
-          </div>
-          <div class="card">
-              <center><img src="images/marketplace/ram-2.png" class="card-img-top" alt="...">
-              </center>
-              <div class="card-body mt-3">
-                  <h5 class="card-title">Aerocool Casing Carbonite</h5>
-                  <p class="card-text">Rp 350.000</p>
-              </div>
-          </div>
-          <div class="card">
-              <center><img src="images/marketplace/ram-3.png" class="card-img-top" alt="...">
-              </center>
-              <div class="card-body mt-3">
-                  <h5 class="card-title">MSI MPG QUIETUDE 100S</h5>
-                  <p class="card-text">Rp 1.975.000</p>
-              </div>
-          </div>
-          <div class="card">
-              <center><img src="images/marketplace/ram-3.png" class="card-img-top" alt="...">
-              </center>
-              <div class="card-body mt-3">
-                  <h5 class="card-title">MSI MPG QUIETUDE 100S</h5>
-                  <p class="card-text">Rp 1.975.000</p>
-              </div>
-          </div>
-      </div>
+        <div class="container d-flex justify-content-between">
+            <h3>RAM</h3>
+            <a class="btn" href="{{ url('marketplace/memories') }}" role="button">Lihat Lainnya</a>
+        </div>
+        <div class="card-content d-flex justify-content-evenly pt-3" style="padding-left: 30px;">
+            @foreach ($data->memories as $dataComponent)
+            <div class="card">
+                <center><img src="{{ asset('storage/images/pc-components/memory/'. $dataComponent->image) }}" class="card-img-top" alt="memory"></center>
+                <div class="card-body mt-3">
+                    <h5 class="card-title">{{ $dataComponent->name }}</h5>
+                    <p class="card-text">{{ $dataComponent->price }}</p>
+                </div>
+            </div>
+            @endforeach
+        </div>
       </div>
       <div class="pt-5 pb-5" id="psu">
-      <div class="container d-flex justify-content-between">
-          <h3>PSU</h3>
-          <a class="btn" href="#" role="button">Lihat Lainnya</a>
+        <div class="container d-flex justify-content-between">
+            <h3>PSU</h3>
+            <a class="btn" href="{{ url('marketplace/power_supplies') }}" role="button">Lihat Lainnya</a>
+        </div>
+        <div class="card-content d-flex justify-content-evenly pt-3" style="padding-left: 30px;">
+            @foreach ($data->power_supplies as $dataComponent)
+            <div class="card">
+                <center><img src="{{ asset('storage/images/pc-components/psu/'. $dataComponent->image) }}" class="card-img-top" alt="power-supply"></center>
+                <div class="card-body mt-3">
+                    <h5 class="card-title">{{ $dataComponent->name }}</h5>
+                    <p class="card-text">{{ $dataComponent->price }}</p>
+                </div>
+            </div>
+            @endforeach
+        </div>
       </div>
-      <div class="card-content d-flex justify-content-evenly pt-3" style="padding-left: 30px;">
-          <div class="card">
-              <center><img src="images/marketplace/psu.png" class="card-img-top" alt="...">
-              </center>
-              <div class="card-body mt-3">
-                  <h5 class="card-title">Cube Gaming Bruks White - ATX</h5>
-                  <p class="card-text">Rp 420.000</p>
-              </div>
-          </div>
-          <div class="card">
-              <center><img src="images/marketplace/psu-2.png" class="card-img-top" alt="...">
-              </center>
-              <div class="card-body mt-3">
-                  <h5 class="card-title">Aerocool Casing Carbonite</h5>
-                  <p class="card-text">Rp 350.000</p>
-              </div>
-          </div>
-          <div class="card">
-              <center><img src="images/marketplace/psu-3.png" class="card-img-top" alt="...">
-              </center>
-              <div class="card-body mt-3">
-                  <h5 class="card-title">MSI MPG QUIETUDE 100S</h5>
-                  <p class="card-text">Rp 1.975.000</p>
-              </div>
-          </div>
-          <div class="card">
-              <center><img src="images/marketplace/psu-3.png" class="card-img-top" alt="...">
-              </center>
-              <div class="card-body mt-3">
-                  <h5 class="card-title">MSI MPG QUIETUDE 100S</h5>
-                  <p class="card-text">Rp 1.975.000</p>
-              </div>
-          </div>
-      </div>
+      <div class="pt-5 pb-5" id="internal-storage">
+        <div class="container d-flex justify-content-between">
+            <h3>Internal Storage</h3>
+            <a class="btn" href="{{ url('marketplace/internal_storages') }}" role="button">Lihat Lainnya</a>
+        </div>
+        <div class="card-content d-flex justify-content-evenly pt-3" style="padding-left: 30px;">
+            @foreach ($data->internal_storages as $dataComponent)
+            <div class="card">
+                <center><img src="{{ asset('storage/images/pc-components/internal-storage/'. $dataComponent->image) }}" class="card-img-top" alt="power-supply"></center>
+                <div class="card-body mt-3">
+                    <h5 class="card-title">{{ $dataComponent->name }}</h5>
+                    <p class="card-text">{{ $dataComponent->price }}</p>
+                </div>
+            </div>
+            @endforeach
+        </div>
       </div>
   </div>
 </section>

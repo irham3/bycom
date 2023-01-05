@@ -33,9 +33,9 @@
         </ul>
       </div>
     </li>
-
+    
     <li class="nav-item">
-      <a class="nav-link" href="{{ url('admin/pc-builds') }}">
+      <a class="nav-link" href="{{ url('admin/full-pc-build') }}">
         <i class="ti-package menu-icon"></i>
         <span class="menu-title">Full PC Builds</span>
       </a>

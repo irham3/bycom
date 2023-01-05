@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AdminCpuController;
 use App\Http\Controllers\Admin\AdminGpuController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminCpuSocketController;
+use App\Http\Controllers\Admin\AdminPcBuildController;
 use App\Http\Controllers\Admin\AdminInternalStorageController;
 use App\Http\Controllers\Admin\AdminMemoryController;
 use App\Http\Controllers\Admin\AdminMotherboardController;
@@ -65,5 +66,12 @@ Route::prefix('/admin')->group(function() {
       Route::get('memory/getAllData', [AdminMemoryController::class,
       'getAllData']);
       Route::resource('memory', AdminMemoryController::class);
+
+      // Admin Memory Route
+      Route::get('full-pc-build/detail/getAllDetailData', [AdminPcBuildController::class,
+      'getAllDetailData']);
+      Route::get('full-pc-build/getAllData', [AdminPcBuildController::class,
+      'getAllData']);
+      Route::resource('full-pc-build', AdminPcBuildController::class);
   });
 });

@@ -1,63 +1,3 @@
-{{-- <x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
-
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-
-            <!-- Name -->
-            <div>
-                <x-input-label for="name" :value="__('Name')" />
-                <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-                <x-input-error :messages="$errors->get('name')" class="mt-2" />
-            </div>
-
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-input-label for="email" :value="__('Email')" />
-                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-                <x-input-error :messages="$errors->get('email')" class="mt-2" />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-input-label for="password" :value="__('Password')" />
-
-                <x-text-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-
-                <x-input-error :messages="$errors->get('password')" class="mt-2" />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-
-                <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-primary-button class="ml-4">
-                    {{ __('Register') }}
-                </x-primary-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout> --}}
 <!doctype html>
 <html lang="en">
     <head>
@@ -82,10 +22,9 @@
                     <!-- Bagian Kanan -->
                     <div class="col-sm-12 col-md-6 col-lg-6 bagiankanan d-flex align-items-center justify-content-center">
                         <div class="w-50">
+                            <a href="{{ route('beranda') }}">Beranda</a>
                             <h1 class="tulisandaftar mt-5 mb-1">REGISTER</h1>
-                            <h6 class="atau register">Sudah punya akun ?<a href="#"> Login</a></h6>
-                            <br>
-
+                            
                             <!-- Form -->
                             <form class="text-dark" method="POST" action="{{ route('register') }}">
                                 @csrf
@@ -93,39 +32,38 @@
                                 <!--Kolom Nama-->
                                 <div class="mb-2">
                                     <label for="email" class="form-label">Nama Lengkap </label>
-                                    <input placeholder="Nama Lengkap" type="text" class="form-control login" id="nama"
-                                    aria-describedby="form-nama">
+                                    <input placeholder="Nama Lengkap" type="text" class="form-control login" id="nama" name="name"
+                                    aria-describedby="form-nama" required>
                                 </div>
 
                                 <!-- Kolom Email -->
                                 <div class="mb-2">
                                     <label for="email" class="form-label">Email </label>
-                                    <input placeholder="Email" type="email" class="form-control login" id="email"
-                                    aria-describedby="form-email">
+                                    <input placeholder="Email" type="email" class="form-control login" id="email" name="email"required>
                                 </div>
 
                                 <!-- Kolom Password -->
                                 <div class="mb-2">
                                     <label for="password" class="form-label">Password</label>
-                                    <input placeholder="Password" type="password" class="form-control login" id="password">
+                                    <input placeholder="Password" type="password" class="form-control login" id="password" name="password" required>
                                 </div>
 
                                 <!-- Kolom Password -->
                                 <div class="mb-2">
                                     <label for="password" class="form-label">Konfirmasi Password</label>
-                                    <input placeholder="Password" type="password" class="form-control login" id="password">
+                                    <input placeholder="Password" type="password" class="form-control login" id="password" name="password_confirmation" required>
                                 </div>
-
                                 <!-- Button Submit Buat Akun -->
                                 <button type="submit" class="btn btn-buatakun w-100 ">Daftar</button>
+                                <h6 class="atau register">Sudah punya akun ?<a href="{{ route('login') }}"> Login</a></h6>
+                            {{-- </form>
                                 <br>
                                 <h6 class="atau text-center">ATAU</h6>
                                 
                                 <!-- Button Link Akun Google -->
                                 <button type="button" class="btn btn-buatakun google w-100 ">
                                     <img src="images/google.svg" alt=""> Google
-                                </button>    
-                            </form>
+                                </button>     --}}
                         </div>
                     </div>
         

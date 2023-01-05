@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Admin;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Models\Cpu;
-use App\Models\CpuSocket;
 use App\Models\Gpu;
-use App\Models\InternalStorage;
-use App\Models\Memory;
-use App\Models\Motherboard;
-use App\Models\PcCase;
-use App\Models\PowerSupply;
 use App\Models\User;
+use App\Models\Admin;
+use App\Models\Memory;
+use App\Models\PcCase;
+use App\Models\PcBuild;
+use App\Models\CpuSocket;
+use App\Models\Motherboard;
+use App\Models\PowerSupply;
+use Illuminate\Http\Request;
+use App\Models\InternalStorage;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
@@ -54,7 +55,7 @@ class AdminController extends Controller
     public function dashboard()
     {
         $userCount = User::all()->count();
-        $cpuSocketCount = CpuSocket::all()->count();
+        $pcBuildCount = PcBuild::all()->count();
         $cpuCount = Cpu::all()->count();
         $moboCount = Motherboard::all()->count();
         $gpuCount = Gpu::all()->count();
@@ -66,7 +67,7 @@ class AdminController extends Controller
 
         $countData = [
             'user' => $userCount,
-            'cpuSocket' => $cpuSocketCount,
+            'pcBuild' => $pcBuildCount,
             'cpu' => $cpuCount,
             'mobo' => $moboCount,
             'gpu' => $gpuCount,

@@ -29,7 +29,7 @@
             </li>
           </ul>
       </div>
-      <div class="filter">
+      {{-- <div class="filter">
           <b>Diurutkan berdasarkan : </b>
           <ul>
               <li class="nav-item">
@@ -92,6 +92,6 @@
                   <label for="habis">Habis</label>
               </li>
           </ul>
-      </div>
+      </div> --}}
   </div>
 </div>

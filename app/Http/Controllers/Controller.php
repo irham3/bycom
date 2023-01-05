@@ -13,6 +13,11 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    protected function rupiah($number)
+    {
+        return 'Rp ' . number_format($number, 0, ',', '.');
+    }
+
     protected function getPcComponentDataTable(Model $pcComponentModel, $pcComponentView)
     {
         $data = $pcComponentModel->select('id','image','name','price','url')->get();

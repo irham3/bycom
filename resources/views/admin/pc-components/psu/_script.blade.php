@@ -74,7 +74,7 @@
         csrf_token = $('meta[name="csrf-token"]').attr('content');
 
     Swal.fire({
-      title: 'Anda yakin ingin menghapus user ini ?',
+      title: 'Anda yakin ingin menghapus data ini ?',
       text: 'Anda tidak bisa mengembalikannya lagi',
       icon: 'warning',
       showCancelButton: true,
