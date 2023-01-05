@@ -257,8 +257,9 @@
             <h3 class="ms-3"><b>{{ $totalPrice }}</b></h3>
         </div>
         <div><a class="btn" href="#" role="button">Simpan</a></div>
-        <div class="pt-1 pb-5" style="text-align: end;"><a class="btn tokopedia" href="#" role="button">Beli di
-                Tokopedia</a></div>
+        <div class="pt-1 pb-5" style="text-align: end;">
+            <a class="btn tokopedia" href="#" role="button" onclick="{{ $multipleUrlsScript }}"
+            >Beli di Tokopedia</a></div>
     </div>
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
 @endsection

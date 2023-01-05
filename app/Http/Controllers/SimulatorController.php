@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use stdClass;
-use App\Models\PcBuild;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -14,18 +13,20 @@ class SimulatorController extends Controller
         $sessionData = $request->session()->all();
         $sessionKeys = ['cpus','gpus','motherboards','cases', 'internal_storages', 'memories', 'power_supplies'];
 
-        // Menghitung harga total
         $totalPrice = 0;
+        $multipleUrlsScript = "";
         foreach ($sessionData as $key => $value) {
             if (in_array($key, $sessionKeys)) {
+                // Menghitung harga total dari komponen yang sudah dipilih
                 $totalPrice += $sessionData[$key]->price;
+                $multipleUrlsScript .= "window.open('".$sessionData[$key]->url."','_blank');";
+                // array_push($ecommerceUrls, $sessionData[$key]->url);
             }
         }
-
         // Mengubah angka ke format rupiah
         $totalPrice = parent::rupiah($totalPrice);
-        
-        return view('simulasi-rakit-pc.index', compact('totalPrice'));
+
+        return view('simulasi-rakit-pc.index', compact('totalPrice', 'multipleUrlsScript'));
     }
 
     public function addComponent($table)
@@ -69,7 +70,7 @@ class SimulatorController extends Controller
 
     public function addComponentItem($table, $id)
     {
-        $componentData =  DB::table($table)->select('id','name','price','image')->where('id', $id)->get()[0];
+        $componentData =  DB::table($table)->select('id','name','price','image', 'url')->where('id', $id)->get()[0];
         $componentData->formattedPrice = parent::rupiah($componentData->price);
 
         // Menyimpan data di session dengan key $table dan value $componentData

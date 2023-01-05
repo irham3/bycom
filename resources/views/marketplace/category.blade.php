@@ -5,9 +5,9 @@
   @include('layouts.side-nav-marketplace')
 
   <div class="list-content container mt-5" style="margin: 0px 30px;">
-      <form class="d-flex justify-content-end" role="search">
+      {{-- <form class="d-flex justify-content-end" role="search">
           <input class="form-control py-3" type="search" placeholder="Cari Komponen PC" aria-label="Search">
-      </form>
+      </form> --}}
 
       <div class="pt-5 pb-5" id="casing-pc">
           <div class="container d-flex justify-content-between">
