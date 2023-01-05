@@ -27,8 +27,9 @@ return new class extends Migration
             $table->foreignId('inStorageId')->nullable()->references('id')->on('internal_storages')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('psuId')->nullable()->references('id')->on('power_supplies')->onDelete('cascade')->onUpdate('cascade');
 
-            $table->integer('totalPrice')->default(0);
-            $table->timestamps();
+            $table->integer('totalPrice')->default(0);          
+            $table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
+            $table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
         });
     }
 

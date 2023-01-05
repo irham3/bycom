@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cpu;
 use stdClass;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -65,5 +66,42 @@ class MarketplaceController extends Controller
         $data->pcComponents = $pcComponents;
 
         return view('marketplace.category', compact('data'));
+    }
+
+    public function detailComponent($table, $id)
+    {
+        $detailComponent = new stdClass();
+        switch ($table) {
+            case "cpus":
+                $specificDetail = Cpu::where('id', $id)->select('cpuSocketId', 'coreCount', 'coreClock', 'boostClock', 'tdp', 'integratedGraphic');
+              break;
+            case "motherboards":
+
+              break;
+            case "gpus":
+
+              break;
+            case "internal_storages":
+
+              break;
+            case "memories":
+
+              break;
+            case "power_supplies":
+
+              break;
+            case "cases":
+
+              break;
+            default:
+            return redirect()->route('marketplace');
+          }
+          $generalDetail = DB::table($table)->select('name','price','url', 'image')->where('id', $id)->get();
+          $detailComponent->general = $generalDetail;
+          $detailComponent->specific = $specificDetail;
+          dd($detailComponent);
+
+        // dd($columnNames);
+        // return view('marketplace.detail-component', compact('detailComponent'));
     }
 }

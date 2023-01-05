@@ -23,7 +23,9 @@ return new class extends Migration
             $table->string('efficiencyRating');
             $table->integer('wattage');
             $table->string('modular');
-            $table->timestamps();
+            $table->mediumText('description')->nullable();          
+            $table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
+            $table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
         });
     }
 

@@ -19,9 +19,10 @@ Route::get('/', function () {
     return view('beranda');
 })->name('beranda');
 
-Route::get('/simulasi-rakit-pc', [SimulatorController::class, 'index']);
-Route::get('/marketplace', [MarketplaceController::class, 'index']);
+Route::get('/simulasi-rakit-pc', [SimulatorController::class, 'index'])->name('simulasi');
+Route::get('/marketplace', [MarketplaceController::class, 'index'])->name('marketplace');
 Route::get('/marketplace/{table}', [MarketplaceController::class, 'category']);
+Route::get('/marketplace/{table}/{id}', [MarketplaceController::class, 'detailComponent']);
 
 Route::middleware('auth')->group(function () {
 });

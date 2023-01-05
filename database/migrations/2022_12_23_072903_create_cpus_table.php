@@ -24,8 +24,10 @@ return new class extends Migration
             $table->string('coreClock');
             $table->string('boostClock');
             $table->integer('tdp');
-            $table->string('integratedGraphic');            
-            $table->timestamps();
+            $table->string('integratedGraphic');  
+            $table->mediumText('description')->nullable();          
+            $table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
+            $table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
         });
     }
 

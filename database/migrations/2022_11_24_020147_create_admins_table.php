@@ -20,8 +20,9 @@ return new class extends Migration
             $table->string('mobile')->unique();
             $table->string('type');
             $table->string('password');
-            $table->string('image')->default('admin.png');
-            $table->timestamps();
+            $table->string('image')->default('admin.png');       
+            $table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
+            $table->timestamp('updated_at')->default('CURRENT_TIMESTAMP');
         });
     }
 
