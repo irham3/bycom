@@ -40,7 +40,7 @@ class CpuSeeder extends Seeder
                 "coreClock" => "3.60 GHz",
                 "boostClock" => "5.00 GHz",
                 "tdp" => 190,
-                "integratedGraphic" => "Intel UHD Graphics 770"
+                "integratedGraphic" => "Intel UHD Graphics 770"  
             ],
 
             [
