@@ -8,7 +8,6 @@ use App\Models\Gpu;
 use Ramsey\Uuid\Uuid;
 use App\Models\Memory;
 use App\Models\PcCase;
-use App\Models\PcBuild;
 use App\Models\Motherboard;
 use App\Models\PowerSupply;
 use Illuminate\Http\Request;

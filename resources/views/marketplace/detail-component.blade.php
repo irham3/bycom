@@ -7,20 +7,20 @@
 
 <section class="container d-flex justify-content-between mt-5 mb-5">
     <div class="gallery">
-        <div class="container-gallery mb-4">
+        <div class="container-gallery mb-4 pt-5 pb-5">
             <!-- Expanded image -->
-            <img id="expandedImg" style="width: 200px" src="{{ asset('storage/images/pc-components/'.$imageFolder .'/' .$detailComponent->image) }}">
+            <img id="expandedImg" style="width: 250px" src="{{ asset('storage/images/pc-components/'.$imageFolder .'/' .$detailComponent->image) }}">
         </div>
     </div>
     <div class="detail-content container ms-3">
         <div class="container bg-blur mb-3 pt-3 pb-2">
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between mt-5 mb-5 ms-5 me-5">
                 <h5>Harga</h5>
-                <p><b>{{ $detailComponent->price }}</b></p>
+                <h5>{{ $detailComponent->price }}</h5>
             </div>
         </div>
         <div class="container bg-blur mt-3 mb-3 pt-3 pb-2">
-           <pre>{{ $detailComponent->description }}</pre> 
+           <pre class="ms-5">{{ $detailComponent->description }}</pre> 
         </div>
 
         <div class="d-flex justify-content-end btn-grup pt-2">

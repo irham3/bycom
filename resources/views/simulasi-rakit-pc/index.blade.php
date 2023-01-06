@@ -296,17 +296,22 @@
             <h3>Total : </h3>
             <h3 class="ms-3"><b>{{ $formattedTotalPrice }}</b></h3>
         </div>
-        @if (Route::has('login'))
-            @auth
-            <button class="btn" data-bs-toggle="modal" data-bs-target="#saveModal">Simpan</button>
-            @else
-            <a class="btn" href="{{ route('login') }}">Simpan</a>
-            @endauth
-        @endif
+        <div class="d-flex justify-content-end">
+            <div class="me-3">
+                @if (Route::has('login'))
+                    @auth
+                    <button class="btn add" data-bs-toggle="modal" data-bs-target="#saveModal">Simpan</button>
+                    @else
+                    <a class="btn add" href="{{ route('login') }}">Simpan</a>
+                    @endauth
+                @endif
+            </div>
 
-        <div class="pt-1 pb-5" style="text-align: end;">
-            <a class="btn tokopedia" href="#" role="button" onclick="{{ $multipleUrlsScript }}"
-            >Beli di Tokopedia</a></div>
+            <div class="pb-5" style="text-align: end;">
+                <a class="btn tokopedia" href="#" role="button" onclick="{{ $multipleUrlsScript }}"
+                >Beli di Tokopedia</a>
+            </div>
+        </div>
     </div>
 
     @include('simulasi-rakit-pc._save-modal')

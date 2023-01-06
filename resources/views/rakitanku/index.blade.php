@@ -15,46 +15,14 @@
           </tr>
       </thead>
       <tbody>
-          <tr>
-              <th class="py-4 category">RAK001</th>
-              <td>
-                  <div class="d-flex align-items-center komponen">
-                      <div class="flex-shrink-0">
-                          <img src="assets/image/keranjang/contoh.png" alt="...">
-                      </div>
-                      <div class="nama-komponen">
-                          RAKITAN PC
-                      </div>
-                  </div>
-              </td>
-              <td class="py-4">Rp 10.000.000</td>
-              <td class="py-3">
-                  <div class="d-flex align-items-center komponen">
-                      <a class="btn add" href="#" role="button"> View Details</a>
-                  </div>
-              </td>
-          </tr>
-
-          <tr>
-              <th class="py-4 category">RAK002</th>
-              <td>
-                  <div class="d-flex align-items-center komponen">
-                      <div class="flex-shrink-0">
-                          <img src="assets/image/keranjang/contoh.png" alt="...">
-                      </div>
-                      <div class="nama-komponen">
-                          PC GAMING
-                      </div>
-                  </div>
-              </td>
-              <td class="py-4">Rp 18.500.000</td>
-              <td class="py-3">
-                  <div class="d-flex align-items-center komponen">
-                      <a class="btn add" href="#" role="button"> View Details</a>
-                  </div>
-              </td>
-          </tr>
-          
+        @foreach ($listRakitan as $rakitan)    
+        <tr>
+            <th class="py-4 category">RAK001</th>
+            <td class="py-4 nama-komponen rakitanku">{{ $rakitan->name }}</td>
+            <td class="py-4">{{ $rakitan->totalPrice }}</td>
+            <td class="py-4 btn-view"><a class="btn add view-details" href="#" role="button"> View</a></td>
+        </tr>
+        @endforeach          
       </tbody>
   </table>
 </section>

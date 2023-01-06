@@ -18,11 +18,13 @@
                 <div class="card-body mt-3">
                     <h5 class="card-title">{{ $pcComponent->name }}</h5>
                     <p class="card-text">{{ $pcComponent->price }}</p>
-                    <form action="{{ url('simulasi-rakit-pc/addComponent/'.$table.'/'.$pcComponent->id) }}" method="post">
+                    <form action="{{ url('simulasi-rakit-pc/addComponent/'.$table.'/'.$pcComponent->id) }}" method="post" style="text-align: center">
                         @csrf                        
-                        <button type="submit" class="btn add">+ Add Item</button >
+                        <button type="submit" class="btn add simulasi">+ Add Item</button >
                     </form>
-                    <a href="{{ url('marketplace/'.$table.'/'.$pcComponent->id) }}" class="btn">Lihat Detail</a>
+                    <div style="text-align: center">
+                        <a href="{{ url('marketplace/'.$table.'/'.$pcComponent->id) }}" class="btn simulasi">Lihat Detail</a>
+                    </div>
                 </div>
             </div>
             @endforeach
