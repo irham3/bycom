@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\MarketplaceController;
 use App\Http\Controllers\RakitanKuController;
-use App\Http\Controllers\SimulatorController;
+use App\Http\Controllers\SimulasiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,11 +22,11 @@ Route::get('/', function () {
 })->name('beranda');
 
 // Simulasi Rakit PC
-Route::get('/simulasi-rakit-pc', [SimulatorController::class, 'index'])->name('simulasi');
-Route::post('/simulasi-rakit-pc', [SimulatorController::class, 'saveSimulasi'])->name('saveSimulasi');
-Route::post('/simulasi-rakit-pc/{key}', [SimulatorController::class, 'deleteSelectedItem'])->name('hapusItemSimulasi');
-Route::post('/simulasi-rakit-pc/addComponent/{table}', [SimulatorController::class, 'addComponent']);
-Route::post('/simulasi-rakit-pc/addComponent/{table}/{id}', [SimulatorController::class, 'addComponentItem']);
+Route::get('/simulasi-rakit-pc', [SimulasiController::class, 'index'])->name('simulasi');
+Route::post('/simulasi-rakit-pc', [SimulasiController::class, 'saveSimulasi'])->name('saveSimulasi');
+Route::post('/simulasi-rakit-pc/{key}', [SimulasiController::class, 'deleteSelectedItem'])->name('hapusItemSimulasi');
+Route::post('/simulasi-rakit-pc/addComponent/{table}', [SimulasiController::class, 'addComponent']);
+Route::post('/simulasi-rakit-pc/addComponent/{table}/{id}', [SimulasiController::class, 'addComponentItem']);
 
 // Marketplace
 Route::get('/marketplace', [MarketplaceController::class, 'index'])->name('marketplace');

@@ -2,18 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use stdClass;
 use App\Models\Cpu;
 use App\Models\Gpu;
+use Ramsey\Uuid\Uuid;
 use App\Models\Memory;
-use App\Models\Motherboard;
 use App\Models\PcCase;
+use App\Models\PcBuild;
+use App\Models\Motherboard;
 use App\Models\PowerSupply;
-use stdClass;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Validator;
 
-class SimulatorController extends Controller
+class SimulasiController extends Controller
 {
+    
     public function index(Request $request)
     {
         $sessionData = $request->session()->all();
@@ -39,9 +44,9 @@ class SimulatorController extends Controller
             }
         }
         // Mengubah angka ke format rupiah
-        $totalPrice = parent::rupiah($totalPrice);
+        $formattedTotalPrice = parent::rupiah($totalPrice);
 
-        return view('simulasi-rakit-pc.index', compact('totalPrice', 'multipleUrlsScript', 'totalWattage'));
+        return view('simulasi-rakit-pc.index', compact('totalPrice', 'multipleUrlsScript', 'totalWattage', 'formattedTotalPrice'));
     }
 
     public function addComponent($table, Request $request)
@@ -127,6 +132,41 @@ class SimulatorController extends Controller
 
     public function saveSimulasi(Request $request)
     {
-        # code...
+        $uuid = Uuid::uuid4();
+        $code = substr($uuid->toString(), 0, 6);
+
+        $validator = Validator::make($request->all(),[
+            'userId'    => ['required'],
+            'name'      => ['required'],
+            'cpuId'     => ['required'],
+        ],[
+            'name.required' => 'Nama rakitan harus dimasukkan!',
+            'cpuId.required' => 'Minimal harus pilih CPU'
+        ]);
+
+        if($validator->fails()) {
+            $errorMessage = '';
+            foreach ($validator->errors()->all() as $error) {
+                $errorMessage .= $error;
+            }
+            Alert::warning('Peringatan', $errorMessage);
+            return redirect()->back();
+        } else {
+            DB::table('pc_builds')->insert([
+                'userId' => $request->userId,
+                'name' => $request->name,
+                'cpuId' => $request->cpuId,
+                'moboId' => $request->moboId,
+                'memoryId' => $request->memoryId,
+                'gpuId' => $request->gpuId,
+                'caseId' => $request->caseId,
+                'inStorageId' => $request->inStorageId,
+                'psuId' => $request->psuId,
+                'totalPrice' => $request->totalPrice,
+            ]);
+            
+            Alert::success('Selamat', 'Anda berhasil menyimpan rakitan PC');
+            return redirect()->route('rakitanku');
+        }
     }
 }

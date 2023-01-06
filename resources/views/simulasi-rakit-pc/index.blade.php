@@ -294,7 +294,7 @@
     <div class="container">
         <div class="d-flex justify-content-end">
             <h3>Total : </h3>
-            <h3 class="ms-3"><b>{{ $totalPrice }}</b></h3>
+            <h3 class="ms-3"><b>{{ $formattedTotalPrice }}</b></h3>
         </div>
         @if (Route::has('login'))
             @auth
