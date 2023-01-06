@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('image')->default('placeholder.png');
             $table->string('type');
             $table->tinyInteger('hddSlot');
+            $table->Integer('gpuMaxLengthMm')->nullable();
             $table->mediumText('description')->nullable();         
         });
     }

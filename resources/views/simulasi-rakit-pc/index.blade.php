@@ -42,7 +42,10 @@
                     @else    
                         <td>
                             <div class="d-flex align-items-center komponen py-2">
-                                <button class="btn add"><a  href="{{ url('/simulasi-rakit-pc/addComponent/cpus') }}" role="button">+ Add Item</a></button>
+                                <form action="{{ url('/simulasi-rakit-pc/addComponent/cpus') }}" method="post">
+                                    @csrf
+                                    <button class="btn add" type="submit"> + Add Item </button>
+                                </form>
                             </div>
                         </td>
                         <td class="py-4"></td>
@@ -75,7 +78,13 @@
                     @else    
                         <td>
                             <div class="d-flex align-items-center komponen py-2">
-                                <button class="btn add" {{ session('cpus') ? '' : 'disabled' }}><a  href="{{ url('/simulasi-rakit-pc/addComponent/motherboards') }}" role="button">+ Add Item</a></button>
+                                <form action="{{ url('/simulasi-rakit-pc/addComponent/motherboards') }}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="selectedCpuId" value="{{ session('cpus') ? session()->get('cpus')->id : ''}}" >
+                                    <button class="btn add" type="submit" {{ session('cpus') ? '' : 'disabled' }}>
+                                        + Add Item
+                                    </button>
+                                </form>
                             </div>
                         </td>
                         <td class="py-4"></td>
@@ -108,7 +117,13 @@
                     @else    
                         <td>
                             <div class="d-flex align-items-center komponen py-2">
-                                <button class="btn add" {{ session('motherboards') ? '' : 'disabled' }}><a  href="{{ url('/simulasi-rakit-pc/addComponent/memories') }}" role="button">+ Add Item</a></button>
+                                <form action="{{ url('/simulasi-rakit-pc/addComponent/memories') }}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="selectedMoboId" value="{{ session('motherboards') ? session()->get('motherboards')->id : ''}}" >
+                                    <button class="btn add" type="submit" {{ session('motherboards') ? '' : 'disabled' }}>
+                                        + Add Item
+                                    </button>
+                                </form>
                             </div>
                         </td>
                         <td class="py-4"></td>
@@ -141,7 +156,13 @@
                     @else    
                         <td>
                             <div class="d-flex align-items-center komponen py-2">
-                                <button class="btn add" {{ session('memories') ? '' : 'disabled' }}><a  href="{{ url('/simulasi-rakit-pc/addComponent/internal_storages') }}" role="button">+ Add Item</a></button>
+                                <form action="{{ url('/simulasi-rakit-pc/addComponent/internal_storages') }}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="selectedMemoryId" value="{{ session('memories') ? session()->get('memories')->id : ''}}" >
+                                    <button class="btn add" type="submit" {{ session('memories') ? '' : 'disabled' }}>
+                                        + Add Item
+                                    </button>
+                                </form>
                             </div>
                         </td>
                         <td class="py-4"></td>
@@ -174,7 +195,13 @@
                     @else    
                         <td>
                             <div class="d-flex align-items-center komponen py-2">
-                                <button class="btn add" {{ session('internal_storages') ? '' : 'disabled' }}><a  href="{{ url('/simulasi-rakit-pc/addComponent/gpus') }}" role="button">+ Add Item</a></button>
+                                <form action="{{ url('/simulasi-rakit-pc/addComponent/gpus') }}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="selectedStorageId" value="{{ session('internal_storages') ? session()->get('internal_storages')->id : ''}}" >
+                                    <button class="btn add" type="submit" {{ session('internal_storages') ? '' : 'disabled' }}>
+                                        + Add Item
+                                    </button>
+                                </form>
                             </div>
                         </td>
                         <td class="py-4"></td>
@@ -207,7 +234,13 @@
                     @else    
                         <td>
                             <div class="d-flex align-items-center komponen py-2">
-                                <button class="btn add" {{ session('gpus') ? '' : 'disabled' }}><a  href="{{ url('/simulasi-rakit-pc/addComponent/cases') }}" role="button">+ Add Item</a></button>
+                                <form action="{{ url('/simulasi-rakit-pc/addComponent/cases') }}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="selectedGpuId" value="{{ session('gpus') ? session()->get('gpus')->id : ''}}" >
+                                    <button class="btn add" type="submit" {{ session('gpus') ? '' : 'disabled' }}>
+                                        + Add Item
+                                    </button>
+                                </form>
                             </div>
                         </td>
                         <td class="py-4"></td>
@@ -240,7 +273,14 @@
                     @else    
                         <td>
                             <div class="d-flex align-items-center komponen py-2">
-                                <button class="btn add" {{ session('cases') ? '' : 'disabled' }}><a  href="{{ url('/simulasi-rakit-pc/addComponent/power_supplies') }}" role="button">+ Add Item</a></button>
+                                <form action="{{ url('/simulasi-rakit-pc/addComponent/power_supplies') }}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="selectedCaseId" value="{{ session('cases') ? session()->get('cases')->id : ''}}" >
+                                    <input type="hidden" name="totalWattage" value="{{ $totalWattage }}">
+                                    <button class="btn add" type="submit" {{ session('cases') ? '' : 'disabled' }}>
+                                        + Add Item
+                                    </button>
+                                </form>
                             </div>
                         </td>
                         <td class="py-4"></td>
