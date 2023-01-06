@@ -20,8 +20,9 @@
                     <p class="card-text">{{ $pcComponent->price }}</p>
                     <form action="{{ url('simulasi-rakit-pc/addComponent/'.$table.'/'.$pcComponent->id) }}" method="post">
                         @csrf                        
-                        <button type="submit" class="btn ">+ Add Item</button >
+                        <button type="submit" class="btn add">+ Add Item</button >
                     </form>
+                    <a href="{{ url('marketplace/'.$table.'/'.$pcComponent->id) }}" class="btn">Lihat Detail</a>
                 </div>
             </div>
             @endforeach

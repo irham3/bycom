@@ -125,7 +125,7 @@ class SimulatorController extends Controller
         return redirect()->route('simulasi');
     }
 
-    public function store(Request $request)
+    public function saveSimulasi(Request $request)
     {
         # code...
     }

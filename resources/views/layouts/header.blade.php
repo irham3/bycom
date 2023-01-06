@@ -5,7 +5,6 @@
     <nav class="navbar">
         <a href="{{ route('beranda') }}" class="{{ (request()->is('/')) ? 'active' : '' }}">Beranda</a>
         <a href="{{ url('simulasi-rakit-pc') }}" class="{{ (request()->is('simulasi-rakit-pc*')) ? 'active' : '' }}">Simulasi Rakit PC</a>
-        {{-- <a href="{{ url('#product') }}" class="{{ (request()->is('#product')) ? 'active' : '' }}">Rekomendasi Rakitan PC</a> --}}
         <a href="{{ url('marketplace') }}" class="{{ (request()->is('marketplace*')) ? 'active' : '' }}">Marketplace</a>
     </nav>
     @if (Route::has('login'))
@@ -15,6 +14,7 @@
                     <a href="#" class="fas fa-user user-profile icons"id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                         <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a></li>
+                        <li><a class="dropdown-item" href="{{ route('rakitanku') }}">Rakitanku</a></li>
                         <li>
                             <form action="{{ route('logout') }}" method="post">
                                 @csrf

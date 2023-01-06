@@ -18,7 +18,6 @@ return new class extends Migration
             $table->foreignId('userId')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->string('code')->unique();
             $table->string('name')->default('PC Rakitan User');
-            $table->string('image')->default('placeholder.png');
             $table->foreignId('cpuId')->nullable()->references('id')->on('cpus')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('moboId')->nullable()->references('id')->on('motherboards')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('memoryId')->nullable()->references('id')->on('memories')->onDelete('cascade')->onUpdate('cascade');

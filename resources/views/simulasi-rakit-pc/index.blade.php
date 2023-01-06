@@ -296,30 +296,20 @@
             <h3>Total : </h3>
             <h3 class="ms-3"><b>{{ $totalPrice }}</b></h3>
         </div>
-        <div><a class="btn" href="#" role="button">Simpan</a></div>
+        @if (Route::has('login'))
+            @auth
+            <button class="btn" data-bs-toggle="modal" data-bs-target="#saveModal">Simpan</button>
+            @else
+            <a class="btn" href="{{ route('login') }}">Simpan</a>
+            @endauth
+        @endif
+
         <div class="pt-1 pb-5" style="text-align: end;">
             <a class="btn tokopedia" href="#" role="button" onclick="{{ $multipleUrlsScript }}"
             >Beli di Tokopedia</a></div>
     </div>
+
+    @include('simulasi-rakit-pc._save-modal')
+
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
 @endsection
-
-{{-- <td>
-    <div class="d-flex align-items-center komponen">
-        <div class="flex-shrink-0">
-            <img src="images/keranjang/contoh.png" alt="...">
-        </div>
-        <div class="nama-komponen">
-            Thermalright Peerless Assassin 66.17 CFM CPU Cooler
-        </div>
-    </div>
-</td>
-<td class="py-4">$41.30</td>
-<td class="py-4 e-commerce">
-    <img src="images/keranjang/logo-tokped.png" alt="">                   
-</td>
-<td class="py-4">
-    <a href="#">
-        <button><iconify-icon icon="material-symbols:close" width="24" height="24"></iconify-icon></button>
-    </a>
-</td> --}}
