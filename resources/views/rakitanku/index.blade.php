@@ -17,12 +17,12 @@
       <tbody>
         @foreach ($listRakitan as $rakitan)    
         <tr>
-            <th class="py-4 category">RAK001</th>
+            <th class="py-4 category">{{ $rakitan->code }}</th>
             <td class="py-4 nama-komponen rakitanku">{{ $rakitan->name }}</td>
             <td class="py-4">{{ $rakitan->totalPrice }}</td>
-            <td class="py-4 btn-view"><a class="btn add view-details" href="#" role="button"> View</a></td>
+            <td class="py-4 btn-view"><a class="btn add view-details" href="{{ url('rakitanku/'.$rakitan->code) }}" role="button"> View</a></td>
         </tr>
-        @endforeach          
+        @endforeach                  
       </tbody>
   </table>
 </section>

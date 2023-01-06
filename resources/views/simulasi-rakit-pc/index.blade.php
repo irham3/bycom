@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('main-content')
     <div class="section-title komponen container mt-5">
-        <h3 class="pt-3 pb-3">Simulasi Rakit PC</h3>
+        <h3 class="pt-3 pb-3">{{ isset($prevRakitanData) ? $prevRakitanData->name : 'Simulasi Rakit PC' }}</h3>
     </div>
 
     <section class="container d-flex justify-content-between mb-5">
@@ -44,7 +44,7 @@
                             <div class="d-flex align-items-center komponen py-2">
                                 <form action="{{ url('/simulasi-rakit-pc/addComponent/cpus') }}" method="post">
                                     @csrf
-                                    <button class="btn add" type="submit"> + Add Item </button>
+                                    <button class="btn add" type="submit">+ Add Item </button>
                                 </form>
                             </div>
                         </td>
@@ -298,13 +298,30 @@
         </div>
         <div class="d-flex justify-content-end">
             <div class="me-3">
-                @if (Route::has('login'))
-                    @auth
-                    <button class="btn add" data-bs-toggle="modal" data-bs-target="#saveModal">Simpan</button>
-                    @else
-                    <a class="btn add" href="{{ route('login') }}">Simpan</a>
-                    @endauth
+                {{-- View Simulasi --}}
+                @if (isset($prevRakitanData))
+                    @if (Route::has('login'))
+                        @auth
+                            @if (Auth::user()->id == $prevRakitanData->userId)
+                                {{-- @include('rakitanku.edit-form') --}}
+                                <button class="btn add">Edit</button>
+                            @endif
+                        @else  
+                        {{-- Kosong karena selain user pemilik rakitan, tidak bisa edit --}}
+                        @endauth
+                    @endif
+                {{-- Buat Simulasi Baru --}}
+                @else  
+                    @if (Route::has('login'))
+                        @auth
+                            <button class="btn add" data-bs-toggle="modal" data-bs-target="#saveModal">Simpan</button>
+                            @include('simulasi-rakit-pc._save-modal')
+                        @else
+                            <a class="btn add" href="{{ route('login') }}">Simpan</a>
+                        @endauth
+                    @endif
                 @endif
+                
             </div>
 
             <div class="pb-5" style="text-align: end;">
@@ -313,8 +330,6 @@
             </div>
         </div>
     </div>
-
-    @include('simulasi-rakit-pc._save-modal')
-
+    
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
 @endsection

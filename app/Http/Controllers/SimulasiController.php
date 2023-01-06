@@ -31,14 +31,15 @@ class SimulasiController extends Controller
 
         // Script JS untuk membuka multiple url dari produk2 ecommerce, sekali proses
         $multipleUrlsScript = "";
-        foreach ($sessionData as $key => $value) {
+        foreach ($sessionData as $key => $column) {
             // Dicek key nya karena ada key yang bukan component
             if (in_array($key, $componentKeys)) {
                 $totalPrice += $sessionData[$key]->price;
 
-                if($key == 'cpus' || $key == 'gpus')
+                if($key == 'cpus' | $key == 'gpus')
                     $totalWattage += $sessionData[$key]->tdp;
 
+                // Menambah url baru ke script
                 $multipleUrlsScript .= "window.open('".$sessionData[$key]->url."','_blank');";
             }
         }
@@ -93,7 +94,7 @@ class SimulasiController extends Controller
                         ->having('totalSize', '<=', $memoryMaxGB)
                         ->get();
         } else if ($request->has('selectedGpuId')) {
-            // Filter casing (notes: jangan lupa tambahin filter tipe monitor dg tipe mobo nya jg)
+            // Filter casing (notes: jangan lupa tambahin filter tipe case dg tipe mobo nya jg)
             $gpuLength = Gpu::where('id', $request->selectedGpuId)->select('length')->first()->length;
             $pcComponents = PcCase::where('gpuMaxLengthMm', '>=',$gpuLength)->select('id','name','price','image')->get();
         }else if ($request->has('selectedCaseId')) {
@@ -126,13 +127,11 @@ class SimulasiController extends Controller
     public function deleteSelectedItem($key)
     {
         session()->pull($key, 'default');
-        return redirect()->route('simulasi');
+        return redirect()->back();
     }
 
     public function saveSimulasi(Request $request)
     {
-        $uuid = Uuid::uuid4();
-        $code = substr($uuid->toString(), 0, 6);
 
         $validator = Validator::make($request->all(),[
             'userId'    => ['required'],
@@ -151,8 +150,14 @@ class SimulasiController extends Controller
             Alert::warning('Peringatan', $errorMessage);
             return redirect()->back();
         } else {
+            // Generate kode rakitan
+            $uuid = Uuid::uuid4();
+            $code = substr($uuid->toString(), 0, 6);
+
+            // Insert data rakitan ke DB
             DB::table('pc_builds')->insert([
                 'userId' => $request->userId,
+                'code' => $code,
                 'name' => $request->name,
                 'cpuId' => $request->cpuId,
                 'moboId' => $request->moboId,

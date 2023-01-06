@@ -38,5 +38,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/rakitanku', [RakitanKuController::class, 'index'])->name('rakitanku');
 });
 
+// Pengguna yang tidak login masih bisa liat detail rakitan
+Route::get('/rakitanku/{code}', [RakitanKuController::class, 'detailRakitan']);
+
 require __DIR__.'/auth.php';
 require __DIR__.'/admin.php';
