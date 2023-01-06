@@ -11,7 +11,7 @@
     --dark-color:#219150;
     --black:#444;
     --light-color:#666;
-    --border:.1rem solid rgba(0,0,0,.1);
+    /* --border:.1rem solid rgba(0,0,0,.1); */
     --border-hover:.1rem solid var(--black);
     --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
 }
@@ -39,7 +39,8 @@ pre {
     white-space: -pre-wrap;
     white-space: -o-pre-wrap;
     word-wrap: break-word;
-  }
+    font-family: 'Poppins', sans-serif;
+}
 
 a{
     text-decoration: none;
@@ -665,11 +666,15 @@ li.nav-item a {
 }
 
 .card {
-    background: rgba(230, 230, 230, 0.26);
+    /* background:rgba(230, 230, 230, 0.26); */
+    background: white;
     margin: 10px;
-    border: 0.5px solid #898989;
+    /* border: 0.5px solid #898989; */
     border-radius: 8px;
     flex-basis: 22%;
+    border: none !important;
+    box-shadow: 0px 16px 15px rgb(0 7 46 / 10%);
+    padding: 10px 0px;
 }
 
 .card-body {
@@ -686,6 +691,8 @@ th {
 
 .card-body p {
     font-weight: normal;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 .card-img-top {
@@ -694,7 +701,7 @@ th {
     margin: 10px 0px;
 }
 
-.btn {
+.btn{
     background: #ffae5d;
     color: #ffffff;
     border: none;
@@ -828,8 +835,19 @@ th {
     background: #25a32d;
 }
 
-.detail-content p {
-    font-size: 13px;
+.detail-content h5 {
+    font-size: 2rem;
+}
+
+.detail-content pre{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 200%;
+    margin-top: .5rem !important;
+}
+
+.container-gallery, .detail-content .bg-blur {
+    border-radius: 10px;
 }
 
 .side-nav .nav-item.active a {
@@ -863,6 +881,22 @@ tr.heading-table th {
     padding-left: 20px;
 }
 
+.nama-komponen.rakitanku{
+    padding-left: 0px;
+}
+
+.py-4.btn-view{
+    padding-top: 0px !important;
+}
+
+.btn.add.view-details{
+    padding: 10px 20px;
+}
+
+.list-content .btn.simulasi{
+    padding: 10px 40px;
+}
+
 tbody th td {
     padding: 1.5rem 0px;
 }
@@ -880,6 +914,10 @@ th.category {
     background: #2c87c3;
     padding: 10px 40px;
 }
+
+.btn.simulasi{
+    padding: 10px 60px;
+}
 /*END STYLING KERANJANG*/
 
 /*START STYLE VIEW ALL*/
@@ -888,7 +926,26 @@ th.category {
 }
 
 .card-body h5 {
+    height: 50px;
+    text-align: center;
+    overflow: hidden;
+}
+
+h1.modal-title{
+    font-size: 16px !important;
+    font-weight: 600;
+}
+
+label.rakitan{
+    font-size: 12px;
+    font-weight: 600;
+}
+
+input#nama-rakitan{
+    border-radius: 8px;
+    margin: 10px 0px;
     height: 30px;
+    width: 80%;
 }
 
 /*END STYLE VIEW ALL*/

@@ -7,7 +7,7 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <form method="post" action="">
-                <div class="modal-body">
+                <div class="modal-body ms-3 mt-3">
                   <input type="hidden" name="idUser" value="{{ Auth::user()->id }}">
                   <input type="hidden" name="idCpu" value="{{ session('cpus') ? session()->get('cpus')->id : ''}}">
                   <input type="hidden" name="idMobo" value="{{ session('motherboards') ? session()->get('motherboards')->id : ''}}">
@@ -17,12 +17,12 @@
                   <input type="hidden" name="idCase" value="{{ session('cases') ? session()->get('cases')->id : ''}}">
                   <input type="hidden" name="idPsu" value="{{ session('power_supplies') ? session()->get('power_supplies')->id : ''}}">
                   <div class="form-group mb-3">
-                    <label for="nama-rakitan">Masukkan nama rakitan anda</label>
-                    <input type="text" class="form-control" id="nama-rakitan" name="name">
+                    <label class="rakitan" for="nama-rakitan">Masukkan Nama rakitan </label>
+                    <input type="text" class="form-control" id="nama-rakitan" name="name" placeholder="Masukkan nama">
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="submit" class="btn btn-primary">Simpan</button>
+                  <button type="submit" class="btn add btn-primary">Simpan</button>
                 </div>
               </form>
           </div>
