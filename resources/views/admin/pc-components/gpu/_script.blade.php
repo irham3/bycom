@@ -3,7 +3,7 @@
   // Get All Users into table
   $(document).ready(function () {
     $('.datatable').DataTable({
-        ajax: '{{ url("admin/motherboard/getAllData") }}',
+        ajax: '{{ url("admin/gpu/getAllData") }}',
         serverSide: false,
         processing: true,
         deferRender: true,
@@ -25,7 +25,7 @@
     e.preventDefault();
     const fd = new FormData(this);
     $.ajax({
-      url: '{{ url("admin/motherboard") }}',
+      url: '{{ url("admin/gpu") }}',
       method: 'post',
       data: fd,
       cache: false,
@@ -130,15 +130,15 @@
             $('#editModal').modal('hide');
           });
           $('#editModal #id').val(response.data.id);
-          $('#editModal #output-img').attr('src', '/storage/images/pc-components/motherboard/' + response.data.image);
+          $('#editModal #output-img').attr('src', '/storage/images/pc-components/gpu/' + response.data.image);
           $('#editModal #name').val(response.data.name);
           $('#editModal #price').val(response.data.price);
           $('#editModal #url').val(response.data.url);
-          $('#editModal #formFactor').val(response.data.formFactor);
-          $('#editModal #cpuSocketId').val(response.data.cpuSocketId);
-          $('#editModal #formFactor').val(response.data.formFactor);
-          $('#editModal #memoryMaxGB').val(response.data.memoryMaxGB);
-          $('#editModal #memorySlot').val(response.data.memorySlot);
+          $('#editModal #license').val(response.data.license);
+          $('#editModal #memorySize').val(response.data.memorySize);
+          $('#editModal #tdp').val(response.data.tdp);
+          $('#editModal #boostClockMhz').val(response.data.boostClockMhz);
+          $('#editModal #lengthMm').val(response.data.lengthMm);
           $('#editModal #description').val(response.data.description);
         }, 
         error: function (xhr, status, error) {
@@ -158,7 +158,7 @@
     const fd = new FormData(this);
     const id = $('#editModal #id').val();
     $.ajax({
-      url: 'motherboard/' + id,
+      url: 'gpu/' + id,
       type: 'POST',
       data: fd,
       cache: false,

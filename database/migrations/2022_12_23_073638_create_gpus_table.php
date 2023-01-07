@@ -20,11 +20,11 @@ return new class extends Migration
             $table->string('url');
             $table->string('image')->default('placeholder.png');
             $table->enum('license', ['Intel', 'AMD', 'Nvidia']);
-            $table->string('memorySize');
+            $table->integer('memorySize');
             $table->integer('tdp');
-            $table->string('boostClock');
-            $table->integer('length');
-            $table->mediumText('description')->nullable(); 
+            $table->integer('boostClockMhz');
+            $table->integer('lengthMm');
+            $table->mediumText('description'); 
             $table->timestamps();         
         });
     }

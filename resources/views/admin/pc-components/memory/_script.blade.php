@@ -1,4 +1,4 @@
-<script type="text/javascript">
+<script>
 
   // Get All Users into table
   $(document).ready(function () {
@@ -21,11 +21,11 @@
   });
 
   // Store
-  $('#add_user_form').submit(function(e) {
+  $('#addForm').submit(function(e) {
     e.preventDefault();
     const fd = new FormData(this);
     $.ajax({
-      url: 'user',
+      url: '{{ url("admin/memory") }}',
       method: 'post',
       data: fd,
       cache: false,
@@ -44,17 +44,16 @@
             'warning'
           )
         } else{
-          $('.users-table').DataTable().ajax.reload();
+          $('.datatable').DataTable().ajax.reload();
           Swal.fire(
             'Berhasil!',
             response.success,
             'success'
             )
-          $("#addUserModal").modal('hide');
+          $("#addModal").modal('hide');
         }
       },
       error: function (xhr, status, error) {
-        console.log(fd);
         console.log(xhr.responseText);
         Swal.fire(
           'Error',
@@ -92,7 +91,7 @@
                   '_token': csrf_token
               },
               success: function (response) {
-                $('.users-table').DataTable().ajax.reload();
+                $('.datatable').DataTable().ajax.reload();
                 Swal.fire(
                   'Terhapus!',
                   'Data berhasil dihapus.',
@@ -117,7 +116,6 @@
   //Edit
   $(document).on('click', '.btn-edit', function(e) {
     e.preventDefault();
-    var id = $(this).data('id');
     var url = $(this).attr('href');
     $.ajax({
         url: url,
@@ -126,15 +124,21 @@
           '_method': 'GET',
         },
         success: function(response) {
-          $('#editUserModal').modal('show');
-          $('#editUserModal .btn-close').click(function (e) { 
+          $('#editModal').modal('show');
+          $('#editModal .btn-close').click(function (e) { 
             e.preventDefault();
-            $('#editUserModal').modal('hide');
+            $('#editModal').modal('hide');
           });
-          $('#editUserModal #output-img').attr('src', '/storage/images/profile-images/users/' + response.user.image);
-          $('#editUserModal #id').val(response.user.id);
-          $('#editUserModal #name').val(response.user.name);
-          $('#editUserModal #email').val(response.user.email);
+          $('#editModal #id').val(response.data.id);
+          $('#editModal #output-img').attr('src', '/storage/images/pc-components/memory/' + response.data.image);
+          $('#editModal #name').val(response.data.name);
+          $('#editModal #price').val(response.data.price);
+          $('#editModal #url').val(response.data.url);
+          $('#editModal #type').val(response.data.type);
+          $('#editModal #count').val(response.data.count);
+          $('#editModal #tdp').val(response.data.tdp);
+          $('#editModal #capacityPerPiece').val(response.data.capacityPerPiece);
+          $('#editModal #description').val(response.data.description);
         }, 
         error: function (xhr, status, error) {
           var err = eval("(" + xhr.responseText + ")"); 
@@ -148,17 +152,18 @@
     });
   });
 
-  $('#edit_user_form').submit(function(e) {
+  $('#editForm').submit(function(e) {
     e.preventDefault();
-    const fd = new FormData(this); 
+    const fd = new FormData(this);
+    const id = $('#editModal #id').val();
     $.ajax({
-      url: 'user/update',
+      url: 'memory/' + id,
       type: 'POST',
       data: fd,
       cache: false,
-      contentType: false,
-      processData: false,
       dataType: 'json',
+      processData: false,
+      contentType: false,
       success: function(response) {
         if (response.errors) {
           let errors = '';
@@ -171,13 +176,13 @@
             'warning'
           )
         } else{
-          $('.users-table').DataTable().ajax.reload();
+          $("#editModal").modal('hide');
           Swal.fire(
             'Berhasil!',
             response.success,
             'success'
             )
-          $("#editUserModal").modal('hide');
+          $('.datatable').DataTable().ajax.reload();
         }
       },
       error: function (xhr, status, error) {

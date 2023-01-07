@@ -134,7 +134,6 @@
           $('#editModal #name').val(response.data.name);
           $('#editModal #price').val(response.data.price);
           $('#editModal #url').val(response.data.url);
-          $('#editModal #formFactor').val(response.data.formFactor);
           $('#editModal #cpuSocketId').val(response.data.cpuSocketId);
           $('#editModal #formFactor').val(response.data.formFactor);
           $('#editModal #memoryMaxGB').val(response.data.memoryMaxGB);

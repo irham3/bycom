@@ -138,7 +138,7 @@ class AdminMotherboardController extends Controller
                         'max' => 'Ukuran gambar maksimal 5MB'
                       ]
                     );
-                    Storage::putFileAs('public/images/pc-components/motherboards', $request->file('imgUpload'), $imgName);
+                    Storage::putFileAs('public/images/pc-components/motherboard', $request->file('imgUpload'), $imgName);
                     $motherboard->image = $request->imgUpload;
                 }
                     

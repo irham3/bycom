@@ -21,7 +21,7 @@
                     <img src="{{url('images/placeholder.jpg')}}" class="img-thumbnail shadow" id="output-img" width="200" alt="image"/>
                 </div>
                 <div class="form-outline mb-3">
-                    <input type="text" required class="name form-control" id="name" name="name" autocomplete="off" placeholder="Nama Motherboard">
+                    <input type="text" required class="name form-control" id="name" name="name" autocomplete="off" placeholder="Nama GPU">
                 </div>
                 <div class="row">
                     <div class="col-lg-6">
@@ -37,28 +37,35 @@
                 </div>
                 <div class="row">
                   <div class="col-lg-6">
-                    <select id="cpuSocketId" name="cpuSocketId" class="form-select p-2" required>
-                      <option>-Jenis Socket-</option>
-                      @foreach ($cpuSockets as $cpuSocket)
-                        <option value="{{ $cpuSocket->id }}">{{ $cpuSocket->socketName }}</option>
-                      @endforeach
+                    <select id="license" name="license" class="form-select p-2" required>
+                      <option>-Lisensi-</option>
+                      <option value="AMD">AMD</option>
+                      <option value="Nvidia">Nvidia</option>
+                      <option value="Intel">Intel</option>
                     </select>
                   </div>
                   <div class="col-lg-6">
                     <div class="form-outline mb-3">
-                      <input type="text" class="form-control" id="formFactor" placeholder="Form Factor" name="formFactor">
+                      <input type="num" class="form-control" id="memorySize" placeholder="Ukuran Memory (GB)" name="memorySize">
                     </div>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="form-outline mb-3">
-                      <input type="num" class="form-control"  min="0" id="memoryMaxGB" placeholder="Max Memory (GB)" name="memoryMaxGB">
+                      <input type="num" class="form-control"  min="0" id="tdp" placeholder="TDP (Watt)" name="tdp">
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="form-outline mb-3">
-                      <input type="num" class="form-control" id="memorySlot" min="0" placeholder="Jumlah Slot Memory" name="memorySlot">
+                      <input type="num" class="form-control" id="boostClockMhz" min="0" placeholder="Boost Clock (Mhz)" name="boostClockMhz">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-outline mb-3">
+                      <input type="num" class="form-control"  min="0" id="lengthMm" placeholder="Panjang GPU (mm)" name="lengthMm">
                     </div>
                   </div>
                 </div>
@@ -66,7 +73,7 @@
 
               <div class="col-lg-6">
                 <div class="form-outline mb-3">
-                  <textarea class="form-control" id="description" rows="17" name="description"></textarea>
+                  <textarea class="form-control" id="description" rows="18" name="description"></textarea>
                   <label class="form-label" for="description">Deskripsi</label>
                 </div>
               </div>
@@ -74,7 +81,7 @@
           </div>
           <div class="modal-footer">
               <button type="reset" class="btn btn-secondary">Reset</button>
-              <button type="submit" class="btn btn-primary btn-add-user">Create</button>
+              <button type="submit" class="btn btn-primary btn-add-data">Create</button>
           </div>
         </form>
       </div>
@@ -107,7 +114,7 @@
                   </div>
                   <div class="form-outline mb-3">
                     <input type="text" required class="name form-control" id="name" name="name" autocomplete="off">
-                    <label class="form-label" for="name">Nama Motherboard</label>
+                    <label class="form-label" for="name">Nama GPU</label>
                   </div>
                   <div class="row">
                       <div class="col-lg-6">
@@ -125,38 +132,46 @@
                   </div>
                   <div class="row">
                     <div class="col-lg-6">
-                      <select id="cpuSocketId" name="cpuSocketId" class="form-select p-2" required>
-                        <option>-Jenis Socket-</option>
-                        @foreach ($cpuSockets as $cpuSocket)
-                          <option value="{{ $cpuSocket->id }}">{{ $cpuSocket->socketName }}</option>
-                        @endforeach
+                      <select id="license" name="license" class="form-select p-2" required>
+                        <option>-Lisensi-</option>
+                        <option value="AMD">AMD</option>
+                        <option value="Nvidia">Nvidia</option>
+                        <option value="Intel">Intel</option>
                       </select>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-outline mb-3">
-                        <input type="text" class="form-control" id="formFactor" name="formFactor">
-                        <label class="form-label" for="formFactor">Form Factor</label>
+                        <input type="text" class="form-control" id="memorySize" name="memorySize">
+                        <label class="form-label" for="memorySize">Ukuran Memory (GB)</label>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-lg-6">
                       <div class="form-outline mb-3">
-                        <input type="num" class="form-control" id="memoryMaxGB" name="memoryMaxGB">
-                        <label class="form-label" for="memoryMaxGB" min="0">Max Memory (GB)</label>
+                        <input type="num" class="form-control" id="tdp" name="tdp">
+                        <label class="form-label" for="tdp" min="0">TDP (Watt)</label>
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-outline mb-3">
-                        <input type="num" class="form-control" id="memorySlot" placeholder="Jumlah Slot Memory" name="memorySlot" min="0">
-                        <label class="form-label" for="memorySlot">Jumlah Slot Memory</label>
+                        <input type="num" class="form-control" id="boostClockMhz" name="boostClockMhz" min="0">
+                        <label class="form-label" for="boostClockMhz">Boost Clock (Mhz)</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-outline mb-3">
+                        <input type="num" class="form-control" id="lengthMm" name="lengthMm">
+                        <label class="form-label" for="lengthMm" min="0">Panjang GPU (mm)</label>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-outline mb-3">
-                    <textarea class="form-control" id="description" rows="17" name="description"></textarea>
+                    <textarea class="form-control" id="description" rows="18" name="description"></textarea>
                     <label class="form-label" for="description">Deskripsi</label>
                   </div>
                 </div>

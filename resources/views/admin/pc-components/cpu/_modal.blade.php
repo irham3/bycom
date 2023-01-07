@@ -70,7 +70,7 @@
                   </div>
                   <div class="col-lg-6">
                     <div class="form-outline mb-3">
-                      <input type="text" class="form-control" id="integratedgGraphic" placeholder="Integrated Graphic" name="integratedgGraphic">
+                      <input type="text" class="form-control" id="integratedGraphic" placeholder="Integrated Graphic" name="integratedGraphic">
                     </div>
                   </div>
                 </div>
@@ -174,7 +174,7 @@
                     </div>
                     <div class="col-lg-6">
                       <div class="form-outline mb-3">
-                        <input type="text" class="form-control" id="integratedgGraphic" name="integratedgGraphic">
+                        <input type="text" class="form-control" id="integratedGraphic" name="integratedGraphic">
                         <label class="form-label" for="integratedGraphic">Integrated Graphic</label>
                       </div>
                     </div>

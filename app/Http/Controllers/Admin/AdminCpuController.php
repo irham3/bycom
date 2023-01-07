@@ -125,7 +125,7 @@ class AdminCpuController extends Controller
                         'max' => 'Ukuran gambar maksimal 5MB'
                       ]
                     );
-                    Storage::putFileAs('public/images/pc-components/cpus', $request->file('imgUpload'), $imgName);
+                    Storage::putFileAs('public/images/pc-components/cpu', $request->file('imgUpload'), $imgName);
                     $cpu->image = $request->imgUpload;
                 }
                     
