@@ -25,7 +25,7 @@
     e.preventDefault();
     const fd = new FormData(this);
     $.ajax({
-      url: '{{ url("admin/cpu") }}',
+      url: '{{ url("admin/case") }}',
       method: 'post',
       data: fd,
       cache: false,
@@ -130,16 +130,14 @@
             $('#editModal').modal('hide');
           });
           $('#editModal #id').val(response.data.id);
-          $('#editModal #output-img').attr('src', '/storage/images/pc-components/cpu/' + response.data.image);
+          $('#editModal #output-img').attr('src', '/storage/images/pc-components/case/' + response.data.image);
           $('#editModal #name').val(response.data.name);
           $('#editModal #price').val(response.data.price);
           $('#editModal #url').val(response.data.url);
-          $('#editModal #coreCount').val(response.data.coreCount);
-          $('#editModal #cpuSocketId').val(response.data.cpuSocketId);
-          $('#editModal #coreClock').val(response.data.coreClock);
-          $('#editModal #boostClock').val(response.data.boostClock);
-          $('#editModal #tdp').val(response.data.tdp);
-          $('#editModal #integratedGraphic').val(response.data.integratedGraphic);
+          $('#editModal #type').val(response.data.type);
+          $('#editModal #hddSlot').val(response.data.hddSlot);
+          $('#editModal #gpuMaxLengthMm').val(response.data.gpuMaxLengthMm);
+          $('#editModal #description').val(response.data.description);
         }, 
         error: function (xhr, status, error) {
           var err = eval("(" + xhr.responseText + ")"); 
@@ -156,9 +154,9 @@
   $('#editForm').submit(function(e) {
     e.preventDefault();
     const fd = new FormData(this);
-    const id = $('#id').val();
+    const id = $('#editModal #id').val();
     $.ajax({
-      url: 'cpu/' + id,
+      url: 'case/' + id,
       type: 'POST',
       data: fd,
       cache: false,
