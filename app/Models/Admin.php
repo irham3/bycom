@@ -9,4 +9,5 @@ class Admin extends Authenticatable
 {
     use HasFactory;
     protected $guard = 'admin';
+    public $timestamps = false;
 }

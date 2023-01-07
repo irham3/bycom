@@ -5,7 +5,6 @@
         <div class="modal-header">
             <h5 class="modal-title" id="addUserModalLabel">Add User Data</h5>
             <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <form action="#" method="POST" id="add_user_form" enctype="multipart/form-data">
@@ -54,7 +53,6 @@
           <div class="modal-header">
               <h5 class="modal-title" id="editUserModalLabel">Edit User</h5>
               <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
               </button>
           </div>
           <form action="#" method="POST" id="edit_user_form" enctype="multipart/form-data">
@@ -80,7 +78,7 @@
               </div>
               <div class="form-group mb-3">
                   <label for="password">New Password</label>
-                  <input type="password" required class="password form-control" id="password" name="password" autocomplete="off">
+                  <input type="password" class="password form-control" id="password" name="password" autocomplete="off">
               </div>
             </div>
             <div class="modal-footer">

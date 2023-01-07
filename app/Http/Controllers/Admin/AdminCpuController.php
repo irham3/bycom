@@ -12,14 +12,15 @@ use Illuminate\Support\Facades\Validator;
 class AdminCpuController extends Controller
 {
     public function index() {
+        // Mengambil data socket cpu untuk tambah dan edit data
         $cpuSockets = CpuSocket::select('id','socketName')->get();
         return view('admin.pc-components.cpu.index',compact('cpuSockets'));
     }
     
     public function getAllData()
     {
-        $model = new Cpu();
-        return parent::getPcComponentDataTable($model, 'cpu');
+        $cpuModel = new Cpu();
+        return parent::getPcComponentDataTable($cpuModel, 'cpu');
     }
 
     public function store(Request $request) {
@@ -74,22 +75,8 @@ class AdminCpuController extends Controller
 
     public function edit($id)
     {
-        $data = Cpu::find($id);
-        if($data)
-        {
-            return response()->json([
-                'status'=>200,
-                'data'=> $data,
-            ]);
-        }
-        else
-        {
-            return response()->json([
-                'status'=>404,
-                'message'=>'No data Found.'
-            ]);
-        }
-
+        $cpuModel = new Cpu();
+        return parent::getResponseEditData($cpuModel, $id);
     }
 
     public function update(Request $request)
@@ -165,7 +152,6 @@ class AdminCpuController extends Controller
 
     public function destroy($id)
     {
-        $user = Cpu::findOrFail($id);
-        $user->delete();
+        Cpu::findOrFail($id)->delete();
     }
 }

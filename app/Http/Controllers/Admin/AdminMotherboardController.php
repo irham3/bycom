@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Motherboard;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\CpuSocket;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class AdminMotherboardController extends Controller
 {
@@ -15,7 +18,9 @@ class AdminMotherboardController extends Controller
      */
     public function index()
     {
-        return view('admin.pc-components.motherboard.index');
+        // Mengambil data socket motherboard untuk tambah dan edit data
+        $cpuSockets = CpuSocket::select('id','socketName')->get();
+        return view('admin.pc-components.motherboard.index', compact('cpuSockets'));
     }
 
     public function getAllData()
@@ -40,53 +45,126 @@ class AdminMotherboardController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+    public function store(Request $request) {
+        $validator = Validator::make($request->all(),[
+             'imgUpload' => 'required|image|mimes:jpeg,png,jpg,svg|max:5000',
+             'name'      => ['required', 'string', 'max:200'],
+             'price'     => ['required','integer','min:4'],
+             'url'     => ['required','string'],
+             'cpuSocketId'     => ['required','integer'],
+             'formFactor'     => ['required','string'],
+             'memoryMaxGB'     => ['required','integer'],
+             'memorySlot'     => ['required','integer'],
+             'description'     => ['required', 'string'],
+         ], 
+         [
+         'imgUpload.image' => 'File yang dipilih bukan gambar',
+         'imgUpload.mimes' => 'Format gambar harus jpeg, png, jpg, svg',
+         'max' => 'Ukuran gambar maksimal 5MB'
+         ]);
+ 
+         if($validator->fails()) {
+             return response()->json(['errors' => $validator->errors()]);
+         } else {
+             $extension = $request->file('imgUpload')->extension();
+             $imgName = $request->name . '-' . date('dmyHis') . uniqid() . '.' .$extension;
+             $path = 'public/images/pc-components/motherboard';
+             Storage::putFileAs($path, $request->file('imgUpload'), $imgName);
+ 
+             Motherboard::create([
+                 'name'  => $request->name,
+                 'price'  => $request->price,
+                 'url'  => $request->url,
+                 'image'  => $imgName,
+                 'cpuSocketId'  => $request->cpuSocketId,
+                 'formFactor'  => $request->formFactor,
+                 'memoryMaxGB'  => $request->memoryMaxGB,
+                 'memorySlot'  => $request->memorySlot,
+                 'description'  => $request->description
+             ]);
+             
+             return response()->json(['success' => "Berhasil menyimpan data"]);
+         }
+ 
+     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $model = new Motherboard();
+        return parent::getResponseEditData($model, $id);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(),[
+            'name'      => ['required', 'string', 'max:200'],
+            'price'     => ['required','integer','min:4'],
+            'url'     => ['required','string'],
+            'cpuSocketId'     => ['required','integer'],
+            'formFactor'     => ['required','string'],
+            'memoryMaxGB'     => ['required','integer'],
+            'memorySlot'     => ['required','integer'],
+            'description'     => ['required','string'],
+        ]);
+
+        if($validator->fails()) {
+            return response()->json([
+                'status'=>400,
+                'errors'=>$validator->messages()
+            ]);
+        } else {
+            $motherboard = Motherboard::find($request->id);
+            if($motherboard) {
+                $motherboard->name = $request->name;
+                $motherboard->price = $request->price;
+                $motherboard->url = $request->url;
+                $motherboard->cpuSocketId = $request->cpuSocketId;
+                $motherboard->formFactor = $request->formFactor;
+                $motherboard->memoryMaxGB = $request->memoryMaxGB;
+                $motherboard->memorySlot = $request->memorySlot;
+                $motherboard->description = $request->description;
+
+                if($request->hasFile('imgUpload')) {
+                    $extension = $request->file('imgUpload')->extension();
+                    $imgName = date('dmyHis').uniqid().'.'.$extension;
+        
+                    $this->validate($request, 
+                      [
+                        'imgUpload' => 'required|image|mimes:jpeg,png,jpg,svg|max:5000',
+                      ], 
+                      [
+                        'imgUpload.image' => 'File yang dipilih bukan gambar',
+                        'imgUpload.mimes' => 'Format gambar harus jpeg, png, jpg, svg',
+                        'max' => 'Ukuran gambar maksimal 5MB'
+                      ]
+                    );
+                    Storage::putFileAs('public/images/pc-components/motherboards', $request->file('imgUpload'), $imgName);
+                    $motherboard->image = $request->imgUpload;
+                }
+                    
+                if($request->has('integratedGraphic'))
+                    $motherboard->integratedGraphic = $request->integratedGraphic;
+
+                $motherboard->save();
+
+                return response()->json([
+                    'status'=>200,
+                    'message'=>'Data Updated Successfully.'
+                ]);
+            }
+            else
+            {
+                return response()->json([
+                    'status'=>404,
+                    'message'=>'No Data Found.'
+                ]);
+            }
+
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        Motherboard::findOrFail($id)->delete();
     }
 }

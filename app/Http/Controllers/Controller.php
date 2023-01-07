@@ -39,4 +39,23 @@ class Controller extends BaseController
         })
         ->make(true);
     }
+
+    public function getResponseEditData(Model $model, $id)
+    {
+        $data = $model->find($id);
+        if($data)
+        {
+            return response()->json([
+                'status'=>200,
+                'data'=> $data,
+            ]);
+        }
+        else
+        {
+            return response()->json([
+                'status'=>404,
+                'message'=>'No data Found.'
+            ]);
+        }
+    }
 }

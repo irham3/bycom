@@ -1,9 +1,9 @@
-<script type="text/javascript">
+<script>
 
   // Get All Users into table
   $(document).ready(function () {
     $('.datatable').DataTable({
-        ajax: '{{ url("admin/gpu/getAllData") }}',
+        ajax: '{{ url("admin/motherboard/getAllData") }}',
         serverSide: false,
         processing: true,
         deferRender: true,
@@ -25,7 +25,7 @@
     e.preventDefault();
     const fd = new FormData(this);
     $.ajax({
-      url: '{{ url("admin/cpu") }}',
+      url: '{{ url("admin/motherboard") }}',
       method: 'post',
       data: fd,
       cache: false,
@@ -54,7 +54,6 @@
         }
       },
       error: function (xhr, status, error) {
-        console.log(fd);
         console.log(xhr.responseText);
         Swal.fire(
           'Error',
@@ -117,7 +116,6 @@
   //Edit
   $(document).on('click', '.btn-edit', function(e) {
     e.preventDefault();
-    var id = $(this).data('id');
     var url = $(this).attr('href');
     $.ajax({
         url: url,
@@ -132,9 +130,16 @@
             $('#editModal').modal('hide');
           });
           $('#editModal #id').val(response.data.id);
-          $('#editModal #socketName').val(response.data.socketName);
-          $('#editModal #introductionYear').val(response.data.introductionYear);
-          $('#editModal #cpuVendor').val(response.data.cpuVendor);
+          $('#editModal #output-img').attr('src', '/storage/images/pc-components/motherboard/' + response.data.image);
+          $('#editModal #name').val(response.data.name);
+          $('#editModal #price').val(response.data.price);
+          $('#editModal #url').val(response.data.url);
+          $('#editModal #formFactor').val(response.data.formFactor);
+          $('#editModal #cpuSocketId').val(response.data.cpuSocketId);
+          $('#editModal #formFactor').val(response.data.formFactor);
+          $('#editModal #memoryMaxGB').val(response.data.memoryMaxGB);
+          $('#editModal #memorySlot').val(response.data.memorySlot);
+          $('#editModal #description').val(response.data.description);
         }, 
         error: function (xhr, status, error) {
           var err = eval("(" + xhr.responseText + ")"); 
@@ -151,9 +156,9 @@
   $('#editForm').submit(function(e) {
     e.preventDefault();
     const fd = new FormData(this);
-    const id = $('#id').val();
+    const id = $('#editModal #id').val();
     $.ajax({
-      url: 'cpu/' + id,
+      url: 'motherboard/' + id,
       type: 'POST',
       data: fd,
       cache: false,

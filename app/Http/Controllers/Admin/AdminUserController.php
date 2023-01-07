@@ -117,8 +117,7 @@ class AdminUserController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name'      => ['required', 'string', 'max:255'],
-            'email'     => ['required', 'email'],
-            'password'  => ['required', Password::defaults()]
+            'email'     => ['required', 'email']
         ]);
 
         if($validator->fails())
@@ -148,17 +147,16 @@ class AdminUserController extends Controller
                       ]
                     );
                     Storage::putFileAs('public/images/profile-images/users', $request->file('imgUpload'), $imgName);
-                    $user->name = $request->input('name');
-                    $user->email = $request->input('email');
-                    $user->password = Hash::make($request->input('password'));
                     $user->image = $imgName;
-                    $user->update();
-                } else {
-                    $user->name = $request->input('name');
-                    $user->email = $request->input('email');
+                } 
+
+                if($request->has('password'))
                     $user->password = Hash::make($request->input('password'));
-                    $user->update();
-                }
+
+
+                $user->name = $request->input('name');
+                $user->email = $request->input('email');
+                $user->update();
                 
                 return response()->json([
                     'status'=>200,

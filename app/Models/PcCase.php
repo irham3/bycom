@@ -10,4 +10,5 @@ class PcCase extends Model
     use HasFactory;
     protected $guarded = [];
     protected $table = 'cases';
+    public $timestamps = false;
 }
