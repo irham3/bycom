@@ -43,13 +43,13 @@
             'warning'
           )
         } else{
-          $('.datatable').DataTable().ajax.reload();
+          $("#addModal").modal('hide');
           Swal.fire(
             'Berhasil!',
             response.success,
             'success'
-            )
-          $("#addModal").modal('hide');
+          )
+          $('.datatable').DataTable().ajax.reload();
         }
       },
       error: function (xhr, status, error) {
