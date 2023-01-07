@@ -6,10 +6,8 @@ use App\Models\Cpu;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\CpuSocket;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rules\Password;
 
 class AdminCpuController extends Controller
 {
@@ -35,6 +33,7 @@ class AdminCpuController extends Controller
             'coreClock'     => ['required','string'],
             'boostClock'     => ['required','string'],
             'tdp'     => ['required','integer'],
+            'description'     => ['required', 'string'],
         ], 
         [
         'imgUpload.image' => 'File yang dipilih bukan gambar',
@@ -65,6 +64,7 @@ class AdminCpuController extends Controller
                 'boostClock'  => $request->boostClock,
                 'tdp'  => $request->tdp,
                 'integratedGraphic'  => $integratedGraphic,
+                'description'  => $request->description
             ]);
             
             return response()->json(['success' => "Berhasil menyimpan data"]);
@@ -92,32 +92,39 @@ class AdminCpuController extends Controller
 
     }
 
-    public function show($id)
-    {
-        //
-    }
-
     public function update(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'name'      => ['required', 'string', 'max:255'],
-            'email'     => ['required', 'email'],
-            'password'  => ['required', Password::defaults()]
+        $validator = Validator::make($request->all(),[
+            'name'      => ['required', 'string', 'max:200'],
+            'price'     => ['required','integer','min:4'],
+            'url'     => ['required','string'],
+            'cpuSocketId'     => ['required','integer'],
+            'coreCount'     => ['required','integer'],
+            'coreClock'     => ['required','string'],
+            'boostClock'     => ['required','string'],
+            'tdp'     => ['required','integer'],
+            'description'     => ['required','string'],
         ]);
 
-        if($validator->fails())
-        {
+        if($validator->fails()) {
             return response()->json([
                 'status'=>400,
                 'errors'=>$validator->messages()
             ]);
-        }
-        else
-        {
-            $user = Cpu::find($request->id);
-            if($user)
-            {
-                if($request->hasFile('imgUpload')){
+        } else {
+            $cpu = Cpu::find($request->id);
+            if($cpu) {
+                $cpu->name = $request->name;
+                $cpu->price = $request->price;
+                $cpu->url = $request->url;
+                $cpu->cpuSocketId = $request->cpuSocketId;
+                $cpu->coreCount = $request->coreCount;
+                $cpu->coreClock = $request->coreClock;
+                $cpu->boostClock = $request->boostClock;
+                $cpu->tdp = $request->tdp;
+                $cpu->description = $request->description;
+
+                if($request->hasFile('imgUpload')) {
                     $extension = $request->file('imgUpload')->extension();
                     $imgName = date('dmyHis').uniqid().'.'.$extension;
         
@@ -131,29 +138,25 @@ class AdminCpuController extends Controller
                         'max' => 'Ukuran gambar maksimal 5MB'
                       ]
                     );
-                    Storage::putFileAs('public/images/profile-images/users', $request->file('imgUpload'), $imgName);
-                    $user->name = $request->input('name');
-                    $user->email = $request->input('email');
-                    $user->password = Hash::make($request->input('password'));
-                    $user->image = $imgName;
-                    $user->update();
-                } else {
-                    $user->name = $request->input('name');
-                    $user->email = $request->input('email');
-                    $user->password = Hash::make($request->input('password'));
-                    $user->update();
+                    Storage::putFileAs('public/images/pc-components/cpus', $request->file('imgUpload'), $imgName);
+                    $cpu->image = $request->imgUpload;
                 }
-                
+                    
+                if($request->has('integratedGraphic'))
+                    $cpu->integratedGraphic = $request->integratedGraphic;
+
+                $cpu->save();
+
                 return response()->json([
                     'status'=>200,
-                    'message'=>'User Updated Successfully.'
+                    'message'=>'Data Updated Successfully.'
                 ]);
             }
             else
             {
                 return response()->json([
                     'status'=>404,
-                    'message'=>'No User Found.'
+                    'message'=>'No Data Found.'
                 ]);
             }
 

@@ -95,7 +95,7 @@
           <form action="#" method="POST" id="addForm" enctype="multipart/form-data">
             @method('PUT')
             @csrf
-            <input type="hidden" name="id">
+            <input type="hidden" name="id" id="id">
             <div class="modal-body">
               <div class="component-pic mb-4">
                   <label class="-label" for="file-add">

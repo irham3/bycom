@@ -298,18 +298,10 @@
         </div>
         <div class="d-flex justify-content-end">
             <div class="me-3">
-                {{-- View Simulasi --}}
+                {{-- View Simulasi Yang disimpan--}}
                 @if (isset($prevRakitanData))
-                    @if (Route::has('login'))
-                        @auth
-                            @if (Auth::user()->id == $prevRakitanData->userId)
-                                {{-- @include('rakitanku.edit-form') --}}
-                                <button class="btn add">Edit</button>
-                            @endif
-                        @else  
-                        {{-- Kosong karena selain user pemilik rakitan, tidak bisa edit --}}
-                        @endauth
-                    @endif
+                        {{-- Tidak ada button simpan lagi --}}
+
                 {{-- Buat Simulasi Baru --}}
                 @else  
                     @if (Route::has('login'))

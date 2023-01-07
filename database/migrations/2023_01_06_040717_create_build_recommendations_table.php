@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('price');
             $table->string('url');
             $table->string('image')->default('placeholder.png');
+            $table->timestamps();
         });
     }
 

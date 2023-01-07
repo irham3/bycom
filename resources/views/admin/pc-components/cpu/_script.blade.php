@@ -140,6 +140,7 @@
           $('#editModal #boostClock').val(response.data.boostClock);
           $('#editModal #tdp').val(response.data.tdp);
           $('#editModal #integratedGraphic').val(response.data.integratedGraphic);
+          $('#editModal #description').val(response.data.description);
         }, 
         error: function (xhr, status, error) {
           var err = eval("(" + xhr.responseText + ")"); 
@@ -156,7 +157,7 @@
   $('#editForm').submit(function(e) {
     e.preventDefault();
     const fd = new FormData(this);
-    const id = $('#id').val();
+    const id = $('#editModal #id').val();
     $.ajax({
       url: 'cpu/' + id,
       type: 'POST',

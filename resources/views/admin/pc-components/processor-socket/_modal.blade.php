@@ -5,18 +5,17 @@
         <div class="modal-header">
             <h5 class="modal-title" id="addModalLabel">Add Data</h5>
             <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <form action="#" method="POST" id="addForm">
           @csrf
           <div class="modal-body">
-              <div class="form-group mb-3">
+              <div class="form-outline mb-3">
                   <input type="text" required class="socketName form-control" id="socketName" name="socketName" autocomplete="off" placeholder="Nama Socket CPU">
               </div>
               <div class="row">
                   <div class="col-lg-6">
-                    <div class="form-group">
+                    <div class="form-outline">
                       <input type="month" class="form-control" id="introductionYear" placeholder="Tahun Diperkenalkan" name="introductionYear">
                     </div>
                   </div>
@@ -45,7 +44,6 @@
           <div class="modal-header">
               <h5 class="modal-title" id="editModalLabel">Edit Data</h5>
               <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
               </button>
           </div>
           <form action="#" method="POST" id="editForm">
@@ -53,12 +51,13 @@
             @csrf
             <input type="hidden" name="id" id="id" value="">
             <div class="modal-body">
-              <div class="form-group mb-3">
-                  <input type="text" required class="socketName form-control" id="socketName" name="socketName" autocomplete="off" placeholder="Nama Socket CPU">
+              <div class="form-outline mb-3">
+                  <input type="text" required class="socketName form-control" id="socketName" name="socketName" autocomplete="off">
+                  <label class="form-label" for="socketName">CPU Socket</label>
               </div>
               <div class="row">
                   <div class="col-lg-6">
-                    <div class="form-group">
+                    <div class="form-outline">
                       <input type="month" class="form-control" id="introductionYear" placeholder="Tahun Diperkenalkan" name="introductionYear">
                     </div>
                   </div>

@@ -22,7 +22,8 @@ return new class extends Migration
             $table->string('type');
             $table->tinyInteger('hddSlot');
             $table->Integer('gpuMaxLengthMm')->nullable();
-            $table->mediumText('description')->nullable();         
+            $table->mediumText('description')->nullable();     
+            $table->timestamps();    
         });
     }
 

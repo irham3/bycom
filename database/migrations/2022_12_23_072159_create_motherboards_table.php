@@ -24,7 +24,8 @@ return new class extends Migration
             $table->string('formFactor');
             $table->integer('memoryMaxGB');
             $table->integer('memorySlot');
-            $table->mediumText('description')->nullable();          
+            $table->mediumText('description')->nullable(); 
+            $table->timestamps();         
         });
     }
 

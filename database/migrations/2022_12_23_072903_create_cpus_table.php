@@ -26,6 +26,7 @@ return new class extends Migration
             $table->integer('tdp');
             $table->string('integratedGraphic');  
             $table->mediumText('description')->nullable(); 
+            $table->timestamps();
         });
     }
 

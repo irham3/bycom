@@ -137,9 +137,22 @@ class SimulasiController extends Controller
             'userId'    => ['required'],
             'name'      => ['required'],
             'cpuId'     => ['required'],
+            'moboId'     => ['required'],
+            'memoryId'     => ['required'],
+            'gpuId'     => ['required'],
+            'caseId'     => ['required'],
+            'inStorageId'     => ['required'],
+            'psuId'     => ['required'],
+            'totalPrice'     => ['required'],
         ],[
             'name.required' => 'Nama rakitan harus dimasukkan!',
-            'cpuId.required' => 'Minimal harus pilih CPU'
+            'cpuId.required' => 'Anda belum memilih CPU',
+            'moboId.required' => 'Anda belum memilih Motherboard',
+            'memoryId.required' => 'Anda belum memilih Memory',
+            'gpuId.required' => 'Anda belum memilih GPU',
+            'caseId.required' => 'Anda belum memilih Casing PC',
+            'inStorageId.required' => 'Anda belum memilih Internal Storage',
+            'psuId.required' => 'Anda belum memilih Power Supply',
         ]);
 
         if($validator->fails()) {
