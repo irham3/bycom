@@ -16,7 +16,7 @@ class AdminMemoryController extends Controller
         return view('admin.pc-components.memory.index');
     }
 
-    public function getAllData()
+    public function getAllDatatable()
     {
         $model = new Memory();
         return parent::getPcComponentDataTable($model, 'memory');

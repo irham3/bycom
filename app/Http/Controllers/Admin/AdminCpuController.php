@@ -17,7 +17,7 @@ class AdminCpuController extends Controller
         return view('admin.pc-components.cpu.index',compact('cpuSockets'));
     }
     
-    public function getAllData()
+    public function getAllDatatable()
     {
         $cpuModel = new Cpu();
         return parent::getPcComponentDataTable($cpuModel, 'cpu');

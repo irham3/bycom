@@ -1,0 +1,1 @@
+<a href="{{ url('rakitanku/'.$code) }}" target="_blank">{{ $code }} </a>

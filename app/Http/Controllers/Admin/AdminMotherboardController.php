@@ -23,7 +23,7 @@ class AdminMotherboardController extends Controller
         return view('admin.pc-components.motherboard.index', compact('cpuSockets'));
     }
 
-    public function getAllData()
+    public function getAllDatatable()
     {
         $model = new Motherboard();
         return parent::getPcComponentDataTable($model, 'motherboard');

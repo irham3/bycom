@@ -15,7 +15,7 @@ class AdminPowerSupplyController extends Controller
         return view('admin.pc-components.psu.index');
     }
 
-    public function getAllData()
+    public function getAllDatatable()
     {
         $model = new PowerSupply();
         return parent::getPcComponentDataTable($model, 'psu');

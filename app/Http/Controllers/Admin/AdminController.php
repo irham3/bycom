@@ -55,7 +55,7 @@ class AdminController extends Controller
     public function dashboard()
     {
         $userCount = User::all()->count();
-        $pcBuildCount = UserPcBuild::all()->count();
+        $userPcBuildCount = UserPcBuild::all()->count();
         $cpuCount = Cpu::all()->count();
         $moboCount = Motherboard::all()->count();
         $gpuCount = Gpu::all()->count();
@@ -67,7 +67,7 @@ class AdminController extends Controller
 
         $countData = [
             'user' => $userCount,
-            'UserPcBuild' => $pcBuildCount,
+            'UserPcBuild' => $userPcBuildCount,
             'cpu' => $cpuCount,
             'mobo' => $moboCount,
             'gpu' => $gpuCount,

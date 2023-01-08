@@ -1,9 +1,9 @@
 <script type="text/javascript">
 
-  // Get All Users into table
+  // Get All Data into table
   $(document).ready(function () {
     $('.datatable').DataTable({
-        ajax: '{{ url("admin/processor-socket/getAllData") }}',
+        ajax: '{{ url("admin/processor-socket/getAllDatatable") }}',
         serverSide: false,
         processing: true,
         deferRender: true,

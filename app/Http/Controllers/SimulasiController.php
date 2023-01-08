@@ -94,8 +94,8 @@ class SimulasiController extends Controller
                         ->having('totalSize', '<=', $memoryMaxGB)
                         ->get();
         } else if ($request->has('selectedGpuId')) {
-            // Filter casing (notes: jangan lupa tambahin filter tipe case dg tipe mobo nya jg)
-            $gpuLength = Gpu::where('id', $request->selectedGpuId)->select('length')->first()->length;
+            // Filter casing
+            $gpuLength = Gpu::where('id', $request->selectedGpuId)->select('lengthMm')->first()->lengthMm;
             $pcComponents = PcCase::where('gpuMaxLengthMm', '>=',$gpuLength)->select('id','name','price','image')->get();
         }else if ($request->has('selectedCaseId')) {
             // Filter PSU
@@ -168,7 +168,7 @@ class SimulasiController extends Controller
             $code = substr($uuid->toString(), 0, 6);
 
             // Insert data rakitan ke DB
-            DB::table('pc_builds')->insert([
+            DB::table('user_pc_builds')->insert([
                 'userId' => $request->userId,
                 'code' => $code,
                 'name' => $request->name,

@@ -18,7 +18,7 @@ class AdminUserController extends Controller
         return view('admin.users.index');
     }
 
-    public function getAllData()
+    public function getAllDatatable()
     {
         $users = DB::table('users')
             ->select(

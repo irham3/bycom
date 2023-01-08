@@ -16,7 +16,7 @@ class AdminPcCaseController extends Controller
         return view('admin.pc-components.case.index');
     }
 
-    public function getAllData()
+    public function getAllDatatable()
     {
         $model = new PcCase();
         return parent::getPcComponentDataTable($model, 'case');

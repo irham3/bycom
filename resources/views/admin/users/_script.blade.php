@@ -6,10 +6,10 @@
           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       }
   });
-  // Get All Users into table
+  // Get All Data into table
   $(document).ready(function () {
     $('.users-table').DataTable({
-        ajax: '{{ url("admin/user/getAllData") }}',
+        ajax: '{{ url("admin/user/getAllDatatable") }}',
         serverSide: false,
         processing: true,
         deferRender: true,

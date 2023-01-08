@@ -21,7 +21,7 @@ class AdminCpuSocketController extends Controller
         return view('admin.pc-components.processor-socket.index');
     }
 
-    public function getAllData()
+    public function getAllDatatable()
     {
         $data = DB::table('cpu_sockets')
             ->select(

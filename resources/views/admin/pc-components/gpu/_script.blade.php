@@ -1,9 +1,9 @@
 <script>
 
-  // Get All Users into table
+  // Get All Data into table
   $(document).ready(function () {
     $('.datatable').DataTable({
-        ajax: '{{ url("admin/gpu/getAllData") }}',
+        ajax: '{{ url("admin/gpu/getAllDatatable") }}',
         serverSide: false,
         processing: true,
         deferRender: true,

@@ -15,7 +15,7 @@ class AdminGpuController extends Controller
         return view('admin.pc-components.gpu.index');
     }
 
-    public function getAllData()
+    public function getAllDatatable()
     {
         $model = new Gpu();
         return parent::getPcComponentDataTable($model, 'gpu');

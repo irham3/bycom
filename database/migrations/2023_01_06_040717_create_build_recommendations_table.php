@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('build_recommendations', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('name');
             $table->integer('price');
             $table->string('url');
             $table->string('image')->default('placeholder.png');

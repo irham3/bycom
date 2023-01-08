@@ -37,7 +37,7 @@
     <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#full-pc-builds" aria-expanded="false" aria-controls="full-pc-builds">
         <i class="ti-package menu-icon"></i>
-        <span class="menu-title">Full PC Builds</span>
+        <span class="menu-title">PC Builds</span>
         <i class="menu-arrow"></i>
       </a>
       <div class="collapse" id="full-pc-builds">
