@@ -54,7 +54,7 @@
         }
       },
       error: function (xhr, status, error) {
-        console.log(xhr.responseText);
+        ;
         Swal.fire(
           'Error',
           'Ada masalah!',
@@ -185,7 +185,7 @@
         }
       },
       error: function (xhr, status, error) {
-        console.log(xhr.responseText)
+        
         Swal.fire(
           'Error',
           'Ada masalah!',

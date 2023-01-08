@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminBuildRecommendationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminCpuController;
@@ -66,11 +67,16 @@ Route::prefix('/admin')->group(function() {
       Route::get('memory/getAllDatatable', [AdminMemoryController::class,
       'getAllDatatable']);
       Route::resource('memory', AdminMemoryController::class);
-
+      
       // Admin User Build
       // Hanya bisa lihat datanya, tidak ada modifikasi data
       Route::get('custom-build/getAllDatatable', [AdminUserBuildController::class,
       'getAllDatatable']);
       Route::get('custom-build', [AdminUserBuildController::class, 'index']);
+
+      // Admin Build Recommendation Route
+      Route::get('pc-recommendation/getAllDatatable', [AdminBuildRecommendationController::class,
+      'getAllDatatable']);
+      Route::resource('pc-recommendation', AdminBuildRecommendationController::class);
+    });
   });
-});

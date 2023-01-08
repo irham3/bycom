@@ -74,7 +74,7 @@
           </div>
           <div class="modal-footer">
               <button type="reset" class="btn btn-secondary">Reset</button>
-              <button type="submit" class="btn btn-primary btn-add-user">Create</button>
+              <button type="submit" class="btn btn-primary btn-add-data">Create</button>
           </div>
         </form>
       </div>

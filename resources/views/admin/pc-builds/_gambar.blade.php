@@ -1,1 +1,1 @@
-<img class="img-thumbnail" src="/storage/images/pc-builds/{{ $imgName }}" alt="cpu-image"/>
+<img class="img-thumbnail" src="/storage/images/build-recommendations/{{ $imgName }}" alt="cpu-image"/>

@@ -43,7 +43,7 @@
       <div class="collapse" id="full-pc-builds">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"><a class="nav-link" href="{{ url('admin/custom-build') }}">User Build</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ url('admin/recommendation-pc') }}">Build Recommendation</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url('admin/pc-recommendation') }}">Build Recommendation</a></li>
         </ul>
       </div>
     </li>

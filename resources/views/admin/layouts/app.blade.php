@@ -210,7 +210,6 @@
   <script>
     document.addEventListener('change', function (event) {
       if (event.target.matches('.upload-img')) {
-        console.log(event);
         var image = event.target.nextSibling.nextSibling;
         image.src = URL.createObjectURL(event.target.files[0]);
       } 
