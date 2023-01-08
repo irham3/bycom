@@ -33,12 +33,19 @@
         </ul>
       </div>
     </li>
-    
+
     <li class="nav-item">
-      <a class="nav-link" href="{{ url('admin/full-pc-build') }}">
+      <a class="nav-link" data-toggle="collapse" href="#full-pc-builds" aria-expanded="false" aria-controls="full-pc-builds">
         <i class="ti-package menu-icon"></i>
         <span class="menu-title">Full PC Builds</span>
+        <i class="menu-arrow"></i>
       </a>
+      <div class="collapse" id="full-pc-builds">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"><a class="nav-link" href="{{ url('admin/custom-build') }}">User Build</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url('admin/recommendation-pc') }}">Build Recommendation</a></li>
+        </ul>
+      </div>
     </li>
     
     <li class="nav-item">

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PcBuild;
+use App\Models\UserPcBuild;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +13,7 @@ class RakitanKuController extends Controller
     public function index(Request $request)
     {
 
-        $listRakitan = PcBuild::where('userId', Auth::user()->id)->get();
+        $listRakitan = UserPcBuild::where('userId', Auth::user()->id)->get();
         foreach ($listRakitan as $rakitan) {
             $rakitan->totalPrice = parent::rupiah($rakitan->totalPrice);
         }
@@ -24,10 +24,10 @@ class RakitanKuController extends Controller
     public function detailRakitan($code)
     {
         // Cek apakah code ditemukan
-        if (PcBuild::where('code', '=', $code)->count() > 0) {
+        if (UserPcBuild::where('code', '=', $code)->count() > 0) {
             // data yang khusus ada ketika proses edit 
             // (untuk membedakan dg proses tambah karena menggunakan page yang sama)
-            $prevRakitanData = PcBuild::where('code', $code)->first();
+            $prevRakitanData = UserPcBuild::where('code', $code)->first();
 
             // Mengambil data semua komponen yang sudah disimpan di db
             $cpu =  DB::table('cpus')->select('*')->where('id', $prevRakitanData->cpuId)->first();

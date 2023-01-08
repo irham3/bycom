@@ -67,7 +67,7 @@ Route::prefix('/admin')->group(function() {
       'getAllData']);
       Route::resource('memory', AdminMemoryController::class);
 
-      // Admin Memory Route
+      // Admin Full PC Build Route
       Route::get('full-pc-build/detail/getAllDetailData', [AdminPcBuildController::class,
       'getAllDetailData']);
       Route::get('full-pc-build/getAllData', [AdminPcBuildController::class,

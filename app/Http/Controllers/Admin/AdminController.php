@@ -8,7 +8,7 @@ use App\Models\User;
 use App\Models\Admin;
 use App\Models\Memory;
 use App\Models\PcCase;
-use App\Models\PcBuild;
+use App\Models\UserPcBuild;
 use App\Models\CpuSocket;
 use App\Models\Motherboard;
 use App\Models\PowerSupply;
@@ -55,7 +55,7 @@ class AdminController extends Controller
     public function dashboard()
     {
         $userCount = User::all()->count();
-        $pcBuildCount = PcBuild::all()->count();
+        $pcBuildCount = UserPcBuild::all()->count();
         $cpuCount = Cpu::all()->count();
         $moboCount = Motherboard::all()->count();
         $gpuCount = Gpu::all()->count();
@@ -67,7 +67,7 @@ class AdminController extends Controller
 
         $countData = [
             'user' => $userCount,
-            'pcBuild' => $pcBuildCount,
+            'UserPcBuild' => $pcBuildCount,
             'cpu' => $cpuCount,
             'mobo' => $moboCount,
             'gpu' => $gpuCount,

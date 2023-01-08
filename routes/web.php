@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\MarketplaceController;
 use App\Http\Controllers\RakitanKuController;
 use App\Http\Controllers\SimulasiController;
@@ -17,9 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Beranda
-Route::get('/', function () {
-    return view('beranda');
-})->name('beranda');
+Route::get('/', [BerandaController::class, 'index'])->name('beranda');
 
 // Simulasi Rakit PC
 Route::get('/simulasi-rakit-pc', [SimulasiController::class, 'index'])->name('simulasi');

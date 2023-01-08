@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PcBuild extends Model
+class UserPcBuild extends Model
 {
     use HasFactory;
     protected $fillable = ['userId,name,cpuId, moboId, memoryId, 

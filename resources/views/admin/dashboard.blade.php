@@ -24,7 +24,7 @@
         <div class="card shadow p-1 mb-5 card-light-blue">
           <div class="card-body">
             <p class="mb-4">Jumlah Rakitan PC</p>
-            <p class="fs-30 mb-2">{{ $countData['pcBuild'] }}</p>
+            <p class="fs-30 mb-2">{{ $countData['UserPcBuild'] }}</p>
           </div>
         </div>
       </div>
