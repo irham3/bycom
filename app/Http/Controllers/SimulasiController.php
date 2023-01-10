@@ -20,7 +20,9 @@ class SimulasiController extends Controller
     
     public function index(Request $request)
     {
+        
         $sessionData = $request->session()->all();
+        // dd($sessionData);
         $componentKeys = ['cpus','gpus','motherboards','cases', 'internal_storages', 'memories', 'power_supplies'];
 
         // Total harga semua komponennya

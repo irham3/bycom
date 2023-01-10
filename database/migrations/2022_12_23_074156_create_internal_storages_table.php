@@ -21,8 +21,7 @@ return new class extends Migration
             $table->string('image')->default('placeholder.png');
             $table->string('capacity');
             $table->string('type');            
-            $table->mediumText('description')->nullable();   
-            $table->timestamps();    
+            $table->mediumText('description')->nullable();    
         });
     }
 

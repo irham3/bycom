@@ -26,7 +26,7 @@
             </div>
 
             <div class="col-7">
-                <h1 class="heading title-menu">
+                <h1 class="heading name-menu">
                     Paket PC Murah Berkualitas
                 </h1>
                 <div class="swiper product-slider">
@@ -42,7 +42,7 @@
                                 <img src="{{ asset('storage/images/build-recommendations/'.$lowBuild->image) }}" alt="{{ $lowBuild->image }}">
                             </div>
                             <div class="content">
-                                <h3>{{ $lowBuild->title }}</h3>
+                                <h3>{{ $lowBuild->name }}</h3>
                                 <div class="harga">{{ $lowBuild->formattedPrice }}</div>
                                 <a href="{{ $lowBuild->url }}" target="_blank" class="btn">Beli Sekarang</a>
                             </div>
@@ -66,7 +66,7 @@
             </div>
 
             <div class="col-7">
-                <h1 class="heading title-menu">
+                <h1 class="heading name-menu">
                     Paket PC Spek Menengah
                 </h1>
                 <div class="swiper product-slider">
@@ -82,7 +82,7 @@
                                 <img src="{{ asset('storage/images/build-recommendations/'.$midBuild->image) }}" alt="{{ $midBuild->image }}">
                             </div>
                             <div class="content">
-                                <h3>{{ $midBuild->title }}</h3>
+                                <h3>{{ $midBuild->name }}</h3>
                                 <div class="harga">{{ $midBuild->formattedPrice }}</div>
                                 <a href="{{ $midBuild->url }}" target="_blank" class="btn">Beli Sekarang</a>
                             </div>
@@ -105,7 +105,7 @@
             </div>
 
             <div class="col-7">
-                <h1 class="heading title-menu">
+                <h1 class="heading name-menu">
                     Paket PC Spek Tinggi
                 </h1>
                 <div class="swiper product-slider">
@@ -121,7 +121,7 @@
                                 <img src="{{ asset('storage/images/build-recommendations/'.$highBuild->image) }}" alt="{{ $highBuild->image }}">
                             </div>
                             <div class="content">
-                                <h3>{{ $highBuild->title }}</h3>
+                                <h3>{{ $highBuild->name }}</h3>
                                 <div class="harga">{{ $highBuild->formattedPrice }}</div>
                                 <a href="{{ $highBuild->url }}" target="_blank" class="btn">Beli Sekarang</a>
                             </div>

@@ -25,8 +25,7 @@ return new class extends Migration
             $table->string('boostClock');
             $table->integer('tdp');
             $table->string('integratedGraphic');  
-            $table->mediumText('description')->nullable(); 
-            $table->timestamps();
+            $table->mediumText('description')->nullable();
         });
     }
 

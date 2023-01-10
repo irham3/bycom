@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
+    // method buat login admin
     public function login(Request $request) {
         if($request->isMethod('post')) {
             $data = $request->all();
@@ -39,7 +40,7 @@ class AdminController extends Controller
             $this->validate($request, $rules, $customMessages);
 
             if(Auth::guard('admin')->attempt(['email'=>$data['email'], 'password'=>$data['password']])) {
-                return redirect('admin/dashboard')->with('adminDetails', $data);
+                return redirect('admin/dashboard');
             } else {
                 return redirect()->back()->with('error_message', 'Email atau Password salah');
             }
@@ -47,6 +48,7 @@ class AdminController extends Controller
         return view('admin.login');
     }
 
+    // buat logout
     public function logout() {
         Auth::guard('admin')->logout();
         return redirect('admin/login');
