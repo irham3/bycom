@@ -453,6 +453,8 @@ section.product{
     font-size: 1.5rem;
     font-weight: 800;
     color:var(--black);
+    height: 50px;
+    overflow: hidden;
 }
 
 .product .product-slider .box .content .harga{
