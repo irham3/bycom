@@ -1177,18 +1177,6 @@ input#nama-rakitan{
     .detail-content{
         margin: 0px !important;
     }
-}
-
-@media (max-width: 576px){
-
-    html{
-        font-size: 50%;
-    }
-
-    body{
-        margin: 0;
-        padding: 0;
-    }
 
     header{
         flex-direction: column;
@@ -1235,6 +1223,18 @@ input#nama-rakitan{
 
     .container-gallery, .detail-content{
         margin: 10px 30px;
+    }
+}
+
+@media (max-width: 576px){
+
+    html{
+        font-size: 50%;
+    }
+
+    body{
+        margin: 0;
+        padding: 0;
     }
 
     tr.heading-table th{
