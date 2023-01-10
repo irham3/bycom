@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('main-content')
-<section class="d-flex justify-content-between">
+<section class="d-flex justify-content-between list-marketplace">
   @include('layouts.side-nav-marketplace')
 
   <div class="list-content container" style="margin: 0px 30px;">
@@ -9,7 +9,7 @@
       <input class="form-control py-3" type="search" placeholder="Cari Komponen PC" aria-label="Search">
   </form> --}}
 
-      <div class="pt-5 pb-5" id="casing-pc">
+      <div class="pt-5 pb-5 box-category" id="casing-pc">
           <div class="container d-flex justify-content-between">
           <h3>Casing PC</h3>
           <a class="btn" href="{{ url('marketplace/cases') }}" role="button">Lihat Lainnya</a>
@@ -28,7 +28,7 @@
           </div>
       </div>
 
-      <div class="pt-5 pb-5" id="motherboard">
+      <div class="pt-5 pb-5 box-category" id="motherboard">
         <div class="container d-flex justify-content-between">
             <h3>Motherboard</h3>
             <a class="btn" href="{{ url('marketplace/motherboards') }}" role="button">Lihat Lainnya</a>
@@ -47,7 +47,7 @@
         </div>
       </div>
 
-      <div class="pt-5 pb-5" id="cpu">
+      <div class="pt-5 pb-5 box-category" id="cpu">
         <div class="container d-flex justify-content-between">
             <h3>CPU</h3>
             <a class="btn" href="{{ url('marketplace/cpus') }}" role="button">Lihat Lainnya</a>
@@ -65,7 +65,7 @@
             @endforeach
         </div>
       </div>
-      <div class="pt-5 pb-5" id="gpu">
+      <div class="pt-5 pb-5 box-category" id="gpu">
           <div class="container d-flex justify-content-between">
               <h3>GPU</h3>
               <a class="btn" href="{{ url('marketplace/gpus') }}" role="button">Lihat Lainnya</a>
@@ -83,7 +83,7 @@
             @endforeach
           </div>
       </div>
-      <div class="pt-5 pb-5" id="ram">
+      <div class="pt-5 pb-5 box-category" id="ram">
         <div class="container d-flex justify-content-between">
             <h3>RAM</h3>
             <a class="btn" href="{{ url('marketplace/memories') }}" role="button">Lihat Lainnya</a>
@@ -101,7 +101,7 @@
             @endforeach
         </div>
       </div>
-      <div class="pt-5 pb-5" id="psu">
+      <div class="pt-5 pb-5 box-category" id="psu">
         <div class="container d-flex justify-content-between">
             <h3>PSU</h3>
             <a class="btn" href="{{ url('marketplace/power_supplies') }}" role="button">Lihat Lainnya</a>
@@ -119,7 +119,7 @@
             @endforeach
         </div>
       </div>
-      <div class="pt-5 pb-5" id="internal-storage">
+      <div class="pt-5 pb-5 box-category" id="internal-storage">
         <div class="container d-flex justify-content-between">
             <h3>Internal Storage</h3>
             <a class="btn" href="{{ url('marketplace/internal_storages') }}" role="button">Lihat Lainnya</a>
