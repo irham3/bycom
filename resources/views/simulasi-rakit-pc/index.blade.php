@@ -8,7 +8,7 @@
         <table class="table">
             <thead>
                 <tr class="heading-table">
-                    <th scope="col">Kategori Komponen</th>
+                    <th scope="col">Kategori</th>
                     <th scope="col">Nama Komponen</th>
                     <th scope="col">Harga</th>
                     <th scope="col">E-commerce</th>

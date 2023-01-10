@@ -1003,12 +1003,26 @@ input#nama-rakitan{
         font-size: 55%;
     }
 
+    body{
+        margin: 0;
+        padding: 0;
+    }
+
     .header .header-1{
         padding:2rem;
     }
 
     section{
         padding:3rem 2rem;
+    }
+
+    .box-category .add-category h3{
+        text-align: center;
+    }
+
+    .box-category .container .btn{
+        margin-top: 0px;
+        margin-right: 3rem;
     }
 
 }
@@ -1020,7 +1034,12 @@ input#nama-rakitan{
     }
 
     body{
-        padding-bottom: 6rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    header{
+        padding: 2rem !important;
     }
 
     .header .header-2{
@@ -1068,14 +1087,168 @@ input#nama-rakitan{
         max-width: 100%;
     }
 
+    .tulisan, .bg-gambarkiri::after{
+        display: none;
+    }
+
+    .bagiankanan .w-50{
+        width: 75% !important;
+        margin: 3rem 0px;
+    }
+
+    .tulisandaftar{
+        margin-top: .5rem !important;
+    }
+
+    .atau.register{
+        margin: 10px 0px;
+        text-align: center;
+    }
+
+    .btn.add{
+        padding: 10px 20px;
+    }
+
+    .box-category .card-content{
+        margin: 0;
+        padding: 0;
+    }
+
+    .box-category .card-content .card{
+        flex-basis: 40%;
+    }
+    .list-marketplace{
+        flex-direction: column;
+    }
+
+    .side-nav b{
+        font-size: 13px;
+    }
+
+    .side-nav ul li{
+        font-size: 10px;
+    }
+
+    .side-nav .side-box{
+        padding: 10px 20px !important;
+    }
+
+    li.nav-item{
+        flex-basis: 22%;
+    }
+
+    .kategori ul{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .box-category h3{
+        font-size: 20px;
+        font-weight: 600;
+        margin-left: 3rem;
+        margin-top: 1rem;
+    }
+
+    .box-category .card-content{
+        padding: 0 !important;
+        flex-wrap: wrap;
+    }
+
+    .box-category .card-content .card{
+        flex-basis: 40% !important;
+    }
+
+    .box-category .card-content .card-body{
+        text-align: center;
+    }
+
+    .list-content .btn.simulasi{
+        padding: 10px 20px;
+    }
+
+    .nama-komponen, .py-4{
+        font-size: 1rem;
+    }
+
+    .py-4 img{
+        width: 50%;
+    }
+
+    .detail-content{
+        margin: 0px !important;
+    }
 }
 
-@media (max-width:450px){
+@media (max-width: 576px){
 
     html{
         font-size: 50%;
     }
 
+    body{
+        margin: 0;
+        padding: 0;
+    }
+
+    header{
+        flex-direction: column;
+    }
+
+    nav{
+        margin: 10px 0px;
+    }
+
+    .cat-pc{
+        flex-direction: column;
+    }
+
+    .cat-pc .kategori.col-5, .cat-pc .col-7{
+        width: 100%;
+    }
+
+    .kategori.col-5 .box{
+        text-align: center;
+    }
+
+    .heading.title-menu{
+        text-align: center;
+        margin: 10px 0px;
+    }
+
+    .desc-area.logo{
+        flex-wrap: wrap;
+    }
+
+    .card-body h5{
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .detail-content h5{
+        font-size: 1.5rem;
+    }
+
+    .detail-content pre{
+        font-size: 12px;
+        margin: 10px 30px;
+    }
+
+    .container-gallery, .detail-content{
+        margin: 10px 30px;
+    }
+
+    tr.heading-table th{
+        font-size: 10px;
+    }
+
+    .list-content{
+        margin: 0px !important;
+    }
+
+    .list-marketplace{
+        margin: 0;
+        padding: 0;
+    }
 }
 
 
