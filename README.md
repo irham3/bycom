@@ -1,5 +1,3 @@
-<p align="center"><img src="https://github.com/irham3/bycom/blob/master/public/images/logo.png" width="400" alt="ByCom Logo"></p>
-
 ## Configuration
 
 Jalanin di terminal atau CMD
