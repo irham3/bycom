@@ -15,6 +15,7 @@ copy .env.example .env
 composer install
 npm install
 npm run build
+composer require realrashid/sweet-alert
 php artisan key:generate
 php artisan migrate
 php artisan db:seed
