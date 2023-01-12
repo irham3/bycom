@@ -46,9 +46,9 @@
                                     <label for="password" class="form-label login">Password</label>
                                     <input placeholder="Password" type="password" class="form-control login" id="password" name="password" required>
                                 </div>
-                                <div class="forget-pass">
+                                {{-- <div class="forget-pass">
                                     <a class="atau" href="#">Lupa password</a>
-                                </div>
+                                </div> --}}
 
                                 <!-- Button Submit Buat Akun -->
                                 <button type="submit" class="btn btn-buatakun w-100 ">Masuk</button>
