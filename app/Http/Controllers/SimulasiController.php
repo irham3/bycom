@@ -126,7 +126,32 @@ class SimulasiController extends Controller
 
     public function deleteSelectedItem($key)
     {
-        session()->pull($key, 'default');
+        switch ($key) {
+            case 'cpus':
+                session()->forget(['cpus','motherboards', 'memories', 'internal_storages', 'gpus', 'cases', 'power_supplies']);
+                break;
+            case 'motherboards':
+                session()->forget(['motherboards', 'memories', 'internal_storages', 'gpus', 'cases', 'power_supplies']);
+                break;
+            case 'memories':
+                session()->forget(['memories', 'internal_storages', 'gpus', 'cases', 'power_supplies']);
+                break;
+            case 'internal_storages':
+                session()->forget(['internal_storages', 'gpus', 'cases', 'power_supplies']);
+                break;
+            case 'gpus':
+                session()->forget(['gpus' ,'cases', 'power_supplies']);
+                break;
+            case 'cases':
+                session()->forget(['cases', 'power_supplies']);
+                break;
+            case 'power_supplies':
+                session()->forget('power_supplies');
+                break;          
+            default:
+                session()->flush();
+                break;
+        }
         return redirect()->back();
     }
 

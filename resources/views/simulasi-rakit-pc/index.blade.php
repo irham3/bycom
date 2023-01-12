@@ -34,10 +34,12 @@
                             <img src="{{ asset('images/keranjang/logo-tokped.png') }}" alt="">                   
                         </td>
                         <td class="py-4">
+                            @if (!isset($prevRakitanData)) 
                             <form action="{{ route('hapusItemSimulasi','cpus') }}" method="post">
                                 @csrf
                                 <button type="submit"><iconify-icon icon="material-symbols:close" width="24" height="24"></iconify-icon></button>
                             </form>
+                            @endif
                         </td>
                     @else    
                         <td>
@@ -70,10 +72,12 @@
                             <img src="{{ asset('images/keranjang/logo-tokped.png') }}" alt="">                   
                         </td>
                         <td class="py-4">
+                            @if (!isset($prevRakitanData)) 
                             <form action="{{ route('hapusItemSimulasi','motherboards') }}" method="post">
                                 @csrf
                                 <button type="submit"><iconify-icon icon="material-symbols:close" width="24" height="24"></iconify-icon></button>
                             </form>
+                            @endif
                         </td>
                     @else    
                         <td>
@@ -109,10 +113,12 @@
                             <img src="{{ asset('images/keranjang/logo-tokped.png') }}" alt="">                   
                         </td>
                         <td class="py-4">
+                            @if (!isset($prevRakitanData)) 
                             <form action="{{ route('hapusItemSimulasi','memories') }}" method="post">
                                 @csrf
                                 <button type="submit"><iconify-icon icon="material-symbols:close" width="24" height="24"></iconify-icon></button>
                             </form>
+                            @endif
                         </td>
                     @else    
                         <td>
@@ -148,10 +154,12 @@
                             <img src="{{ asset('images/keranjang/logo-tokped.png') }}" alt="">                   
                         </td>
                         <td class="py-4">
+                            @if (!isset($prevRakitanData)) 
                             <form action="{{ route('hapusItemSimulasi','internal_storages') }}" method="post">
                                 @csrf
                                 <button type="submit"><iconify-icon icon="material-symbols:close" width="24" height="24"></iconify-icon></button>
                             </form>
+                            @endif
                         </td>
                     @else    
                         <td>
@@ -187,10 +195,12 @@
                             <img src="{{ asset('images/keranjang/logo-tokped.png') }}" alt="">                   
                         </td>
                         <td class="py-4">
+                            @if (!isset($prevRakitanData)) 
                             <form action="{{ route('hapusItemSimulasi','gpus') }}" method="post">
                                 @csrf
                                 <button type="submit"><iconify-icon icon="material-symbols:close" width="24" height="24"></iconify-icon></button>
                             </form>
+                            @endif
                         </td>
                     @else    
                         <td>
@@ -226,10 +236,12 @@
                             <img src="{{ asset('images/keranjang/logo-tokped.png') }}" alt="">                   
                         </td>
                         <td class="py-4">
+                            @if (!isset($prevRakitanData)) 
                             <form action="{{ route('hapusItemSimulasi','cases') }}" method="post">
                                 @csrf
                                 <button type="submit"><iconify-icon icon="material-symbols:close" width="24" height="24"></iconify-icon></button>
                             </form>
+                            @endif
                         </td>
                     @else    
                         <td>
@@ -265,10 +277,12 @@
                             <img src="{{ asset('images/keranjang/logo-tokped.png') }}" alt="">                   
                         </td>
                         <td class="py-4">
+                            @if (!isset($prevRakitanData)) 
                             <form action="{{ route('hapusItemSimulasi','power_supplies') }}" method="post">
                                 @csrf
                                 <button type="submit"><iconify-icon icon="material-symbols:close" width="24" height="24"></iconify-icon></button>
                             </form>
+                            @endif
                         </td>
                     @else    
                         <td>
