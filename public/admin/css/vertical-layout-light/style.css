@@ -9849,6 +9849,14 @@ pre code {
     flex: 0 0 33.33333%;
     max-width: 33.33333%;
   }
+
+  .row.profile{
+    flex-direction: column;
+  }
+
+  .col-lg-4.profile{
+    width: 100%;
+  }
   .col-lg-5 {
     flex: 0 0 41.66667%;
     max-width: 41.66667%;
@@ -23789,7 +23797,7 @@ dl li {
 
 @media (max-width: 400px) {
   .modal .modal-dialog .modal-content .modal-footer {
-    padding-left: .25rem;
+    padding-left: .15rem;
     padding-right: .25rem;
     flex-direction: column;
   }
@@ -23799,6 +23807,9 @@ dl li {
   }
   .modal .modal-dialog .modal-content .modal-footer > :not(:first-child) {
     margin-left: 0;
+  }
+  .modal.show .modal-dialog{
+    margin: 5rem 2rem;
   }
 }
 
@@ -28458,7 +28469,11 @@ div.tagsinput span.tag a {
 
 @media (max-width: 767px) {
   .content-wrapper {
-    padding: 1.5rem 1.5rem;
+    padding: 1.5rem 0;
+  }
+
+  .container-profile{
+    padding: 1.5rem;
   }
 }
 
@@ -28671,6 +28686,10 @@ div.tagsinput span.tag a {
   line-height: 1;
   height: auto;
   border-top: 0;
+}
+
+.collapse.show ul li{
+  list-style-type: none;
 }
 
 .sidebar .nav.sub-menu .nav-item .nav-link:hover {

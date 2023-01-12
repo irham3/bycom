@@ -25,7 +25,7 @@
                 </div>
             </div>
 
-            <div class="col-7">
+            <div class="col-7 mt-4">
                 <h1 class="heading name-menu">
                     Paket PC Murah Berkualitas
                 </h1>
@@ -65,7 +65,7 @@
                 </div>
             </div>
 
-            <div class="col-7">
+            <div class="col-7 mt-4">
                 <h1 class="heading name-menu">
                     Paket PC Spek Menengah
                 </h1>
@@ -104,7 +104,7 @@
                 </div>
             </div>
 
-            <div class="col-7">
+            <div class="col-7 mt-4">
                 <h1 class="heading name-menu">
                     Paket PC Spek Tinggi
                 </h1>

@@ -104,6 +104,7 @@
   /* Edit sidebar style */
   .sidebar .nav.sub-menu .nav-item .nav-link {
       color: #000;
+      list-style-type: none;
   }
 
   .sidebar .nav:not(.sub-menu) > .nav-item > .nav-link[aria-expanded="true"] {

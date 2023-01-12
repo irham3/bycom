@@ -1,31 +1,33 @@
 @extends('admin.layouts.app')
 @section('content')
-    <h1 class="h3 mb-4 text-gray-800">{{ __('Settings') }}</h1>
-    @if (session('success'))
-        <div class="alert alert-success border-left-success alert-dismissible fade show" role="alert">
-            {{ session('success') }}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    @endif
+    <div class="container-profile">
+      <h1 class="h3 mb-4 text-gray-800">{{ __('Settings') }}</h1>
+      @if (session('success'))
+          <div class="alert alert-success border-left-success alert-dismissible fade show" role="alert">
+              {{ session('success') }}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+      @endif
 
-    @if ($errors->any())
-      <div class="alert alert-warning border-left-warning alert-dismissible fade show" role="alert">
-        @foreach ($errors->all() as $error)
-          <li>{{ $error }}</li>
-        @endforeach
-        <button type="button" class="close mb-4" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    @endif
+      @if ($errors->any())
+        <div class="alert alert-warning border-left-warning alert-dismissible fade show" role="alert">
+          @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+          <button type="button" class="close mb-4" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      @endif
+      
       <div class="row">
         <div class="col-lg-4 order-lg-2">
           <div class="card shadow mb-4">
             <form action="{{ route('updateAdminImage') }}" method="post" enctype="multipart/form-data">
               @csrf
-              <div class="profile-pic mt-3">
+              <div class="profile-pic mt-5">
                 <label class="-label" for="file-admin-img">
                   <span class="glyphicon glyphicon-camera"></span>
                   <span>Ganti Gambar</span>
@@ -63,20 +65,20 @@
                   <label for="email">Email</label>
                   <input type="email" class="form-control" id="email" value="{{ $adminDetails['email'] }}" readonly>
                 </div>
-                <div class="row">
-                  <div class="col-lg-4">
+                <div class="row profile">
+                  <div class="col-lg-4 profile">
                     <div class="form-group">
                       <label for="oldPassword">Password Lama</label>
                       <input type="password" class="form-control" id="oldPassword" placeholder="Masukkan Password Lama" name="current_password">
                     </div>
                   </div>
-                  <div class="col-lg-4">
+                  <div class="col-lg-4 profile">
                     <div class="form-group">
                       <label for="newPassword">Password Baru</label>
                       <input type="password" class="form-control" id="newPassword" placeholder="Masukkan Password Baru" name="new_password">
                     </div>
                   </div>
-                  <div class="col-lg-4">
+                  <div class="col-lg-4 profile">
                     <div class="form-group">
                       <label for="confirmPassword">Konfirmasi Password</label>
                       <input type="password" class="form-control" id="confirmPassword" placeholder="Konfirmasi Password Baru" name="confirm_password">
@@ -96,5 +98,6 @@
           </div>
         </div>
       </div>
+    </div>
 
 @endsection

@@ -12,7 +12,7 @@
           <div class="modal-body">
             <div class="row">
               <div class="col-lg-6">
-                <div class="component-pic mb-4">
+                <div class="component-pic mb-5 mt-4">
                     <label class="-label" for="file-add">
                       <span class="glyphicon glyphicon-camera"></span>
                       <span>Pilih Gambar</span>
@@ -41,7 +41,7 @@
                       <input type="number" class="form-control" id="coreCount" placeholder="Jumlah Core" name="coreCount">
                     </div>
                   </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 mb-3">
                       <select id="cpuSocketId" name="cpuSocketId" class="form-select p-2" required>
                         <option>-Jenis Socket-</option>
                         @foreach ($cpuSockets as $cpuSocket)
@@ -109,7 +109,7 @@
             <div class="modal-body">
               <div class="row">
                 <div class="col-lg-6">
-                  <div class="component-pic mb-4">
+                  <div class="component-pic mb-5 mt-4">
                       <label class="-label" for="file-edit">
                         <span class="glyphicon glyphicon-camera"></span>
                         <span>Pilih Gambar</span>
@@ -142,7 +142,7 @@
                         <label class="form-label" for="coreCount">Jumlah Core</label>
                       </div>
                     </div>
-                      <div class="col-lg-6">
+                      <div class="col-lg-6 mb-3">
                         <select id="cpuSocketId" name="cpuSocketId" class="form-select p-2" required>
                           <option>-Jenis Socket-</option>
                           @foreach ($cpuSockets as $cpuSocket)

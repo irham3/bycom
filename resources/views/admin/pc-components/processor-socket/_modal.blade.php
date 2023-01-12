@@ -15,7 +15,7 @@
               </div>
               <div class="row">
                   <div class="col-lg-6">
-                    <div class="form-outline">
+                    <div class="form-outline mb-3">
                       <input type="month" class="form-control" id="introductionYear" placeholder="Tahun Diperkenalkan" name="introductionYear">
                     </div>
                   </div>
@@ -57,7 +57,7 @@
               </div>
               <div class="row">
                   <div class="col-lg-6">
-                    <div class="form-outline">
+                    <div class="form-outline mb-3">
                       <input type="month" class="form-control" id="introductionYear" placeholder="Tahun Diperkenalkan" name="introductionYear">
                     </div>
                   </div>
