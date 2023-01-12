@@ -22,8 +22,7 @@ return new class extends Migration
             $table->string('type');
             $table->integer('count');
             $table->integer('capacityPerPiece');
-            $table->mediumText('description')->nullable();  
-            $table->timestamps();        
+            $table->mediumText('description')->nullable();        
         });
     }
 

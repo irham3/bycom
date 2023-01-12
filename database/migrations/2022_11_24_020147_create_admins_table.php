@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('type');
             $table->string('password');
             $table->string('image')->default('admin.png');
-            $table->timestamps();
         });
     }
 

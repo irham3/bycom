@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('main-content')
-<section class="d-flex justify-content-between">
+<section class="d-flex justify-content-between list-marketplace">
   <!--Side Nav Marketplace-->
   @include('layouts.side-nav-marketplace')
 
@@ -9,7 +9,7 @@
           <input class="form-control py-3" type="search" placeholder="Cari Komponen PC" aria-label="Search">
       </form> --}}
 
-      <div class="pt-5 pb-5" id="casing-pc">
+      <div class="pt-5 pb-5 box-category" id="casing-pc">
           <div class="container d-flex justify-content-between">
               <h3>{{ $data->categoryTitle }}</h3>
           </div>

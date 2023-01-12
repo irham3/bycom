@@ -1,5 +1,5 @@
 <div class="side-nav">
-  <div class="container pt-5" style="padding-left: 50px;">
+  <div class="side-box container pt-5" style="padding-left: 50px;">
       <div class="kategori">
           <b>Kategori</b>
           <ul>

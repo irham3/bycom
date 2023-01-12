@@ -24,8 +24,7 @@ return new class extends Migration
             $table->integer('tdp');
             $table->integer('boostClockMhz');
             $table->integer('lengthMm');
-            $table->mediumText('description'); 
-            $table->timestamps();         
+            $table->mediumText('description');         
         });
     }
 

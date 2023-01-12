@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('socketName');
             $table->string('introductionYear');
             $table->string('cpuVendor');
-            $table->timestamps();
         });
     }
 
