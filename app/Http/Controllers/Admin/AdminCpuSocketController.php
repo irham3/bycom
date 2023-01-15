@@ -90,21 +90,8 @@ class AdminCpuSocketController extends Controller
      */
     public function edit($id)
     {
-        $data = CPUSocket::find($id);
-        if($data)
-        {
-            return response()->json([
-                'status'=> 200,
-                'data'=> $data,
-            ]);
-        }
-        else
-        {
-            return response()->json([
-                'status'=> 404,
-                'message'=>'No Data Is Found.'
-            ]);
-        }
+        $model = new CPUSocket();
+        return parent::getResponseEditData($model, $id);
 
     }
 
