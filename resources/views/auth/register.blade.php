@@ -4,10 +4,11 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="{{ url('admin/css/vertical-layout-light/style.css?v=').time() }}">
         <link rel="stylesheet" href="{{ URL::asset('css/app.css?v=').time() }}">
         <title>Register</title>
+        <link rel="shortcut icon" href="{{ URL::asset('images/favicon.png?v=').time()}}" />
     </head>
     
     <body>
@@ -22,7 +23,7 @@
                     <!-- Bagian Kanan -->
                     <div class="col-sm-12 col-md-6 col-lg-6 bagiankanan d-flex align-items-center justify-content-center">
                         <div class="w-50">
-                            <a href="{{ route('beranda') }}">Beranda</a>
+                            <div class="atau"><a href="{{ route('beranda') }}">Kembali ke Beranda</a></div>
                             <h1 class="tulisandaftar mt-5 mb-1">REGISTER</h1>
                             
                             <!-- Form -->
@@ -56,14 +57,15 @@
                                 <!-- Button Submit Buat Akun -->
                                 <button type="submit" class="btn btn-buatakun w-100 ">Daftar</button>
                                 <h6 class="atau register">Sudah punya akun ?<a href="{{ route('login') }}"> Login</a></h6>
-                            {{-- </form>
                                 <br>
                                 <h6 class="atau text-center">ATAU</h6>
                                 
                                 <!-- Button Link Akun Google -->
-                                <button type="button" class="btn btn-buatakun google w-100 ">
-                                    <img src="images/google.svg" alt=""> Google
-                                </button>     --}}
+                                <a href="{{ route('googleAuth') }}">
+                                    <button type="button" class="btn btn-buatakun google w-100 ">
+                                        <img src="images/google.svg" alt=""> Google
+                                    </button>    
+                                </a>
                         </div>
                     </div>
         
@@ -72,6 +74,6 @@
       </div>
 
         <!-- Option 1: Bootstrap Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="{{ url('admin/vendors/js/vendor.bundle.base.js') }}"></script>
     </body>
 </html>

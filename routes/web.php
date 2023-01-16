@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\GoogleAuthController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\MarketplaceController;
 use App\Http\Controllers\RakitanKuController;
@@ -28,6 +29,10 @@ Route::middleware('auth')->group(function () {
 
 // Pengguna yang tidak login maupun selain pemilik rakitan masih bisa liat detail rakitan
 Route::get('/rakitanku/{code}', [RakitanKuController::class, 'detailRakitan']);
+
+// Google Auth
+Route::get('auth/google', [GoogleAuthController::class, 'redirect'])->name('googleAuth');
+Route::get('auth/google/call-back',[GoogleAuthController::class, 'callBackGoogle']);
 
 require __DIR__.'/auth.php';
 require __DIR__.'/admin.php';

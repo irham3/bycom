@@ -11,8 +11,13 @@ use App\Http\Controllers\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
+use App\Http\Controllers\Auth\GoogleAuthController;
 
 Route::middleware('guest')->group(function () {
+    // Google Auth
+    Route::get('auth/google', [GoogleAuthController::class, 'redirect'])->name('googleAuth');
+    Route::get('auth/google/call-back',[GoogleAuthController::class, 'callBackGoogle']);
+    
     Route::get('register', [RegisteredUserController::class, 'create'])
                 ->name('register');
 

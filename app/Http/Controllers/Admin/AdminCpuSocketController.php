@@ -82,16 +82,31 @@ class AdminCpuSocketController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\CPUSocket  $cPUSocket
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        $model = new CPUSocket();
-        return parent::getResponseEditData($model, $id);
+        $data = DB::table('cpu_sockets')
+        ->select(
+            'id',
+            'socketName',
+            'introductionYear',
+            'cpuVendor'
+            )
+        ->where('id', $id)
+        ->first();
+        if($data)
+        {
+            return response()->json([
+                'status'=> 200,
+                'data'=> $data,
+            ]);
+        }
+        else
+        {
+            return response()->json([
+                'status'=> 404,
+                'message'=>'No Data Is Found.'
+            ]);
+        }
 
     }
 
