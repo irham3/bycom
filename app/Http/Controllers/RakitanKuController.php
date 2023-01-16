@@ -52,9 +52,6 @@ class RakitanKuController extends Controller
             $sessionData = session()->all();
             $componentKeys = array_keys($allComponents);
 
-            // Total harga semua komponennya
-            $totalPrice = 0;
-
             // Total watt dari komponen yang sudah dipilih
             $totalWattage = 150;
 
@@ -63,8 +60,6 @@ class RakitanKuController extends Controller
             foreach ($sessionData as $key => $column) {
                 // Dicek key nya karena ada key yang bukan component
                 if (in_array($key, $componentKeys)) {
-                    $totalPrice += $sessionData[$key]->price;
-
                     if($key == 'cpus' | $key == 'gpus')
                         $totalWattage += $sessionData[$key]->tdp;
 
@@ -72,6 +67,10 @@ class RakitanKuController extends Controller
                     $multipleUrlsScript .= "window.open('".$sessionData[$key]->url."','_blank');";
                 }
             }
+            
+            // Total harga semua komponennya
+            $totalPrice = $prevRakitanData->totalPrice;
+
             // Mengubah angka ke format rupiah
             $formattedTotalPrice = parent::rupiah($totalPrice);
 
