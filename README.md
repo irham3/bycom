@@ -7,6 +7,7 @@ composer install
 npm install
 npm run build
 composer require realrashid/sweet-alert
+composer require laravel/socialite
 php artisan key:generate
 php artisan migrate
 php artisan db:seed
