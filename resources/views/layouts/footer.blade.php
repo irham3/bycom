@@ -7,7 +7,7 @@
                 <img src="{{ url('images/logo.png') }}" alt="">
             </div>
             <div class="desc-area">
-                <p>Membantu anda untuk merakit PC sesuai kebutuhan yang anda inginkan.</p>
+                <p>ByCom (Build Your Computer) membantu anda untuk merakit PC sesuai kebutuhan yang anda inginkan.</p>
             </div>
         </div>
         <div class="footer-desc">
