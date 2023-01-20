@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cpu;
 use stdClass;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class MarketplaceController extends Controller
+class KatalogController extends Controller
 {
     public function index()
     {
@@ -26,7 +24,7 @@ class MarketplaceController extends Controller
                 $component->price = parent::rupiah($component->price);
             }
         }
-        return view('marketplace.index', compact('data'));
+        return view('katalog.index', compact('data'));
     }
 
     public function category($table)
@@ -65,7 +63,7 @@ class MarketplaceController extends Controller
         }
         $data->pcComponents = $pcComponents;
 
-        return view('marketplace.category', compact('data','table'));
+        return view('katalog.category', compact('data','table'));
     }
 
     public function detailComponent($table, $id)
@@ -84,6 +82,6 @@ class MarketplaceController extends Controller
         $detailComponent->price = parent::rupiah($detailComponent->price);
 
         // dd($columnNames);
-        return view('marketplace.detail-component', compact('detailComponent', 'imageFolder'));
+        return view('katalog.detail-component', compact('detailComponent', 'imageFolder'));
     }
 }

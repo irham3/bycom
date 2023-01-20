@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\BerandaController;
-use App\Http\Controllers\MarketplaceController;
+use App\Http\Controllers\KatalogController;
 use App\Http\Controllers\RakitanKuController;
 use App\Http\Controllers\SimulasiController;
 use Illuminate\Support\Facades\Route;
@@ -16,10 +16,10 @@ Route::post('/simulasi-rakit-pc/{key}', [SimulasiController::class, 'deleteSelec
 Route::post('/simulasi-rakit-pc/addComponent/{table}', [SimulasiController::class, 'addComponent']);
 Route::post('/simulasi-rakit-pc/addComponent/{table}/{id}', [SimulasiController::class, 'addComponentItem']);
 
-// Marketplace
-Route::get('/marketplace', [MarketplaceController::class, 'index'])->name('marketplace');
-Route::get('/marketplace/{table}', [MarketplaceController::class, 'category']);
-Route::get('/marketplace/{table}/{id}', [MarketplaceController::class, 'detailComponent']);
+// Katalog
+Route::get('/katalog', [KatalogController::class, 'index'])->name('katalog');
+Route::get('/katalog/{table}', [KatalogController::class, 'category']);
+Route::get('/katalog/{table}/{id}', [KatalogController::class, 'detailComponent']);
 
 Route::middleware('auth')->group(function () {
     // RakitanKu

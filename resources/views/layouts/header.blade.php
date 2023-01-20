@@ -5,7 +5,7 @@
     <nav class="navbar">
         <a href="{{ route('beranda') }}" class="{{ (request()->is('/')) ? 'active' : '' }}">Beranda</a>
         <a href="{{ url('simulasi-rakit-pc') }}" class="{{ (request()->is('simulasi-rakit-pc*')) ? 'active' : '' }}">Simulasi Rakit PC</a>
-        <a href="{{ url('marketplace') }}" class="{{ (request()->is('marketplace*')) ? 'active' : '' }}">Marketplace</a>
+        <a href="{{ url('katalog') }}" class="{{ (request()->is('katalog*')) ? 'active' : '' }}">Katalog</a>
     </nav>
     @if (Route::has('login'))
             <div class="d-flex icon-nav">

@@ -23,7 +23,6 @@
     box-sizing: border-box;
     outline: none; border:none;
     text-decoration: none;
-    text-transform: capitalize;
     transition:all .2s linear;
 }
 
@@ -1106,6 +1105,7 @@ input#nama-rakitan{
     .atau.register{
         margin: 10px 0px;
         text-align: center;
+        
     }
 
     .btn.add{
@@ -1120,7 +1120,7 @@ input#nama-rakitan{
     .box-category .card-content .card{
         flex-basis: 40%;
     }
-    .list-marketplace{
+    .list-katalog{
         flex-direction: column;
     }
 
@@ -1248,7 +1248,7 @@ input#nama-rakitan{
         margin: 0px !important;
     }
 
-    .list-marketplace{
+    .list-katalog{
         margin: 0;
         padding: 0;
     }

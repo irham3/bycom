@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('main-content')
-<section class="d-flex justify-content-between list-marketplace">
-  @include('layouts.side-nav-marketplace')
+<section class="d-flex justify-content-between list-katalog">
+  @include('layouts.side-nav-katalog')
 
   <div class="list-content container" style="margin: 0px 30px;">
   {{-- <form class="d-flex justify-content-end" role="search">
@@ -12,7 +12,7 @@
       <div class="pt-5 pb-5 box-category" id="casing-pc">
           <div class="container d-flex justify-content-between">
           <h3>Casing PC</h3>
-          <a class="btn" href="{{ url('marketplace/cases') }}" role="button">Lihat Lainnya</a>
+          <a class="btn" href="{{ url('katalog/cases') }}" role="button">Lihat Lainnya</a>
           </div>
           <div class="card-content d-flex justify-content-evenly pt-3" style="padding-left: 30px;">
             @foreach ($data->cases as $dataComponent)
@@ -21,7 +21,7 @@
                 <div class="card-body mt-3">
                     <h5 class="card-title">{{ $dataComponent->name }}</h5>
                     <p class="card-text">{{ $dataComponent->price }}</p>
-                    <a href="{{ url('marketplace/cases/'.$dataComponent->id) }}" class="btn simulasi">Lihat Detail</a>
+                    <a href="{{ url('katalog/cases/'.$dataComponent->id) }}" class="btn simulasi">Lihat Detail</a>
                 </div>
             </div>
             @endforeach
@@ -31,7 +31,7 @@
       <div class="pt-5 pb-5 box-category" id="motherboard">
         <div class="container d-flex justify-content-between">
             <h3>Motherboard</h3>
-            <a class="btn" href="{{ url('marketplace/motherboards') }}" role="button">Lihat Lainnya</a>
+            <a class="btn" href="{{ url('katalog/motherboards') }}" role="button">Lihat Lainnya</a>
         </div>
         <div class="card-content d-flex justify-content-evenly pt-3" style="padding-left: 30px;">
             @foreach ($data->motherboards as $dataComponent)
@@ -40,7 +40,7 @@
                 <div class="card-body mt-3">
                     <h5 class="card-title">{{ $dataComponent->name }}</h5>
                     <p class="card-text">{{ $dataComponent->price }}</p>
-                    <a href="{{ url('marketplace/motherboards/'.$dataComponent->id) }}" class="btn simulasi">Lihat Detail</a>
+                    <a href="{{ url('katalog/motherboards/'.$dataComponent->id) }}" class="btn simulasi">Lihat Detail</a>
                 </div>
             </div>
             @endforeach
@@ -50,7 +50,7 @@
       <div class="pt-5 pb-5 box-category" id="cpu">
         <div class="container d-flex justify-content-between">
             <h3>CPU</h3>
-            <a class="btn" href="{{ url('marketplace/cpus') }}" role="button">Lihat Lainnya</a>
+            <a class="btn" href="{{ url('katalog/cpus') }}" role="button">Lihat Lainnya</a>
         </div>
         <div class="card-content d-flex justify-content-evenly pt-3" style="padding-left: 30px;">
             @foreach ($data->cpus as $dataComponent)
@@ -59,7 +59,7 @@
                 <div class="card-body mt-3">
                     <h5 class="card-title">{{ $dataComponent->name }}</h5>
                     <p class="card-text">{{ $dataComponent->price }}</p>
-                    <a href="{{ url('marketplace/cpus/'.$dataComponent->id) }}" class="btn simulasi">Lihat Detail</a>
+                    <a href="{{ url('katalog/cpus/'.$dataComponent->id) }}" class="btn simulasi">Lihat Detail</a>
                 </div>
             </div>
             @endforeach
@@ -68,7 +68,7 @@
       <div class="pt-5 pb-5 box-category" id="gpu">
           <div class="container d-flex justify-content-between">
               <h3>GPU</h3>
-              <a class="btn" href="{{ url('marketplace/gpus') }}" role="button">Lihat Lainnya</a>
+              <a class="btn" href="{{ url('katalog/gpus') }}" role="button">Lihat Lainnya</a>
           </div>
           <div class="card-content d-flex justify-content-evenly pt-3" style="padding-left: 30px;">
             @foreach ($data->gpus as $dataComponent)
@@ -77,7 +77,7 @@
                 <div class="card-body mt-3">
                     <h5 class="card-title">{{ $dataComponent->name }}</h5>
                     <p class="card-text">{{ $dataComponent->price }}</p>
-                    <a href="{{ url('marketplace/gpus/'.$dataComponent->id) }}" class="btn simulasi">Lihat Detail</a>
+                    <a href="{{ url('katalog/gpus/'.$dataComponent->id) }}" class="btn simulasi">Lihat Detail</a>
                 </div>
             </div>
             @endforeach
@@ -86,7 +86,7 @@
       <div class="pt-5 pb-5 box-category" id="ram">
         <div class="container d-flex justify-content-between">
             <h3>RAM</h3>
-            <a class="btn" href="{{ url('marketplace/memories') }}" role="button">Lihat Lainnya</a>
+            <a class="btn" href="{{ url('katalog/memories') }}" role="button">Lihat Lainnya</a>
         </div>
         <div class="card-content d-flex justify-content-evenly pt-3" style="padding-left: 30px;">
             @foreach ($data->memories as $dataComponent)
@@ -95,7 +95,7 @@
                 <div class="card-body mt-3">
                     <h5 class="card-title">{{ $dataComponent->name }}</h5>
                     <p class="card-text">{{ $dataComponent->price }}</p>
-                    <a href="{{ url('marketplace/memories/'.$dataComponent->id) }}" class="btn simulasi">Lihat Detail</a>
+                    <a href="{{ url('katalog/memories/'.$dataComponent->id) }}" class="btn simulasi">Lihat Detail</a>
                 </div>
             </div>
             @endforeach
@@ -104,7 +104,7 @@
       <div class="pt-5 pb-5 box-category" id="psu">
         <div class="container d-flex justify-content-between">
             <h3>PSU</h3>
-            <a class="btn" href="{{ url('marketplace/power_supplies') }}" role="button">Lihat Lainnya</a>
+            <a class="btn" href="{{ url('katalog/power_supplies') }}" role="button">Lihat Lainnya</a>
         </div>
         <div class="card-content d-flex justify-content-evenly pt-3" style="padding-left: 30px;">
             @foreach ($data->power_supplies as $dataComponent)
@@ -113,7 +113,7 @@
                 <div class="card-body mt-3">
                     <h5 class="card-title">{{ $dataComponent->name }}</h5>
                     <p class="card-text">{{ $dataComponent->price }}</p>
-                    <a href="{{ url('marketplace/power_supplies/'.$dataComponent->id) }}" class="btn simulasi">Lihat Detail</a>
+                    <a href="{{ url('katalog/power_supplies/'.$dataComponent->id) }}" class="btn simulasi">Lihat Detail</a>
                 </div>
             </div>
             @endforeach
@@ -122,7 +122,7 @@
       <div class="pt-5 pb-5 box-category" id="internal-storage">
         <div class="container d-flex justify-content-between">
             <h3>Internal Storage</h3>
-            <a class="btn" href="{{ url('marketplace/internal_storages') }}" role="button">Lihat Lainnya</a>
+            <a class="btn" href="{{ url('katalog/internal_storages') }}" role="button">Lihat Lainnya</a>
         </div>
         <div class="card-content d-flex justify-content-evenly pt-3" style="padding-left: 30px;">
             @foreach ($data->internal_storages as $dataComponent)
@@ -131,7 +131,7 @@
                 <div class="card-body mt-3">
                     <h5 class="card-title">{{ $dataComponent->name }}</h5>
                     <p class="card-text">{{ $dataComponent->price }}</p>
-                    <a href="{{ url('marketplace/internal_storages/'.$dataComponent->id) }}" class="btn simulasi">Lihat Detail</a>
+                    <a href="{{ url('katalog/internal_storages/'.$dataComponent->id) }}" class="btn simulasi">Lihat Detail</a>
                 </div>
             </div>
             @endforeach

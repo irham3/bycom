@@ -5,7 +5,7 @@
     <h3 class="pt-3 pb-3">{{ $detailComponent->name }}</h3>
 </div>
 
-<section class="container d-flex justify-content-between mt-5 mb-5 list-marketplace">
+<section class="container d-flex justify-content-between mt-5 mb-5 list-katalog">
     <div class="gallery">
         <div class="container-gallery mb-4 pt-5 pb-5">
             <!-- Expanded image -->

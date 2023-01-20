@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('main-content')
-<section class="d-flex justify-content-between list-marketplace">
-  <!--Side Nav Marketplace-->
-  @include('layouts.side-nav-marketplace')
+<section class="d-flex justify-content-between list-katalog">
+  <!--Side Nav Katalog-->
+  @include('layouts.side-nav-katalog')
 
   <div class="list-content container mt-5" style="margin: 0px 30px;">
       {{-- <form class="d-flex justify-content-end" role="search">
@@ -20,7 +20,7 @@
                 <div class="card-body mt-3">
                     <h5 class="card-title">{{ $pcComponent->name }}</h5>
                     <p class="card-text">{{ $pcComponent->price }}</p>
-                    <a href="{{ url('marketplace/'.$table.'/'.$pcComponent->id) }}" class="btn ">Lihat Detail</a>
+                    <a href="{{ url('katalog/'.$table.'/'.$pcComponent->id) }}" class="btn ">Lihat Detail</a>
                 </div>
             </div>
             @endforeach

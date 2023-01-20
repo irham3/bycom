@@ -19,7 +19,7 @@
                         <button type="submit" class="btn add simulasi">+ Add Item</button >
                     </form>
                     <div style="text-align: center">
-                        <a href="{{ url('marketplace/'.$table.'/'.$pcComponent->id) }}" class="btn simulasi">Lihat Detail</a>
+                        <a href="{{ url('katalog/'.$table.'/'.$pcComponent->id) }}" class="btn simulasi">Lihat Detail</a>
                     </div>
                 </div>
             </div>

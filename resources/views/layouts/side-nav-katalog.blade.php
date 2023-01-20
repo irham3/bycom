@@ -3,29 +3,29 @@
       <div class="kategori">
           <b>Kategori</b>
           <ul>
-            <li class="nav-item {{ (request()->is('marketplace')) ? 'active' : '' }}">
-                <a href="{{ url('marketplace') }}">Lihat Semua</a>
+            <li class="nav-item {{ (request()->is('katalog')) ? 'active' : '' }}">
+                <a href="{{ url('katalog') }}">Lihat Semua</a>
             </li>
-            <li class="nav-item {{ (request()->is('marketplace/cpus')) ? 'active' : '' }}">
-                <a href="{{ url('marketplace/cpus') }}">CPU</a>
+            <li class="nav-item {{ (request()->is('katalog/cpus')) ? 'active' : '' }}">
+                <a href="{{ url('katalog/cpus') }}">CPU</a>
             </li>
-            <li class="nav-item {{ (request()->is('marketplace/cases')) ? 'active' : '' }}">
-                <a href="{{ url('marketplace/cases') }}">Casing PC</a>
+            <li class="nav-item {{ (request()->is('katalog/cases')) ? 'active' : '' }}">
+                <a href="{{ url('katalog/cases') }}">Casing PC</a>
             </li>
-            <li class="nav-item {{ (request()->is('marketplace/motherboards')) ? 'active' : '' }}">
-                <a href="{{ url('marketplace/motherboards') }}">Motherboard</a>
+            <li class="nav-item {{ (request()->is('katalog/motherboards')) ? 'active' : '' }}">
+                <a href="{{ url('katalog/motherboards') }}">Motherboard</a>
             </li>
-            <li class="nav-item {{ (request()->is('marketplace/gpus')) ? 'active' : '' }}">
-                <a href="{{ url('marketplace/gpus') }}">GPU</a>
+            <li class="nav-item {{ (request()->is('katalog/gpus')) ? 'active' : '' }}">
+                <a href="{{ url('katalog/gpus') }}">GPU</a>
             </li>
-            <li class="nav-item {{ (request()->is('marketplace/memories')) ? 'active' : '' }}">
-                <a href="{{ url('marketplace/memories') }}">Memory</a>
+            <li class="nav-item {{ (request()->is('katalog/memories')) ? 'active' : '' }}">
+                <a href="{{ url('katalog/memories') }}">Memory</a>
             </li>
-            <li class="nav-item {{ (request()->is('marketplace/power_supplies')) ? 'active' : '' }}">
-                <a href="{{ url('marketplace/power_supplies') }}">Power Supply (PSU)</a>
+            <li class="nav-item {{ (request()->is('katalog/power_supplies')) ? 'active' : '' }}">
+                <a href="{{ url('katalog/power_supplies') }}">Power Supply (PSU)</a>
             </li>
-            <li class="nav-item {{ (request()->is('marketplace/internal_storages')) ? 'active' : '' }}">
-                <a href="{{ url('marketplace/internal_storages') }}">Internal Storage</a>
+            <li class="nav-item {{ (request()->is('katalog/internal_storages')) ? 'active' : '' }}">
+                <a href="{{ url('katalog/internal_storages') }}">Internal Storage</a>
             </li>
           </ul>
       </div>
