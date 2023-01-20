@@ -33,7 +33,7 @@
                 <span class="logo-name"></span>
             </div>
             <div class="desc-area logo d-flex">
-                <a class="icons" href="#"><img src="images/sosmed.png" alt=""></a>
+                <a class="icons" href="https://www.facebook.com/ahmed.sunda1/" target="blank"><img src="images/sosmed.png" alt=""></a>
                 <a class="icons" href="https://www.instagram.com/irham_tri" target="blank"><img src="images/sosmed-2.png" alt=""></a>
                 <a class="icons" href="#"><img src="images/sosmed-3.png" alt=""></a>
                 <a class="icons" href="#"><img src="images/sosmed-4.png" alt=""></a>
