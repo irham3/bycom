@@ -135,7 +135,20 @@
             </div>
         </div>
     </section>
-
     <!-- product section ends -->
+@endsection
 
+@section('js-content')
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        window.onload = (event) => {
+            setTimeout(() => 
+                Swal.fire({
+                    title: '<strong>Selamat Datang</strong>',
+                    html:
+                        '<div style="text-align: justify;text-justify: auto;">Website ByCom ini adalah website prototype yang masih belum sempurna. Kami sangat mengharapkan masukan dan saran Anda untuk menyempurnakan website ini sebelum diluncurkan nantinya. Setelah Anda menggunakan website ini, mohon berikan feedback melalui tombol <b>Feedback</b> di kanan bawah. Kami sangat menghargai dukungan Anda dalam proses pengembangan website ini.</div></br>Terima kasih! ❤️',
+                })
+            , 500);
+        };
+    </script>
 @endsection

@@ -354,6 +354,52 @@ header{
     margin-left: 80px;
   }
 
+  /* Feedback Button*/
+  .feedback-widget {
+    font-family: Arial, Helvetica, sans-serif;
+    position: fixed;
+    z-index: 2;
+    bottom: 20px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000000;
+    padding-right: 15px;
+    padding-left: 10px;
+    border-radius: 15px 0 0 15px;
+    box-shadow: 0 2px 5px -1px rgba(50,50,93,0.25),0 1px 3px -1px rgba(0,0,0,0.3);
+  }
+  .feedback-widget .feedback-widget-item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex: 0 0 50%;
+    height: 40px;
+  }
+  .feedback-widget .feedback-widget-item > div {
+    font-size: 18px;
+    line-height: 1;
+    color: #f5f8fa;
+    text-transform: uppercase;
+  }
+  .feedback-widget .feedback-widget-item > div:first-child {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .feedback-widget .feedback-widget-item > div svg {
+    display: block;
+    width: 25px;
+    height: 25px;
+    fill: #dbe1e9;
+    color: #dbe1e9;
+  }
+
+  /* End FeedBack Button */
+
 .icons-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));

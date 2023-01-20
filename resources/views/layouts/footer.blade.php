@@ -23,8 +23,8 @@
                 <span class="logo-name">Kontak Kami</span>
             </div>
             <div class="desc-area">
-                <p><a href="#">bycom@gmail.com</a></p>
-                <p><a href="#">+62 000-0000-0000</a></p>
+                <p><a href="mailto:irhamtria@gmail.com?subject=Website ByCom">irhamtria@gmail.com</a></p>
+                <p><a href="http://wa.me/62881023409290">+62 881-0234-09290</a></p>
             </div>
         </div>
 
@@ -34,7 +34,7 @@
             </div>
             <div class="desc-area logo d-flex">
                 <a class="icons" href="#"><img src="images/sosmed.png" alt=""></a>
-                <a class="icons" href="#"><img src="images/sosmed-2.png" alt=""></a>
+                <a class="icons" href="https://www.instagram.com/irham_tri"><img src="images/sosmed-2.png" alt=""></a>
                 <a class="icons" href="#"><img src="images/sosmed-3.png" alt=""></a>
                 <a class="icons" href="#"><img src="images/sosmed-4.png" alt=""></a>
             </div>
@@ -42,6 +42,6 @@
 
     </div>
 
-    <div class="credit">Copyright® 2022 Kaizen Team All rights Reserved</div>
+    <div class="credit">Copyright® {{ date("Y") }} Kaizen Team All rights Reserved</div>
 
 </section>
