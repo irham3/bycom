@@ -315,7 +315,7 @@ header{
   .home .image img{
     width:100%;
     padding:1rem;
-    animation:float 3s linear infinite;
+    /* animation:float 3s linear infinite */
   }
   
   @keyframes float{
@@ -364,7 +364,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #000000;
+    background: #ffae5d;
     padding-right: 15px;
     padding-left: 10px;
     border-radius: 15px 0 0 15px;
