@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>ByCom Dashboard</title>
+  <title>BangunPC Dashboard</title>
   <!-- plugins:css -->
   <link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet">
   <link rel="stylesheet" href="{{ URL::asset('admin/vendors/feather/feather.css?v=').time()}}">

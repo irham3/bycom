@@ -6,21 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
-    <title>ByCom - Build Your Computer</title>
+    <title>BangunPC - Build Your Computer</title>
     <meta name="description" content="Membantu anda untuk merakit PC sesuai kebutuhan yang anda inginkan.">
     <!-- Google / Search Engine Tags -->
-    <meta itemprop="name" content="ByCom - Build Your Computer">
+    <meta itemprop="name" content="BangunPC - Build Your Computer">
     <meta itemprop="description" content="Membantu anda untuk merakit PC sesuai kebutuhan yang anda inginkan.">
     <meta itemprop="image" content="{{ URL::asset('images/favicon.png?v=').time()}}">
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://bycom.eastus2.cloudapp.azure.com">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="ByCom - Build Your Computer">
+    <meta property="og:title" content="BangunPC - Build Your Computer">
     <meta property="og:description" content="Membantu anda untuk merakit PC sesuai kebutuhan yang anda inginkan.">
     <meta property="og:image" content="{{ URL::asset('images/favicon.png?v=').time()}}">
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ByCom - Build Your Computer">
+    <meta name="twitter:title" content="BangunPC - Build Your Computer">
     <meta name="twitter:description" content="Membantu anda untuk merakit PC sesuai kebutuhan yang anda inginkan.">
     <meta name="twitter:image" content="{{ URL::asset('images/favicon.png?v=').time()}}">
 

@@ -7,7 +7,7 @@
                 <img src="{{ url('images/logo.png') }}" alt="">
             </div>
             <div class="desc-area">
-                <p>ByCom (Build Your Computer) membantu anda untuk merakit PC sesuai kebutuhan yang anda inginkan.</p>
+                <p>Membantu anda merakit PC sesuai kebutuhan yang anda inginkan.</p>
             </div>
         </div>
         <div class="footer-desc">
@@ -23,7 +23,7 @@
                 <span class="logo-name">Kontak Kami</span>
             </div>
             <div class="desc-area">
-                <p><a href="mailto:irhamtria@gmail.com?subject=Website ByCom">irhamtria@gmail.com</a></p>
+                <p><a href="mailto:irhamtria@gmail.com?subject=Website BangunPC">irhamtria@gmail.com</a></p>
                 <p><a href="http://wa.me/62881023409290" target="blank">+62 881-0234-09290</a></p>
             </div>
         </div>
