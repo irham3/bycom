@@ -1,0 +1,63 @@
+version: '3.9'
+services:
+  app:
+    build: .
+    container_name: bycom
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/var/www
+    depends_on:
+      - db
+    links:
+      - db
+    restart: unless-stopped
+    # command: php artisan serve --host=0.0.0.0 --port=8000
+    networks:
+      - app-network
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: ""
+    restart: unless-stopped
+    networks:
+      - app-network
+  db:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_DATABASE: bycom
+      # MYSQL_USER: root
+      MYSQL_PASSWORD: ""
+    volumes:
+      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "8081:80"
+    volumes:
+      - ./:/var/www
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - phpmyadmin
+    restart: unless-stopped
+    networks:
+      - app-network
+
+volumes:
+  db_data: {}
+
+networks:
+  app-network:
+    driver: bridge

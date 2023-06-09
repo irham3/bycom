@@ -10,10 +10,10 @@
         "laravel/breeze": "^1.15",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
-        "laravel/socialite": "^5.5",
+        "laravel/socialite": "^5.6",
         "laravel/tinker": "^2.7",
         "ramsey/uuid": "^4.7",
-        "realrashid/sweet-alert": "^5.1",
+        "realrashid/sweet-alert": "^7.0",
         "yajra/laravel-datatables-oracle": "10.0"
     },
     "require-dev": {
