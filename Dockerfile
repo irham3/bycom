@@ -36,6 +36,12 @@ RUN npm install
 RUN npm run build
 RUN composer require realrashid/sweet-alert
 RUN composer require laravel/socialite
+COPY .env.example .env
+
+# Switch to root user, change ownership, and switch back to $user
+USER root
+RUN chown $user:$user .env
+USER $user
 RUN php artisan key:generate
 # RUN php artisan migrate
 # RUN php artisan db:seed

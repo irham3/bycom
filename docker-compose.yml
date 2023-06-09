@@ -3,8 +3,6 @@ services:
   app:
     build: .
     container_name: bycom
-    ports:
-      - "8000:8000"
     volumes:
       - .:/var/www
     depends_on:
@@ -45,7 +43,7 @@ services:
     image: nginx:latest
     container_name: nginx
     ports:
-      - "8081:80"
+      - "8000:80"
     volumes:
       - ./:/var/www
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
